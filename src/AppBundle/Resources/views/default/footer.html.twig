@@ -8,10 +8,10 @@
                 <div class="col-md-10">
                     <nav>
                         <ul class="clearfix">
-                            <li>O firmie</li>
-                            <li>Odpowiedzialność społeczna</li>
-                            <li>Zgłoś działania nieporządane</li>
-                            <li>Kontakt</li>
+                            <li {% if app.request.get('_route') == 'firm' %}class="active"{% endif %}><a href="{{ path('firm')}}">O firmie</a></li>
+                            <li {% if app.request.get('_route') == 'responsibility' %}class="active"{% endif %}><a href="{{ path('responsibility')}}">Odpowiedzialność społeczna</a></li>
+                            <li {% if app.request.get('_route') == 'notification' %}class="active"{% endif %}><a href="{{ path('notification')}}">Zgłoś działania nieporządane</a></li>
+                            <li {% if app.request.get('_route') == 'contact' %}class="active"{% endif %}><a href="{{ path('contact')}}">Kontakt</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -21,6 +21,22 @@
                     padding-right: 8px;
                     padding-left: 8px;
 
+                    a {
+                        color: @colorTextGray;
+                        
+                        &:hover, &:active, &:focus {
+                            text-decoration: underline;
+                            color: @colorTextGray;
+                        }
+                    }
+                    
+                    &:hover, &.active {
+                        a {
+                            color: @colorTextGray;
+                            text-decoration: underline;
+                        }
+                    }
+                    
                     &:last-child {
                         border-right: none;
                         padding-right: 0;

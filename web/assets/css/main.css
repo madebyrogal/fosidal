@@ -6797,6 +6797,20 @@ h1 {
   padding-right: 8px;
   padding-left: 8px;
 }
+.footerBox footer nav ul li a {
+  color: #999999;
+}
+.footerBox footer nav ul li a:hover,
+.footerBox footer nav ul li a:active,
+.footerBox footer nav ul li a:focus {
+  text-decoration: underline;
+  color: #999999;
+}
+.footerBox footer nav ul li:hover a,
+.footerBox footer nav ul li.active a {
+  color: #999999;
+  text-decoration: underline;
+}
 .footerBox footer nav ul li:last-child {
   border-right: none;
   padding-right: 0;
