@@ -1,0 +1,38 @@
+.footerBox{
+    background-color: @colorWhite;
+    color: @colorTextGray;
+
+    footer {
+        border-bottom: 1px solid @colorTextGray;
+        padding-bottom: 30px;
+        padding-top:30px;
+
+        nav {
+
+            ul {
+                font-size: 12px;
+                list-style: none;
+                line-height: 12px;
+                margin-top: 17px;
+
+                li {
+                    float: left;
+                    border-right: 1px solid @colorTextGray;
+                    padding-right: 8px;
+                    padding-left: 8px;
+
+                    &:last-child {
+                        border-right: none;
+                        padding-right: 0;
+                    }
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .textFooter {
+        margin-top: 20px;
+    }
+}

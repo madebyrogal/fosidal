@@ -1,0 +1,33 @@
+.headerBox {
+    background-color: @colorWhite;
+
+    header {
+        padding-bottom: 20px;
+        padding-top:20px;
+
+        nav {
+            min-height: 83px;
+            position: relative;
+
+            ul {
+                position: absolute;
+                font-size: 22px;
+                bottom: 0;
+                right: 0;
+                z-index: 1;
+                margin-bottom: 0;
+                list-style: none;
+
+                li {
+                    float: left;
+                    color: @colorTextBlue;
+                    margin-right: 30px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

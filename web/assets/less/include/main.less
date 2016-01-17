@@ -7,85 +7,20 @@ body {
     .mainBox {
         padding-left: 0;
         padding-right: 0;
-        background-color: #000;
-    }
-
-    .headerBox {
-        background-color: @colorWhite;
-
-        header {
-            padding-bottom: 30px;
-            padding-top:30px;
-
-            nav {
-                min-height: 83px;
-                position: relative;
-
-                ul {
-                    position: absolute;
-                    font-size: 22px;
-                    bottom: 0;
-                    right: 0;
-                    z-index: 1;
-                    margin-bottom: 0;
-                    list-style: none;
-
-                    li {
-                        float: left;
-                        color: @colorTextBlue;
-                        margin-right: 30px;
-
-                        &:last-child {
-                            margin-right: 0;
-                        }
-                    }
-                }
-            }
+        background-size: cover;
+        @media(max-width: 1600px) {
+            background-size: contain;
         }
-    }
-
-    .footerBox{
-        background-color: @colorWhite;
-        color: @colorTextGray;
-
-        footer {
-            border-bottom: 1px solid @colorTextGray;
-            padding-bottom: 30px;
-            padding-top:30px;
-
-            nav {
-
-                ul {
-                    font-size: 12px;
-                    list-style: none;
-                    line-height: 12px;
-                    margin-top: 17px;
-
-                    li {
-                        float: left;
-                        border-right: 1px solid @colorTextGray;
-                        padding-right: 8px;
-                        padding-left: 8px;
-
-                        &:last-child {
-                            border-right: none;
-                            padding-right: 0;
-                        }
-                        &:first-child {
-                            padding-left: 0;
-                        }
-                    }
-                }
-            }
-        }
-        .textFooter {
-            margin-top: 20px;
-        }
+        background-position-y: 100px;
+        background-repeat: no-repeat;
     }
 
     .modalBody {
         margin-top: 100px;
+        margin-bottom: 60px;
         border: 20px solid @colorWhite;
+        background-color: @colorBackgroundTransparent;
+        padding: 30px;
     }
 
 }

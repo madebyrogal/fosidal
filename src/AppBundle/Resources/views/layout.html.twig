@@ -9,10 +9,12 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <div class="mainBox container-fluid" style="background-image: url('{{ asset('assets/images/') }}')">
+        <div class="mainBox container-fluid" style="background-image: url('{{ asset('assets/images/bg.jpg') }}')">
             {{ include('AppBundle:default:header.html.twig') }}
-            <div class='modalBody'>
-                {% block body %}{% endblock %}
+            <div class='container'>
+                <div class='modalBody'>
+                    {% block body %}{% endblock %}
+                </div>
             </div>
             {{ include('AppBundle:default:footer.html.twig') }}
         </div>
