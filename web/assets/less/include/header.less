@@ -12,7 +12,8 @@
             ul {
                 position: absolute;
                 font-size: 22px;
-                bottom: 0;
+                bottom: -20px;
+                height: 50px;
                 right: 0;
                 z-index: 1;
                 margin-bottom: 0;
@@ -20,9 +21,26 @@
 
                 li {
                     float: left;
-                    color: @colorTextBlue;
+                    height: 100%;
                     margin-right: 30px;
-
+                    
+                    a {
+                        color: @colorTextBlue;
+                        
+                        &:hover, &:active, &:focus {
+                            text-decoration: none;
+                            color: @colorTextYellow;
+                        }
+                    }
+                    
+                    &:hover, &.active {
+                        border-bottom: 6px solid @colorTextYellow;
+                        
+                        a {
+                            color: @colorTextYellow;
+                        }
+                    }
+                    
                     &:last-child {
                         margin-right: 0;
                     }

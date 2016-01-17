@@ -8,11 +8,11 @@
                 <div class="col-md-9">
                     <nav>
                         <ul class="clearfix">
-                            <li>Konkurs</li>
-                            <li>Nagrody</li>
-                            <li>Zwycięzcy</li>
-                            <li>Reguamin</li>
-                            <li>O produkcie</li>
+                            <li {% if app.request.get('_route') == 'competition' %}class="active"{% endif %}><a href="{{ path('competition') }}">Konkurs</a></li>
+                            <li {% if app.request.get('_route') == 'award' %}class="active"{% endif %}><a href="{{ path('award') }}">Nagrody</a></li>
+                            <li><a href="#">Zwycięzcy</a></li>
+                            <li><a href="#">Reguamin</a></li>
+                            <li><a href="#">O produkcie</a></li>
                         </ul>
                     </nav>
                 </div>

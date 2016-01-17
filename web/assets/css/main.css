@@ -6744,7 +6744,8 @@ h1 {
 .headerBox header nav ul {
   position: absolute;
   font-size: 22px;
-  bottom: 0;
+  bottom: -20px;
+  height: 50px;
   right: 0;
   z-index: 1;
   margin-bottom: 0;
@@ -6752,8 +6753,25 @@ h1 {
 }
 .headerBox header nav ul li {
   float: left;
-  color: #253583;
+  height: 100%;
   margin-right: 30px;
+}
+.headerBox header nav ul li a {
+  color: #253583;
+}
+.headerBox header nav ul li a:hover,
+.headerBox header nav ul li a:active,
+.headerBox header nav ul li a:focus {
+  text-decoration: none;
+  color: #fdc010;
+}
+.headerBox header nav ul li:hover,
+.headerBox header nav ul li.active {
+  border-bottom: 6px solid #fdc010;
+}
+.headerBox header nav ul li:hover a,
+.headerBox header nav ul li.active a {
+  color: #fdc010;
 }
 .headerBox header nav ul li:last-child {
   margin-right: 0;
