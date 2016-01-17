@@ -6776,6 +6776,19 @@ h1 {
 .headerBox header nav ul li:last-child {
   margin-right: 0;
 }
+.barBox .side {
+  min-height: 180px;
+  width: 35%;
+  background-color: #fdc010;
+  float: left;
+}
+.barBox .product {
+  min-height: 180px;
+  position: relative;
+  background-color: transparent;
+  float: left;
+  width: 30%;
+}
 .footerBox {
   background-color: #fff;
   color: #999999;
