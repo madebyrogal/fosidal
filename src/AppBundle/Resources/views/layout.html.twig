@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Fosidal{% endblock %}</title>
+        {% block stylesheets %}
+            {{ include('AppBundle:default:include_head.html.twig') }}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            {{ include('AppBundle:default:header.html.twig') }}
+            {% block body %}{% endblock %}
+            {{ include('AppBundle:default:footer.html.twig') }}
+        </div>
+        {% block javascripts %}
+            {{ include('AppBundle:default:include_foot.html.twig') }}
+        {% endblock %}
+</body>
+</html>
