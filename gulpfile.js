@@ -8,35 +8,28 @@ var gulp = require('gulp'),
         minifyCSS = require('gulp-minify-css'),
         plumber = require('gulp-plumber'),
         concat = require('gulp-concat');
+        watch = require('gulp-watch');
 
 gulp.task('less', function () {
-    return gulp.src('/web/assets/less/main.less')
+    return gulp.src('web/assets/less/*.less')
             .pipe(plumber())
-            .pipe(less({
-                paths: ['/web/assets/less']
-            }))
-            .pipe(gulp.dest('/web/assets/css'));
+            .pipe(less())
+            .pipe(gulp.dest('web/assets/css'));
 });
 
-//gulp.task('less', function () {
-//    gulp.src('/web/assets/scss/main.scss')
-//            .pipe(plumber())
-//            .pipe(compass({
-//                css: 'web/assets/css',
-//                less: 'web/assets/less/main.less',
-//            }))
-//            .pipe(minifyCSS())
-//            .pipe(gulp.dest('web/assets/temp'));
-//});
+// Watch Files For Changes
+gulp.task('watch', function() {
+    gulp.watch('web/assets/less/**/*.less', ['less']);
+});
 
 gulp.task('minifyCSS', function () {
     gulp.src([
-        './web/assets/css/*.css'
+        '.web/assets/css/*.css'
     ])
             .pipe(concat('style.min.css'))
             .pipe(minifyCSS())
-            .pipe(gulp.dest('./web/assets/temp'));
+            .pipe(gulp.dest('web/assets/dist'));
 });
 // define tasks here
-gulp.task('default', ['less', 'minifyCSS']);
+gulp.task('default', ['less', 'minifyCSS', 'watch']);
 
