@@ -10,7 +10,7 @@
                         <ul class="clearfix">
                             <li {% if app.request.get('_route') == 'competition' %}class="active"{% endif %}><a href="{{ path('competition') }}">Konkurs</a></li>
                             <li {% if app.request.get('_route') == 'award' %}class="active"{% endif %}><a href="{{ path('award') }}">Nagrody</a></li>
-                            <li><a href="#">Zwycięzcy</a></li>
+                            <li {% if app.request.get('_route') == 'winner' %}class="active"{% endif %}><a href="{{ path('winner') }}">Zwycięzcy</a></li>
                             <li><a href="#">Reguamin</a></li>
                             <li><a href="#">O produkcie</a></li>
                         </ul>
