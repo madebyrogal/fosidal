@@ -6863,8 +6863,11 @@ h1 {
     padding: 0;
     position: static;
   }
+  .modalBody .home .row .col-md-6.left {
+    padding: 0 0 0 3.5%;
+  }
   .modalBody .home .row .col-md-6 h1 {
-    left: 32px;
+    left: 3.5%;
     position: absolute;
     top: 30px;
     width: 100%;
@@ -6893,26 +6896,48 @@ h1 {
   font-family: 'Open Sans';
   font-size: 18px;
   font-weight: normal;
-  margin-top: 85px;
+  margintop: 85px 0  0 0;
 }
 .modalBody .home .col-md-6 ul {
   list-style-type: none;
+  margin-top: 22px;
   padding-left: 0;
 }
 .modalBody .home .col-md-6 ul li {
   color: #1a171b;
   font-family: 'Open Sans';
   font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 22px;
+  /*span {
+      background-color: #fdc010;
+      color: #fff;
+      display: inline-block;
+      height: 31px;
+      line-height: 31px;
+      margin-right: 19px;
+      text-align: center;
+      width: 31px;
+     }*/
 }
-.modalBody .home .col-md-6 ul li span {
+.modalBody .home .col-md-6 ul li:before {
   background-color: #fdc010;
   color: #fff;
-  display: inline-block;
+  float: left;
   height: 31px;
   line-height: 31px;
   margin-right: 19px;
   text-align: center;
   width: 31px;
+}
+.modalBody .home .col-md-6 ul li:first-child:before {
+  content: '1';
+}
+.modalBody .home .col-md-6 ul li:nth-child(2):before {
+  content: '2';
+}
+.modalBody .home .col-md-6 ul li:nth-child(3):before {
+  content: '3';
 }
 body {
   font-family: "Open sans";
