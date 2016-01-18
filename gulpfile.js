@@ -14,11 +14,16 @@ gulp.task('less', function () {
     return gulp.src('web/assets/less/*.less')
             .pipe(plumber())
             .pipe(less())
+            .on('error', function (error) {
+                // Would like to catch the error here
+                console.log(error);
+                this.emit('end');
+            })
             .pipe(gulp.dest('web/assets/css'));
 });
 
 // Watch Files For Changes
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch('web/assets/less/**/*.less', ['less']);
 });
 

@@ -6781,17 +6781,45 @@ h1 {
   height: 181px;
 }
 .barBox .side {
+  font-size: 42px;
+  font-family: "Calibri";
+  line-height: 40px;
+  color: #fff;
   position: absolute;
   height: 181px;
   width: 50%;
   background-color: #fdc010;
   z-index: 1;
 }
+.barBox .side .slogan {
+  display: block;
+}
+@media (max-width: 1199px) {
+  .barBox .side .slogan {
+    font-size: 3vw;
+    line-height: 3vw;
+  }
+}
+@media (max-width: 660px) {
+  .barBox .side .slogan {
+    display: none;
+  }
+}
 .barBox .side.left {
   left: 0;
+  text-align: right;
+}
+.barBox .side.left .slogan {
+  margin-top: 48px;
+  margin-right: 6%;
 }
 .barBox .side.right {
   right: 0;
+  text-align: left;
+}
+.barBox .side.right .slogan {
+  margin-top: 29px;
+  margin-left: 6%;
 }
 .barBox .product {
   position: absolute;
