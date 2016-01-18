@@ -6882,7 +6882,65 @@ h1 {
   margin-bottom: 60px;
   border: 20px solid #fff;
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
+}
+@media (min-width: 1200px) {
+  .modalBody .home .row {
+    position: relative;
+  }
+  .modalBody .home .row .col-md-6 {
+    padding: 0;
+    position: static;
+  }
+  .modalBody .home .row .col-md-6 h1 {
+    left: 32px;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+  }
+  .modalBody .home .row .col-md-6 h2 {
+    margin-top: 85px;
+  }
+}
+.modalBody .home .col-md-6 {
+  padding: 0;
+  position: static;
+}
+.modalBody .home .col-md-6 h1 {
+  color: #3a3a3a;
+  font-family: 'Open Sans';
+  font-size: 36px;
+  font-weight: bold;
+  left: 32px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 30px;
+  width: 100%;
+}
+.modalBody .home .col-md-6 h2 {
+  color: #3a3a3a;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 85px;
+}
+.modalBody .home .col-md-6 ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.modalBody .home .col-md-6 ul li {
+  color: #1a171b;
+  font-family: 'Open Sans';
+  font-size: 16px;
+}
+.modalBody .home .col-md-6 ul li span {
+  background-color: #fdc010;
+  color: #fff;
+  display: inline-block;
+  height: 31px;
+  line-height: 31px;
+  margin-right: 19px;
+  text-align: center;
+  width: 31px;
 }
 body {
   font-family: "Open sans";
