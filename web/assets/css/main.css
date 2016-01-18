@@ -6776,18 +6776,33 @@ h1 {
 .headerBox header nav ul li:last-child {
   margin-right: 0;
 }
+.barBox {
+  position: relative;
+  height: 181px;
+}
 .barBox .side {
-  min-height: 180px;
-  width: 35%;
+  position: absolute;
+  height: 181px;
+  width: 50%;
   background-color: #fdc010;
-  float: left;
+  z-index: 1;
+}
+.barBox .side.left {
+  left: 0;
+}
+.barBox .side.right {
+  right: 0;
 }
 .barBox .product {
-  min-height: 180px;
-  position: relative;
+  position: absolute;
   background-color: transparent;
-  float: left;
-  width: 30%;
+  z-index: 2;
+  width: 384px;
+  height: 287px;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
 }
 .footerBox {
   background-color: #fff;
