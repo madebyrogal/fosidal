@@ -5,7 +5,7 @@
     footer {
         border-bottom: 1px solid @colorTextGray;
         padding-bottom: 30px;
-        padding-top:30px;
+        padding-top:50px;
 
         nav {
 
@@ -21,6 +21,22 @@
                     padding-right: 8px;
                     padding-left: 8px;
 
+                    a {
+                        color: @colorTextGray;
+                        
+                        &:hover, &:active, &:focus {
+                            text-decoration: underline;
+                            color: @colorTextGray;
+                        }
+                    }
+                    
+                    &:hover, &.active {
+                        a {
+                            color: @colorTextGray;
+                            text-decoration: underline;
+                        }
+                    }
+                    
                     &:last-child {
                         border-right: none;
                         padding-right: 0;

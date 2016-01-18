@@ -6776,6 +6776,34 @@ h1 {
 .headerBox header nav ul li:last-child {
   margin-right: 0;
 }
+.barBox {
+  position: relative;
+  height: 181px;
+}
+.barBox .side {
+  position: absolute;
+  height: 181px;
+  width: 50%;
+  background-color: #fdc010;
+  z-index: 1;
+}
+.barBox .side.left {
+  left: 0;
+}
+.barBox .side.right {
+  right: 0;
+}
+.barBox .product {
+  position: absolute;
+  background-color: transparent;
+  z-index: 2;
+  width: 384px;
+  height: 287px;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+}
 .footerBox {
   background-color: #fff;
   color: #999999;
@@ -6783,7 +6811,7 @@ h1 {
 .footerBox footer {
   border-bottom: 1px solid #999999;
   padding-bottom: 30px;
-  padding-top: 30px;
+  padding-top: 50px;
 }
 .footerBox footer nav ul {
   font-size: 12px;
@@ -6796,6 +6824,20 @@ h1 {
   border-right: 1px solid #999999;
   padding-right: 8px;
   padding-left: 8px;
+}
+.footerBox footer nav ul li a {
+  color: #999999;
+}
+.footerBox footer nav ul li a:hover,
+.footerBox footer nav ul li a:active,
+.footerBox footer nav ul li a:focus {
+  text-decoration: underline;
+  color: #999999;
+}
+.footerBox footer nav ul li:hover a,
+.footerBox footer nav ul li.active a {
+  color: #999999;
+  text-decoration: underline;
 }
 .footerBox footer nav ul li:last-child {
   border-right: none;
