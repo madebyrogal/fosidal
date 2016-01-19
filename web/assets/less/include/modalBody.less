@@ -1,32 +1,10 @@
 .modalBody {
-    margin-top: 100px;
-    margin-bottom: 60px;
-    border: 20px solid @colorWhite;
-    background-color: @colorBackgroundTransparent;
-    //padding: 30px;
-    .home {
-     @media (min-width: @screen-lg-min) {
-   .row {
-       position: relative;
-       .col-md-6 {
-        padding: 0;
-        position: static;
-        &.left {
-         padding: 0 0 0 3.5%;
-         //padding: 0 0 0 32px;
-        }
-        h1 {
-         left: 3.5%;
-         position: absolute;
-         top: 30px;
-         width: 100%;
-        }
-        h2 {
-         margin-top: 85px;
-        }
-       }
-      }
-  }
+ margin-top: 100px;
+ margin-bottom: 60px;
+ border: 20px solid @colorWhite;
+ background-color: @colorBackgroundTransparent;
+ //padding: 30px;
+ .home {
   .col-md-6 {
    padding: 0;
    position: static;
@@ -35,11 +13,8 @@
     font-family: 'Open Sans';
     font-size: 36px;
     font-weight: bold;
-    left: 32px;
-    position: absolute;
+
     text-transform: uppercase;
-    top: 30px;
-    width: 100%;
    }
    h2 {
     color: #3a3a3a;
@@ -58,16 +33,6 @@
      font-size: 16px;
      line-height: 18px;
      margin-bottom: 22px;
-     /*span {
-      background-color: #fdc010;
-      color: #fff;
-      display: inline-block;
-      height: 31px;
-      line-height: 31px;
-      margin-right: 19px;
-      text-align: center;
-      width: 31px;
-     }*/
      &:before {
       background-color: #fdc010;
       color: #fff;
@@ -86,6 +51,63 @@
      }
      &:nth-child(3):before {
       content: '3';
+     }
+    }
+   }
+   .take-part {
+    background-color: #3a3a3a;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-style: italic;
+    line-height: 60px;
+    margin-bottom: 25px; 
+    padding: 0 0 0 6%;
+    width: 57%;
+    &:hover {
+     text-decoration: none;
+    }
+   }
+  }
+  .left {
+   p {
+     color: #1a171b;
+     font-family: 'Open Sans';
+     font-size: 13px;
+     line-height: 16px;
+     margin-bottom: 15px;
+   }
+  }
+  .right {
+   p {
+    color: #1a171b;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0 0 2px 8%;
+   }
+  }
+  @media (min-width: @screen-lg-min) {
+  .row {
+    position: relative;
+    .col-md-6 {
+     padding: 0;
+     position: static;
+     &.left {
+      padding: 0 0 0 3.5%;
+      //padding: 0 0 0 32px;
+     }
+     h1 {
+      left: 3.5%;
+      position: absolute;
+      top: 30px;
+      width: 100%;
+     }
+     h2 {
+      margin-top: 85px;
      }
     }
    }
