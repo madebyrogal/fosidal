@@ -51,13 +51,13 @@ class Question
     private $position;
     
     /**
-     * @ManyToOne(targetEntity="Survey", inversedBy="guestions")
-     * @JoinColumn(name="survey_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Survey", inversedBy="guestions")
+     * @ORM\JoinColumn(name="survey_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $survey;
     
     /**
-     * @OneToMany(targetEntity="Answer", mappedBy="question")
+     * @ORM\OneToMany(targetEntity="Answer", mappedBy="question")
      */
     private $answers;
     
@@ -166,5 +166,61 @@ class Question
     public function getPosition()
     {
         return $this->position;
+    }
+
+    /**
+     * Set survey
+     *
+     * @param \AppBundle\Entity\Survey $survey
+     * @return Question
+     */
+    public function setSurvey(\AppBundle\Entity\Survey $survey = null)
+    {
+        $this->survey = $survey;
+
+        return $this;
+    }
+
+    /**
+     * Get survey
+     *
+     * @return \AppBundle\Entity\Survey 
+     */
+    public function getSurvey()
+    {
+        return $this->survey;
+    }
+
+    /**
+     * Add answers
+     *
+     * @param \AppBundle\Entity\Answer $answers
+     * @return Question
+     */
+    public function addAnswer(\AppBundle\Entity\Answer $answers)
+    {
+        $this->answers[] = $answers;
+
+        return $this;
+    }
+
+    /**
+     * Remove answers
+     *
+     * @param \AppBundle\Entity\Answer $answers
+     */
+    public function removeAnswer(\AppBundle\Entity\Answer $answers)
+    {
+        $this->answers->removeElement($answers);
+    }
+
+    /**
+     * Get answers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAnswers()
+    {
+        return $this->answers;
     }
 }

@@ -45,13 +45,13 @@ class Survey
 
 
     /**
-     * @OneToMany(targetEntity="Question", mappedBy="survey")
+     * @ORM\OneToMany(targetEntity="Question", mappedBy="survey")
      */
-    private $guestions;
+    private $questions;
     
     public function __construct()
     {
-        $this->guestions = new ArrayCollection();
+        $this->questions = new ArrayCollection();
     }
 
     /**
@@ -131,5 +131,38 @@ class Survey
     public function getEnd()
     {
         return $this->end;
+    }
+
+    /**
+     * Add questions
+     *
+     * @param \AppBundle\Entity\Question $questions
+     * @return Survey
+     */
+    public function addQuestion(\AppBundle\Entity\Question $questions)
+    {
+        $this->questions[] = $questions;
+
+        return $this;
+    }
+
+    /**
+     * Remove questions
+     *
+     * @param \AppBundle\Entity\Question $questions
+     */
+    public function removeQuestion(\AppBundle\Entity\Question $questions)
+    {
+        $this->questions->removeElement($questions);
+    }
+
+    /**
+     * Get questions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
     }
 }

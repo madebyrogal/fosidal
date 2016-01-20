@@ -44,8 +44,8 @@ class Answer
 
 
     /**
-     * @ManyToOne(targetEntity="Question", inversedBy="answers")
-     * @JoinColumn(name="question_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Question", inversedBy="answers")
+     * @ORM\JoinColumn(name="question_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $question;
     
@@ -126,5 +126,28 @@ class Answer
     public function getPosition()
     {
         return $this->position;
+    }
+
+    /**
+     * Set question
+     *
+     * @param \AppBundle\Entity\Question $question
+     * @return Answer
+     */
+    public function setQuestion(\AppBundle\Entity\Question $question = null)
+    {
+        $this->question = $question;
+
+        return $this;
+    }
+
+    /**
+     * Get question
+     *
+     * @return \AppBundle\Entity\Question 
+     */
+    public function getQuestion()
+    {
+        return $this->question;
     }
 }
