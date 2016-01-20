@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Survey
@@ -42,6 +43,16 @@ class Survey
      */
     private $end;
 
+
+    /**
+     * @OneToMany(targetEntity="Question", mappedBy="survey")
+     */
+    private $guestions;
+    
+    public function __construct()
+    {
+        $this->guestions = new ArrayCollection();
+    }
 
     /**
      * Get id

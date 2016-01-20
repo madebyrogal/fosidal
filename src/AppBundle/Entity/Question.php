@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Question
@@ -48,6 +49,22 @@ class Question
      * @ORM\Column(name="position", type="integer")
      */
     private $position;
+    
+    /**
+     * @ManyToOne(targetEntity="Survey", inversedBy="guestions")
+     * @JoinColumn(name="survey_id", referencedColumnName="id")
+     */
+    private $survey;
+    
+    /**
+     * @OneToMany(targetEntity="Answer", mappedBy="question")
+     */
+    private $answers;
+    
+    public function __construct()
+    {
+        $this->answers = new ArrayCollection();
+    }
 
     /**
      * Get id

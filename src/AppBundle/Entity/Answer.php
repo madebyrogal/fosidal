@@ -44,6 +44,12 @@ class Answer
 
 
     /**
+     * @ManyToOne(targetEntity="Question", inversedBy="answers")
+     * @JoinColumn(name="question_id", referencedColumnName="id")
+     */
+    private $question;
+    
+    /**
      * Get id
      *
      * @return integer 
