@@ -6892,6 +6892,7 @@ h1 {
   font-family: 'Open Sans';
   font-size: 36px;
   font-weight: bold;
+  line-height: 48px;
   text-transform: uppercase;
 }
 .modalBody .home .col-md-6 h2 {
@@ -6899,11 +6900,12 @@ h1 {
   font-family: 'Open Sans';
   font-size: 18px;
   font-weight: normal;
+  line-height: 22px;
   margintop: 85px 0  0 0;
 }
 .modalBody .home .col-md-6 ul {
   list-style-type: none;
-  margin-top: 22px;
+  margin: 22px 10px 0 50px;
   padding-left: 0;
 }
 .modalBody .home .col-md-6 ul li {
@@ -6911,26 +6913,21 @@ h1 {
   font-family: 'Open Sans';
   font-size: 16px;
   line-height: 18px;
-  margin-bottom: 22px;
+  margin: 0 0 22px 0;
+  position: relative;
 }
-.modalBody .home .col-md-6 ul li:before {
+.modalBody .home .col-md-6 ul li span {
   background-color: #fdc010;
   color: #fff;
-  float: left;
+  display: block;
   height: 31px;
   line-height: 31px;
+  left: -50px;
   margin-right: 19px;
+  position: absolute;
   text-align: center;
+  top: 0;
   width: 31px;
-}
-.modalBody .home .col-md-6 ul li:first-child:before {
-  content: '1';
-}
-.modalBody .home .col-md-6 ul li:nth-child(2):before {
-  content: '2';
-}
-.modalBody .home .col-md-6 ul li:nth-child(3):before {
-  content: '3';
 }
 .modalBody .home .col-md-6 .take-part {
   background-color: #3a3a3a;
@@ -6945,6 +6942,15 @@ h1 {
   margin-bottom: 25px;
   padding: 0 0 0 6%;
   width: 57%;
+}
+.modalBody .home .col-md-6 .take-part span {
+  background-image: url("/assets/images/sprite.png");
+  background-position: 1px 39px;
+  display: inline-block;
+  float: right;
+  height: 40px;
+  margin: 10px 10px 0 0;
+  width: 53px;
 }
 .modalBody .home .col-md-6 .take-part:hover {
   text-decoration: none;
@@ -6963,7 +6969,7 @@ h1 {
   line-height: 14px;
   margin: 0 0 2px 8%;
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .modalBody .home .row {
     position: relative;
   }
@@ -6974,14 +6980,17 @@ h1 {
   .modalBody .home .row .col-md-6.left {
     padding: 0 0 0 3.5%;
   }
-  .modalBody .home .row .col-md-6 h1 {
+  .modalBody .home .row .col-md-6 .head {
     left: 3.5%;
     position: absolute;
     top: 30px;
-    width: 100%;
+    width: 70%;
   }
-  .modalBody .home .row .col-md-6 h2 {
-    margin-top: 85px;
+  .modalBody .home .row .col-md-6 .head h2 {
+    width: 85%;
+  }
+  .modalBody .home .row .col-md-6 ul {
+    margin-top: 170px;
   }
 }
 body {
