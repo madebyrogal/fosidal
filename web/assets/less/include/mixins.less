@@ -1,0 +1,29 @@
+.button(@bgColor, @bgHover, @bgArrowColor, @textColor, @float){
+    background-color: @bgColor;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: @textColor;
+    display: inline-block;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 60px;
+    padding-left: 20px;
+    min-width: 100px;
+    i {
+        background-color: @bgArrowColor;
+        text-align: center;
+        line-height: 40px;
+        display: block;
+        float: @float;
+        height: 40px;
+        margin: 10px 10px 0 20px;
+        width: 53px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+    &:hover {
+        background-color: @bgHover;
+        text-decoration: none;
+    }
+}
+

@@ -1,5 +1,39 @@
 .question {
-    padding-left: 30px;
-    padding-right: 30px;
+    position: relative;
+
+    h1 {
+        font-weight: bold;
+    }
+
+    .questionContainer{
+        padding-top: 70px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 80px;
+    }
+
+    .questionCounterTop{
+        float: right;
+        background-color: @colorWhite;
+        font-style: italic;
+        padding: 2px 20px;
+        color: @colorTextGray;
+    }
+
+    .questionCounterBottom {
+        text-align: center;
+        font-size: 18px;
+        color: @colorTextGray;
+        padding-bottom: 20px;
+    }
+
+    .nextQuestion {
+        .button(@bgColorDark, @bgColorDarkHover, @bgArrowColor, @colorWhite, right);
+        position: absolute;
+        z-index: 1;
+        bottom: 5px;
+        right: 5px;
+    }
+
 }
 

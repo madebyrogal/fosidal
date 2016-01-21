@@ -14,7 +14,7 @@ class SurveyRepository extends EntityRepository
 {
     public function findActive(){
         //TODO Query for active survey
-        $this->createQueryBuilder($alias);
+        //$this->createQueryBuilder($alias);
         
         return array();
     }
