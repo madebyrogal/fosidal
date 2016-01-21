@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class SurveyRepository extends EntityRepository
 {
+    public function findActive(){
+        //TODO Query for active survey
+        $this->createQueryBuilder($alias);
+        
+        return array();
+    }
 }

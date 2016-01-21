@@ -7009,6 +7009,10 @@ h1 {
     margin-top: 170px;
   }
 }
+.question {
+  padding-left: 30px;
+  padding-right: 30px;
+}
 body {
   font-family: "Open sans";
   font-size: 12px;
@@ -7022,7 +7026,7 @@ body .mainBox {
   background-position-y: 100px;
   background-repeat: no-repeat;
 }
-@media (max-width: 1600px) {
+@media (max-width: 1920px) {
   body .mainBox {
     background-size: contain;
   }
