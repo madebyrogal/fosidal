@@ -8976,11 +8976,6 @@ h1 {
   position: static;
 }
 .modalBody .home .col-md-6 h1 {
-  color: #3a3a3a;
-  font-family: 'Open Sans';
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 48px;
   text-transform: uppercase;
 }
 .modalBody .home .col-md-6 h2 {
@@ -9218,4 +9213,18 @@ body .mainBox {
   body .mainBox {
     background-size: contain;
   }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #3a3a3a;
+  font-family: 'Open Sans';
+  font-weight: bold;
+}
+h1 {
+  font-size: 36px;
+  line-height: 48px;
 }
