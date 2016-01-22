@@ -8814,6 +8814,7 @@ button.close {
 }
 ul {
   margin: 0;
+  padding: 0;
 }
 h1 {
   margin: 0;
@@ -9102,6 +9103,7 @@ h1 {
 }
 .question h1 {
   font-weight: bold;
+  font-size: 36px;
 }
 .question .questionContainer {
   padding-top: 70px;
@@ -9113,19 +9115,20 @@ h1 {
   float: right;
   background-color: #fff;
   font-style: italic;
+  font-size: 18px;
   padding: 2px 20px;
   color: #999999;
 }
 .question .questionCounterBottom {
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
   color: #999999;
   padding-bottom: 20px;
 }
 .question .nextQuestion {
   background-color: #3a3a3a;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
   color: #fff;
   display: inline-block;
   font-size: 24px;
@@ -9147,12 +9150,48 @@ h1 {
   height: 40px;
   margin: 10px 10px 0 20px;
   width: 53px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 .question .nextQuestion:hover {
   background-color: #262626;
   text-decoration: none;
+}
+.question .questions {
+  list-style-type: none;
+  margin-top: 30px;
+}
+.question .questions li {
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  padding: 15px 15px 15px 99px;
+  display: block;
+  border: 1px solid #3a3a3a;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 93px;
+  margin-bottom: 20px;
+}
+.question .questions li:last-child {
+  margin-bottom: 0;
+}
+.question .questions li .boxLetter {
+  top: 15px;
+  left: 15px;
+  position: absolute;
+}
+.question .questions li .boxLetter span {
+  background-color: #fdc010;
+  color: #fff;
+  text-align: center;
+  line-height: 64px;
+  display: block;
+  height: 64px;
+  width: 64px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 body {
   font-family: "Open sans";
