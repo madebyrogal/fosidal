@@ -8972,13 +8972,10 @@ h1 {
   border: 20px solid #fff;
   background-color: rgba(255, 255, 255, 0.8);
 }
-.modalBody .home .col-md-6 {
-  position: static;
-}
-.modalBody .home .col-md-6 h1 {
+.modalBody .home h1 {
   text-transform: uppercase;
 }
-.modalBody .home .col-md-6 h2 {
+.modalBody .home h2 {
   color: #3a3a3a;
   font-family: 'Open Sans';
   font-size: 18px;
@@ -8986,12 +8983,12 @@ h1 {
   line-height: 22px;
   margin-top: 6px;
 }
-.modalBody .home .col-md-6 ul {
+.modalBody .home ul {
   list-style-type: none;
   margin: 22px 10px 0 50px;
   padding-left: 0;
 }
-.modalBody .home .col-md-6 ul li {
+.modalBody .home ul li {
   color: #1a171b;
   font-family: 'Open Sans';
   font-size: 16px;
@@ -8999,7 +8996,7 @@ h1 {
   margin: 0 0 22px 0;
   position: relative;
 }
-.modalBody .home .col-md-6 ul li span {
+.modalBody .home ul li span {
   background-color: #fdc010;
   color: #fff;
   display: block;
@@ -9012,7 +9009,7 @@ h1 {
   top: 3px;
   width: 31px;
 }
-.modalBody .home .col-md-6 .take-part {
+.modalBody .home .take-part {
   background-color: #3a3a3a;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -9026,7 +9023,7 @@ h1 {
   padding: 0 0 0 6%;
   width: 100%;
 }
-.modalBody .home .col-md-6 .take-part span {
+.modalBody .home .take-part span {
   background-image: url("/assets/images/sprite.png");
   background-position: 1px 39px;
   display: inline-block;
@@ -9035,18 +9032,18 @@ h1 {
   margin: 10px 10px 0 0;
   width: 53px;
 }
-.modalBody .home .col-md-6 .take-part:hover {
+.modalBody .home .take-part:hover {
   background-color: #262626;
   text-decoration: none;
 }
-.modalBody .home .left p {
+.modalBody .home .left-box p {
   color: #1a171b;
   font-family: 'Open Sans';
   font-size: 13px;
   line-height: 16px;
   margin-bottom: 15px;
 }
-.modalBody .home .right .col-bg {
+.modalBody .home .right-box .col-bg {
   background: #e7e7e7;
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U3ZTdlNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
   background: -moz-linear-gradient(top, #e7e7e7 0%, #ffffff 100%);
@@ -9055,7 +9052,7 @@ h1 {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e7e7e7', endColorstr='#ffffff', GradientType=0);
   padding-bottom: 20px;
 }
-.modalBody .home .right p {
+.modalBody .home .right-box p {
   color: #1a171b;
   font-family: 'Open Sans';
   font-size: 12px;
@@ -9063,7 +9060,7 @@ h1 {
   margin: 0 0 2px 8%;
 }
 @media (min-width: 480px) {
-  .modalBody .home .col-md-6 .take-part {
+  .modalBody .home .take-part {
     width: 50%;
   }
 }
@@ -9072,32 +9069,34 @@ h1 {
     position: relative;
   }
   .modalBody .home .col-md-6 {
-    padding-left: 0;
     position: static;
   }
-  .modalBody .home .col-md-6.left {
+  .modalBody .home .left-box {
     padding: 0 0 0 3.5%;
   }
-  .modalBody .home .col-md-6 .take-part {
+  .modalBody .home .right-box {
+    padding-left: 0;
+  }
+  .modalBody .home .take-part {
     width: 38%;
   }
 }
 @media (min-width: 992px) {
-  .modalBody .home .col-md-6 .take-part {
+  .modalBody .home .take-part {
     width: 57%;
   }
 }
 @media (min-width: 1200px) {
-  .modalBody .home .row .col-md-6 .head {
+  .modalBody .home .row .head {
     left: 3.5%;
     position: absolute;
     top: 18px;
     width: 70%;
   }
-  .modalBody .home .row .col-md-6 .head h2 {
+  .modalBody .home .row .head h2 {
     width: 85%;
   }
-  .modalBody .home .row .col-md-6 ul {
+  .modalBody .home ul {
     margin-top: 136px;
   }
 }
@@ -9197,7 +9196,7 @@ h1 {
   border-radius: 10px;
 }
 body {
-  font-family: "Open sans";
+  font-family: 'Open sans';
   font-size: 12px;
   background-color: #fff;
   color: #3a3a3a;

@@ -5,73 +5,73 @@
     background-color: @colorBackgroundTransparent;  
     .home {
         .col-md-6 {
-            position: static;
-            h1 {
-                text-transform: uppercase;
-            }
-            h2 {
-                color: #3a3a3a;
+        //position: static;
+        }
+        h1 {
+            text-transform: uppercase;
+        }
+        h2 {
+            color: #3a3a3a;
+            font-family: 'Open Sans';
+            font-size: 18px;
+            font-weight: normal;
+            line-height: 22px;
+            margin-top: 6px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 22px 10px 0 50px;
+            padding-left: 0;
+            li {
+                color: #1a171b;
                 font-family: 'Open Sans';
-                font-size: 18px;
-                font-weight: normal;
-                line-height: 22px;
-                margin-top: 6px;
-            }
-            ul {
-                list-style-type: none;
-                margin: 22px 10px 0 50px;
-                padding-left: 0;
-                li {
-                    color: #1a171b;
-                    font-family: 'Open Sans';
-                    font-size: 16px;
-                    line-height: 18px;
-                    margin: 0 0 22px 0;
-                    position: relative;
-                    span {
-                        background-color: #fdc010;
-                        color: #fff;
-                        display: block;
-                        height: 31px;
-                        line-height: 31px;
-                        left: -50px;
-                        margin-right: 19px;
-                        position: absolute;
-                        text-align: center;
-                        top: 3px;
-                        width: 31px;
-                    }
-                }
-            }
-            .take-part {
-                background-color: #3a3a3a;
-                -webkit-border-radius: 5px;
-                border-radius: 5px;
-                color: #fff;
-                display: inline-block;
-                font-family: 'Open Sans';
-                font-size: 24px;
-                font-style: italic;
-                line-height: 60px;
-                margin: 5px 0 25px 0; 
-                padding: 0 0 0 6%;
-                width: 100%;
+                font-size: 16px;
+                line-height: 18px;
+                margin: 0 0 22px 0;
+                position: relative;
                 span {
-                    background-image: url("/assets/images/sprite.png");
-                    background-position: 1px 39px;
-                    display: inline-block;
-                    float: right;
-                    height: 40px;
-                    margin: 10px 10px 0 0;
-                    width: 53px;
-                }
-                &:hover {
-                    background-color: #262626;
-                    text-decoration: none;
+                    background-color: #fdc010;
+                    color: #fff;
+                    display: block;
+                    height: 31px;
+                    line-height: 31px;
+                    left: -50px;
+                    margin-right: 19px;
+                    position: absolute;
+                    text-align: center;
+                    top: 3px;
+                    width: 31px;
                 }
             }
         }
-        .left {
+        .take-part {
+            background-color: #3a3a3a;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            color: #fff;
+            display: inline-block;
+            font-family: 'Open Sans';
+            font-size: 24px;
+            font-style: italic;
+            line-height: 60px;
+            margin: 5px 0 25px 0; 
+            padding: 0 0 0 6%;
+            width: 100%;
+            span {
+                background-image: url("/assets/images/sprite.png");
+                background-position: 1px 39px;
+                display: inline-block;
+                float: right;
+                height: 40px;
+                margin: 10px 10px 0 0;
+                width: 53px;
+            }
+            &:hover {
+                background-color: #262626;
+                text-decoration: none;
+            }
+        }
+        .left-box {
             p {
                 color: #1a171b;
                 font-family: 'Open Sans';
@@ -80,7 +80,7 @@
                 margin-bottom: 15px;
             }
         }
-        .right {
+        .right-box {
             .col-bg {
                 background: #e7e7e7;
                 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U3ZTdlNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -99,8 +99,8 @@
             }
         }
         @media (min-width: @screen-xs-min) {
-            .col-md-6 .take-part {
-                            width: 50%;
+            .take-part {
+                 width: 50%;
             }
         }
         @media (min-width: @screen-sm-min) {
@@ -108,36 +108,37 @@
                 position: relative;
             }
             .col-md-6 {
-                padding-left: 0;
+                //padding-left: 0;
                 position: static;
-                &.left {
-                                padding: 0 0 0 3.5%;
-                }
             }
-            .col-md-6 .take-part {
+            .left-box {
+                padding: 0 0 0 3.5%;
+            }
+            .right-box {
+                padding-left: 0;
+            }
+            .take-part {
                 width: 38%;
             }
         }
         @media (min-width: @screen-md-min) {
-            .col-md-6 .take-part {
+            .take-part {
                 width: 57%;
             }
         }
         @media (min-width: @screen-lg-min) {
-            .row .col-md-6 {
-                .head {
-                    left: 3.5%;
-                    position: absolute;
-                    top: 18px;
-                    width: 70%;
-                    h2 {
-                        width: 85%;
-                    }
-                }
-                ul {
-                    margin-top: 136px;
+            .row .head {
+                left: 3.5%;
+                position: absolute;
+                top: 18px;
+                width: 70%;
+                h2 {
+                    width: 85%;
                 }
             }
+            ul {
+                margin-top: 136px;
+            }      
         }
     }
 }
