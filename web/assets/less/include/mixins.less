@@ -1,16 +1,18 @@
-.button(@bgColor, @bgHover, @bgArrowColor, @textColor, @float){
+//Button next, previus question, Register
+.button(@bgColor, @bgHover, @colorYellow, @textColor, @float){
+    cursor: pointer;
     background-color: @bgColor;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     color: @textColor;
-    display: inline-block;
+    display: block;
     font-size: 24px;
     font-style: italic;
     line-height: 60px;
     padding-left: 20px;
     min-width: 100px;
     i {
-        background-color: @bgArrowColor;
+        background-color: @colorYellow;
         text-align: center;
         line-height: 40px;
         display: block;
@@ -27,3 +29,35 @@
     }
 }
 
+//Li question for class ok, error, active(hover)
+.question(@colorBackground, @color, @icon) {
+    background-color: @colorBackground;
+    border-color: @colorBackground;
+    color: @color;
+
+    .boxLetter {
+        span {
+            background-color: @color;
+
+            &::after{
+                font-family: 'FontAwesome';
+                content: @icon;
+                color: @colorBackground;
+            }
+        }
+    }
+}
+
+//Li question for other question
+.questionSimple(@colorBackground, @color) {
+    background-color: @colorBackground;
+    border-color: @colorBackground;
+    color: @color;
+
+    .boxLetter {
+        span {
+            background-color: @color;
+            color: @colorBackground;
+        }
+    }
+}
