@@ -19,22 +19,28 @@
         font-style: italic;
         font-size: 18px;
         padding: 2px 20px;
-        color: @colorTextGray;
+        color: @colorGray;
     }
 
     .questionCounterBottom {
         text-align: center;
         font-size: 24px;
-        color: @colorTextGray;
+        color: @colorGray;
         padding-bottom: 20px;
     }
 
     .nextQuestion {
-        .button(@bgColorDark, @bgColorDarkHover, @bgArrowColor, @colorWhite, right);
+        .button(@bgColorDark, @bgColorDarkHover, @colorYellow, @colorWhite, right);
         position: absolute;
         z-index: 1;
         bottom: 5px;
         right: 5px;
+
+        @media(max-width: @screen-sm-max) {
+            position: static;
+            margin: 0 auto;
+            width: 300px;
+        }
     }
 
     .questions {
@@ -42,6 +48,7 @@
         margin-top: 30px;
 
         li {
+            cursor: pointer;
             font-size: 18px;
             font-weight: bold;
             position: relative;
@@ -53,19 +60,38 @@
             width: 100%;
             min-height: 93px;
             margin-bottom: 20px;
-            
+
             &:last-child {
                 margin-bottom: 0;
+            }
+            
+            &.ok {
+                .question(@colorGreen, @colorWhite, '\f00c');
+                &:hover, &:active {
+                    .question(@colorGreen, @colorWhite, '\f00c');
+                }
+            }
+            
+            &.error {
+                .question(@colorRed, @colorWhite, '\f00d');
+                &:hover, &:active {
+                    .question(@colorRed, @colorWhite, '\f00d');
+                }
+            }
+            
+            &.active, &:hover, &:active {
+                .questionSimple(@colorYellow, @colorWhite);
             }
 
             .boxLetter {
                 top: 15px;
                 left: 15px;
                 position: absolute;
-                
+
                 span{
-                    background-color: @bgArrowColor;
+                    background-color: @colorYellow;
                     color: @colorWhite;
+                    font-size: 36px;
                     text-align: center;
                     line-height: 64px;
                     display: block;
@@ -75,11 +101,13 @@
                     border-radius: 10px;
                 }
             }
-            
+
             .boxQuestion {
+                height: 61px;
+                display: table-cell;
+                vertical-align: middle;
             }
         }
     }
-
 }
 

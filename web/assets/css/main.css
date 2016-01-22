@@ -9169,11 +9169,12 @@ h1 {
   padding-bottom: 20px;
 }
 .question .nextQuestion {
+  cursor: pointer;
   background-color: #3a3a3a;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   color: #fff;
-  display: inline-block;
+  display: block;
   font-size: 24px;
   font-style: italic;
   line-height: 60px;
@@ -9200,11 +9201,19 @@ h1 {
   background-color: #262626;
   text-decoration: none;
 }
+@media (max-width: 991px) {
+  .question .nextQuestion {
+    position: static;
+    margin: 0 auto;
+    width: 300px;
+  }
+}
 .question .questions {
   list-style-type: none;
   margin-top: 30px;
 }
 .question .questions li {
+  cursor: pointer;
   font-size: 18px;
   font-weight: bold;
   position: relative;
@@ -9220,6 +9229,77 @@ h1 {
 .question .questions li:last-child {
   margin-bottom: 0;
 }
+.question .questions li.ok {
+  background-color: #1eb033;
+  border-color: #1eb033;
+  color: #fff;
+}
+.question .questions li.ok .boxLetter span {
+  background-color: #fff;
+}
+.question .questions li.ok .boxLetter span::after {
+  font-family: 'FontAwesome';
+  content: '\f00c';
+  color: #1eb033;
+}
+.question .questions li.ok:hover,
+.question .questions li.ok:active {
+  background-color: #1eb033;
+  border-color: #1eb033;
+  color: #fff;
+}
+.question .questions li.ok:hover .boxLetter span,
+.question .questions li.ok:active .boxLetter span {
+  background-color: #fff;
+}
+.question .questions li.ok:hover .boxLetter span::after,
+.question .questions li.ok:active .boxLetter span::after {
+  font-family: 'FontAwesome';
+  content: '\f00c';
+  color: #1eb033;
+}
+.question .questions li.error {
+  background-color: #da2828;
+  border-color: #da2828;
+  color: #fff;
+}
+.question .questions li.error .boxLetter span {
+  background-color: #fff;
+}
+.question .questions li.error .boxLetter span::after {
+  font-family: 'FontAwesome';
+  content: '\f00d';
+  color: #da2828;
+}
+.question .questions li.error:hover,
+.question .questions li.error:active {
+  background-color: #da2828;
+  border-color: #da2828;
+  color: #fff;
+}
+.question .questions li.error:hover .boxLetter span,
+.question .questions li.error:active .boxLetter span {
+  background-color: #fff;
+}
+.question .questions li.error:hover .boxLetter span::after,
+.question .questions li.error:active .boxLetter span::after {
+  font-family: 'FontAwesome';
+  content: '\f00d';
+  color: #da2828;
+}
+.question .questions li.active,
+.question .questions li:hover,
+.question .questions li:active {
+  background-color: #fdc010;
+  border-color: #fdc010;
+  color: #fff;
+}
+.question .questions li.active .boxLetter span,
+.question .questions li:hover .boxLetter span,
+.question .questions li:active .boxLetter span {
+  background-color: #fff;
+  color: #fdc010;
+}
 .question .questions li .boxLetter {
   top: 15px;
   left: 15px;
@@ -9228,6 +9308,7 @@ h1 {
 .question .questions li .boxLetter span {
   background-color: #fdc010;
   color: #fff;
+  font-size: 36px;
   text-align: center;
   line-height: 64px;
   display: block;
@@ -9235,6 +9316,11 @@ h1 {
   width: 64px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+}
+.question .questions li .boxQuestion {
+  height: 61px;
+  display: table-cell;
+  vertical-align: middle;
 }
 body {
   font-family: 'Open sans';
