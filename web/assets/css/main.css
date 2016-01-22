@@ -9185,6 +9185,7 @@ h1 {
 .question .questions li .boxLetter span {
   background-color: #fdc010;
   color: #fff;
+  font-size: 36px;
   text-align: center;
   line-height: 64px;
   display: block;
