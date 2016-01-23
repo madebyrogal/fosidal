@@ -51,7 +51,7 @@ class Question
     private $position;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Survey", inversedBy="guestions")
+     * @ORM\ManyToOne(targetEntity="Survey", inversedBy="questions")
      * @ORM\JoinColumn(name="survey_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $survey;

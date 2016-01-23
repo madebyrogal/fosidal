@@ -9027,7 +9027,6 @@ h1 {
   padding-left: 20px;
   transition-property: background-color;
   transition-duration: 2s;
-  width: 100%;
   margin: 10px 0 35px 0;
   padding: 0 0 0 6%;
 }
@@ -9218,7 +9217,6 @@ h1 {
   padding-left: 20px;
   transition-property: background-color;
   transition-duration: 2s;
-  width: 100%;
   float: right;
   font-size: 17px;
 }
@@ -9381,7 +9379,6 @@ h1 {
   padding-left: 20px;
   transition-property: background-color;
   transition-duration: 2s;
-  width: 100%;
   position: absolute;
   z-index: 1;
   bottom: 5px;
@@ -9404,6 +9401,7 @@ h1 {
 }
 @media (max-width: 991px) {
   .question .nextQuestion {
+    display: block;
     position: static;
     margin: 0 auto;
     width: 300px;

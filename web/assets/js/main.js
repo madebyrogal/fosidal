@@ -1,5 +1,6 @@
 $(document).ready(function () {
     scaleBar();
+    initQuiz();
 });
 
 $(window).resize(function () {
@@ -7,13 +8,17 @@ $(window).resize(function () {
 });
 
 //Scale bar with fosidal (product)
-function scaleBar() {
+function scaleBar()
+{
     var barBox = $('.barBox');
     var product = $('.barBox .product');
     barBox.find('.side').each(function (i, elem) {
-        var width = ( $(document).width() - product.width() ) / 2
+        var width = ($(document).width() - product.width()) / 2
         $(elem).width(width);
     })
 }
 
-
+function initQuiz()
+{
+    $('.questions').quiz();
+}

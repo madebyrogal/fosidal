@@ -7,7 +7,7 @@
         <ul class="clearfix center-block">
             <li class="timer">
                 <div class="clock"></div>
-                <div class="countdown">{{quiz.getQuestions.first.timeToAnswer | timer}}</div>
+                <div class="countdown">{{question.timeToAnswer | timer}}</div>
             </li>
             <li class="clearfix pointSummar">
                 <div class="podium"></div>
@@ -18,15 +18,15 @@
                 </div>
             </li>
             <li class="pointToCollect">
-                <span class="point">{{quiz.getQuestions.first.getPoints}}<br /></span>
+                <span class="point">{{question.getPoints}}<br /></span>
                 <span>Punkty do zdobycia</span>
             </li>
         </ul>
     </div>
     <div class='modalBody question clearfix'>
-        <div class="questionCounterTop"><b>Quiz.</b> Pytanie 01/{{quiz.getQuestions.count | qNumber}}</div>
+        <div class="questionCounterTop"><b>Quiz.</b> Pytanie {{questionNumber | qNumber}}/{{quiz.getQuestions.count | qNumber}}</div>
         <div class="questionContainer">
-            <h1>W jakich godzinach może być podawany Fosidal?</h1>
+            <h1>{{question.name}}</h1>
             <ul class='questions'>
                 <li class='clearfix'>
                     <div class='boxLetter'><span>A</span></div>
@@ -41,7 +41,7 @@
                 </li>
             </ul>
         </div>
-        <div class="questionCounterBottom">Pytanie 01/{{quiz.getQuestions.count | qNumber}}</div>
+        <div class="questionCounterBottom">Pytanie {{questionNumber | qNumber}}/{{quiz.getQuestions.count | qNumber}}</div>
         <div class="nextQuestion">Następne pytanie <i class="fa fa-angle-double-right"></i></div>
     </div>
 {% endblock %}
