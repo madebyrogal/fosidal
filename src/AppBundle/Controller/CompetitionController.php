@@ -6,20 +6,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
+/**
+ * @Route("konkurs")
+ */
 class CompetitionController extends Controller
 {
 
     /**
-     * @Route("/konkurs.html", name="competition")
+     * @Route("/slajd/{slideNr}.html", defaults={"slideNr" = 1}, name="competition", requirements={
+     *     "page": "\d+"
+     * })
      * @Method({"GET", "HEAD"})
      */
-    public function indexAction()
+    public function indexAction($slideNr)
     {
-        return $this->render('AppBundle:Competition:index.html.twig', array());
+        return $this->render('AppBundle:Competition:slide' . $slideNr . '.html.twig', array());
     }
 
     /**
-     * @Route("/konkurs/pytania.html", name="competitionQuestion")
+     * @Route("/pytania.html", name="competitionQuestion")
      * @Method({"GET","POST","HEAD"})
      */
     public function questionAction()
@@ -29,7 +34,7 @@ class CompetitionController extends Controller
         if (!$survey) {
 
             throw $this->createNotFoundException('Sorry, there are no quiz');
-        } 
+        }
 
         return $this->render('AppBundle:Competition:question.html.twig', array('quiz' => $survey, 'question' => $question, 'questionNumber' => 1));
     }
