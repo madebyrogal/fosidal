@@ -1,4 +1,105 @@
+.pointCounter{
+    max-width: 468px;
+    margin: 15px auto 0 auto;
+
+    ul {
+        font-family: 'Lato';
+        display: block;
+
+        li {
+            display: block;
+            float: left;
+            min-height: 82px;
+            background-color: @colorWhite;
+            padding: 10px 10px 5px 10px;
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .timer {
+            width: 80px;
+            text-align: center;
+            font-size: 23px;
+            line-height: 23px;
+            font-weight: bold;
+            color: @colorYellow;
+
+            .clock{
+                background-image: url('/assets/images/sprite.png');
+                background-position: 79px 0px;
+                width: 40px;
+                height: 36px;
+                margin: 0 auto 5px auto;
+            }
+        }
+
+        .pointSummar {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+
+            .podium {
+                background-image: url('/assets/images/sprite.png');
+                background-position: 142px 0px;
+                width: 58px;
+                height: 58px;
+                float: left;
+                margin-right: 20px;
+            }
+
+            .pointDesc {
+                position: relative;
+                margin-top: 5px;
+                float: left;
+
+                .core {
+                    font-size: 18px;
+                    line-height: 14px;
+                }
+
+                .allPoint {
+                    font-size: 14px;
+                    color: @colorGray;
+                }
+
+                .pointAssume {
+                    position: absolute;
+                    top: -10px;
+                    right: 0;
+                    z-index: 1;
+                    font-size: 24px;;
+                    color: @colorYellow;
+
+                    b {
+                        font-size: 48px;
+                        line-height: 48px;
+                    }
+                }
+            }
+        }
+
+        .pointToCollect {
+            width: 80px;
+            text-align: center;
+            line-height: 14px;
+            color: @colorGray;
+            
+            .point {
+                display: block;
+                font-weight: bold;
+                font-size: 36px;
+                line-height: 26px;
+                color: @colorBlue;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
 .question {
+    margin-top: 0px;
     position: relative;
 
     h1 {
@@ -64,21 +165,21 @@
             &:last-child {
                 margin-bottom: 0;
             }
-            
+
             &.ok {
                 .question(@colorGreen, @colorWhite, '\f00c');
                 &:hover, &:active {
                     .question(@colorGreen, @colorWhite, '\f00c');
                 }
             }
-            
+
             &.error {
                 .question(@colorRed, @colorWhite, '\f00d');
                 &:hover, &:active {
                     .question(@colorRed, @colorWhite, '\f00d');
                 }
             }
-            
+
             &.active, &:hover, &:active {
                 .questionSimple(@colorYellow, @colorWhite);
             }
