@@ -3,28 +3,30 @@
 {% block title %}Fosidal - Konkurs{% endblock %}
 
 {% block body %}
-	<div class="competition">
-		<div class="row">
-			<div class="col-md-6 left-box">
-			    <h1>III fazy zakażenia dróg oddechowych</h1>
-			    <ul>
-			    	<li class="active">I faza <span>obrzękowo - wysiękowa<br> (zwana również wysiękową)</span></li>
-			    	<li>II faza <span>obturacji gęstej</span></li>
-			    	<li>III faza <span>nadkażenia bakteryjnego</span></li>
-			    </ul>
+	<div class="modalBody clearfix">
+		<div class="competition">
+			<div class="row">
+				<div class="col-md-6 left-box">
+				    <h1>III fazy zakażenia dróg oddechowych</h1>
+				    <ul>
+				    	<li class="active">I faza <span>obrzękowo - wysiękowa<br> (zwana również wysiękową)</span></li>
+				    	<li>II faza <span>obturacji gęstej</span></li>
+				    	<li>III faza <span>nadkażenia bakteryjnego</span></li>
+				    </ul>
+				</div>
+				<div class="col-md-6 right-box">
+					<div class="pagination-slide pagination-top">
+						<span>Slajd 01/08</span>
+					</div>
+				    <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/fantom.png') }}">
+				</div>
 			</div>
-			<div class="col-md-6 right-box">
-				<div class="pagination-slide pagination-top">
+			<div class="bottom-modal">
+				<div class="pagination-slide pagination-bottom">
 					<span>Slajd 01/08</span>
 				</div>
-			    <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/fantom.png') }}">
+				<a class="button take-part" title="" href="">Następny slajd<i class="fa fa-angle-double-right"></i></a>
 			</div>
-		</div>
-		<div class="bottom-modal">
-			<div class="pagination-slide pagination-bottom">
-				<span>Slajd 01/08</span>
-			</div>
-			<a class="button take-part" title="" href="">Następny slajd<i class="fa fa-angle-double-right"></i></a>
 		</div>
 	</div>
 {% endblock %}
