@@ -5,8 +5,9 @@ namespace AdminBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class SurveyType extends AbstractType
+class QuestionType extends AbstractType
 {
 
     /**
@@ -17,9 +18,11 @@ class SurveyType extends AbstractType
     {
         $builder
                 ->add('name')
-                ->add('start', 'datetime')
-                ->add('end', 'datetime')
-                ->add('questions');
+                ->add('timeToAnswer')
+                ->add('points')
+                ->add('position')
+                ->add('survey', EntityType::class, array('class' => 'AdminBundle:Survey', 'choice_label' => 'name'))
+                ->add('answers')
         ;
     }
 
@@ -29,7 +32,7 @@ class SurveyType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AdminBundle\Entity\Survey'
+            'data_class' => 'AdminBundle\Entity\Question'
         ));
     }
 
