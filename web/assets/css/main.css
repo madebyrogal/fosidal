@@ -8981,7 +8981,7 @@ h1 {
   font-size: 18px;
   font-weight: normal;
   line-height: 22px;
-  margin-top: 6px;
+  margin-top: 13px;
 }
 .modalBody .home ul {
   list-style-type: none;
@@ -9019,7 +9019,7 @@ h1 {
   font-size: 24px;
   font-style: italic;
   line-height: 60px;
-  margin: 5px 0 25px 0;
+  margin: 10px 0 35px 0;
   padding: 0 0 0 6%;
   width: 100%;
 }
@@ -9041,7 +9041,7 @@ h1 {
   font-family: 'Open Sans';
   font-size: 13px;
   line-height: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 .modalBody .home .right-box .col-bg {
   background: #e7e7e7;
@@ -9090,101 +9090,56 @@ h1 {
   .modalBody .home .row .head {
     left: 3.5%;
     position: absolute;
-    top: 18px;
+    top: 25px;
     width: 70%;
   }
   .modalBody .home .row .head h2 {
     width: 85%;
   }
   .modalBody .home ul {
-    margin-top: 136px;
+    margin-top: 140px;
   }
 }
-.pointCounter {
-  max-width: 468px;
-  margin: 15px auto 0 auto;
+.modalBody .competition h1 {
+  margin-top: 100px;
 }
-.pointCounter ul {
-  font-family: 'Lato';
-  display: block;
+.modalBody .competition ul {
+  list-style-type: none;
+  margin-top: 70px;
 }
-.pointCounter ul li {
-  display: block;
-  float: left;
-  min-height: 82px;
-  background-color: #fff;
-  padding: 10px 10px 5px 10px;
-  margin-right: 10px;
-}
-.pointCounter ul li:last-child {
-  margin-right: 0;
-}
-.pointCounter ul .timer {
-  width: 80px;
-  text-align: center;
-  font-size: 23px;
-  line-height: 23px;
-  font-weight: bold;
-  color: #fdc010;
-}
-.pointCounter ul .timer .clock {
-  background-image: url('/assets/images/sprite.png');
-  background-position: 79px 0px;
-  width: 40px;
-  height: 36px;
-  margin: 0 auto 5px auto;
-}
-.pointCounter ul .pointSummar {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 15px;
-}
-.pointCounter ul .pointSummar .podium {
-  background-image: url('/assets/images/sprite.png');
-  background-position: 142px 0px;
-  width: 58px;
-  height: 58px;
-  float: left;
-  margin-right: 20px;
-}
-.pointCounter ul .pointSummar .pointDesc {
-  position: relative;
-  margin-top: 5px;
-  float: left;
-}
-.pointCounter ul .pointSummar .pointDesc .core {
+.modalBody .competition ul li {
+  color: #3a3a3a;
   font-size: 18px;
-  line-height: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
-.pointCounter ul .pointSummar .pointDesc .allPoint {
-  font-size: 14px;
-  color: #999999;
-}
-.pointCounter ul .pointSummar .pointDesc .pointAssume {
-  position: absolute;
-  top: -10px;
-  right: 0;
-  z-index: 1;
-  font-size: 24px;
+.modalBody .competition ul li.active {
   color: #fdc010;
 }
-.pointCounter ul .pointSummar .pointDesc .pointAssume b {
-  font-size: 48px;
-  line-height: 48px;
-}
-.pointCounter ul .pointToCollect {
-  width: 80px;
-  text-align: center;
-  line-height: 14px;
-  color: #999999;
-}
-.pointCounter ul .pointToCollect .point {
+.modalBody .competition ul li span {
   display: block;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 26px;
-  color: #253583;
-  padding-bottom: 10px;
+  font-size: 30px;
+}
+.modalBody .competition .right-box {
+  position: relative;
+}
+.modalBody .competition .right-box .slide-pagination {
+  background-color: #fff;
+  color: #999;
+  font-size: 18px;
+  line-height: 22px;
+  font-style: italic;
+  height: 34px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 129px;
+}
+.modalBody .competition .right-box .slide-pagination span {
+  display: block;
+  margin-top: 6px;
 }
 .question {
   margin-top: 0px;
@@ -9398,5 +9353,5 @@ h6 {
 }
 h1 {
   font-size: 36px;
-  line-height: 48px;
+  line-height: 36px;
 }
