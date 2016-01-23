@@ -24,7 +24,7 @@ class CompetitionController extends Controller
      */
     public function questionAction()
     {
-        $survey = $this->getDoctrine()->getRepository('AppBundle:Survey')->findActive();
+        $survey = null;
         return $this->render('AppBundle:Competition:question.html.twig', array('survey'=>$survey));
     }
 

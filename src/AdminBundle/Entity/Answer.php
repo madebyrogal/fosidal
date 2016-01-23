@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Answer
  *
  * @ORM\Table(name="answer")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\AnswerRepository")
+ * @ORM\Entity(repositoryClass="AdminBundle\Repository\AnswerRepository")
  */
 class Answer
 {
@@ -131,10 +131,10 @@ class Answer
     /**
      * Set question
      *
-     * @param \AppBundle\Entity\Question $question
+     * @param \AdminBundle\Entity\Question $question
      * @return Answer
      */
-    public function setQuestion(\AppBundle\Entity\Question $question = null)
+    public function setQuestion(\AdminBundle\Entity\Question $question = null)
     {
         $this->question = $question;
 
@@ -144,7 +144,7 @@ class Answer
     /**
      * Get question
      *
-     * @return \AppBundle\Entity\Question 
+     * @return \AdminBundle\Entity\Question 
      */
     public function getQuestion()
     {
