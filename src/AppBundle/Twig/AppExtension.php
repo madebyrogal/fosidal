@@ -21,6 +21,7 @@ class AppExtension extends \Twig_Extension
         return array(
             new \Twig_SimpleFilter('timer', array($this, 'timerFilter')),
             new \Twig_SimpleFilter('qNumber', array($this, 'qNumberFilter')),
+            new \Twig_SimpleFilter('convToLetter', array($this, 'convToLetterFilter')),
         );
     }
 
@@ -35,6 +36,11 @@ class AppExtension extends \Twig_Extension
     public function qNumberFilter($qNumber)
     {
         return sprintf("%02d", $qNumber);
+    }
+    
+    public function convToLetterFilter($number)
+    {
+        return chr(64+$number);
     }
 
     public function getName()
