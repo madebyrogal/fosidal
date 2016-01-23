@@ -8988,6 +8988,11 @@ h1 {
   margin: 22px 10px 0 50px;
   padding-left: 0;
 }
+@media (min-width: 1200px) {
+  .modalBody .home ul {
+    margin-top: 140px;
+  }
+}
 .modalBody .home ul li {
   color: #1a171b;
   font-family: 'Open Sans';
@@ -9010,31 +9015,56 @@ h1 {
   width: 31px;
 }
 .modalBody .home .take-part {
+  cursor: pointer;
   background-color: #3a3a3a;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
   color: #fff;
   display: inline-block;
-  font-family: 'Open Sans';
   font-size: 24px;
   font-style: italic;
   line-height: 60px;
+  padding-left: 20px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  width: 100%;
   margin: 10px 0 35px 0;
   padding: 0 0 0 6%;
-  width: 100%;
 }
-.modalBody .home .take-part span {
-  background-image: url("/assets/images/sprite.png");
-  background-position: 1px 39px;
-  display: inline-block;
+.modalBody .home .take-part i {
+  background-color: #fdc010;
+  text-align: center;
+  line-height: 40px;
   float: right;
   height: 40px;
-  margin: 10px 10px 0 0;
+  margin: 10px 10px 0 20px;
   width: 53px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 .modalBody .home .take-part:hover {
   background-color: #262626;
   text-decoration: none;
+}
+@media (min-width: 480px) {
+  .modalBody .home .take-part {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .modalBody .home .take-part {
+    width: 38%;
+  }
+}
+@media (min-width: 992px) {
+  .modalBody .home .take-part {
+    width: 57%;
+  }
+}
+@media (min-width: 768px) {
+  .modalBody .home .left-box {
+    padding: 0 0 0 3.5%;
+  }
 }
 .modalBody .home .left-box p {
   color: #1a171b;
@@ -9042,6 +9072,11 @@ h1 {
   font-size: 13px;
   line-height: 16px;
   margin-bottom: 18px;
+}
+@media (min-width: 768px) {
+  .modalBody .home .right-box {
+    padding-left: 0;
+  }
 }
 .modalBody .home .right-box .col-bg {
   background: #e7e7e7;
@@ -9059,36 +9094,23 @@ h1 {
   line-height: 14px;
   margin: 0 0 2px 8%;
 }
-@media (min-width: 480px) {
-  .modalBody .home .take-part {
-    width: 50%;
-  }
-}
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .modalBody .home .row {
     position: relative;
   }
   .modalBody .home .col-md-6 {
     position: static;
   }
-  .modalBody .home .left-box {
-    padding: 0 0 0 3.5%;
-  }
-  .modalBody .home .right-box {
-    padding-left: 0;
-  }
-  .modalBody .home .take-part {
-    width: 38%;
-  }
 }
-@media (min-width: 992px) {
-  .modalBody .home .take-part {
-    width: 57%;
+@media (min-width: 480px) {
+  .modalBody .home .row .head {
+    margin-top: 20px;
   }
 }
 @media (min-width: 1200px) {
   .modalBody .home .row .head {
     left: 3.5%;
+    margin-top: 0;
     position: absolute;
     top: 25px;
     width: 70%;
@@ -9096,50 +9118,141 @@ h1 {
   .modalBody .home .row .head h2 {
     width: 85%;
   }
-  .modalBody .home ul {
-    margin-top: 140px;
-  }
 }
 .modalBody .competition h1 {
-  margin-top: 100px;
+  margin-top: 20px;
+}
+@media (min-width: 480px) {
+  .modalBody .competition h1 {
+    margin: 100px 10% 0 9%;
+  }
 }
 .modalBody .competition ul {
-  list-style-type: none;
-  margin-top: 70px;
+  margin: 20px 5% 0 10%;
+}
+@media (min-width: 480px) {
+  .modalBody .competition ul {
+    margin: 70px 5% 0 20%;
+  }
 }
 .modalBody .competition ul li {
   color: #3a3a3a;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 30px;
   font-weight: bold;
+  line-height: 24px;
+  list-style-type: none;
   margin-bottom: 30px;
 }
 .modalBody .competition ul li.active {
   color: #fdc010;
+  list-style-type: initial;
 }
 .modalBody .competition ul li span {
   display: block;
-  font-size: 30px;
+  font-size: 18px;
 }
 .modalBody .competition .right-box {
   position: relative;
 }
-.modalBody .competition .right-box .slide-pagination {
+@media (min-width: 992px) {
+  .modalBody .competition .right-box img {
+    margin-top: -39px;
+  }
+}
+.modalBody .competition .bottom-modal {
+  background-color: #fff;
+  padding: 30px 0 20px 0;
+  width: 100%;
+}
+.modalBody .competition .pagination-slide {
   background-color: #fff;
   color: #999;
-  font-size: 18px;
-  line-height: 22px;
   font-style: italic;
   height: 34px;
-  position: absolute;
-  right: 0;
   text-align: center;
-  top: 0;
   width: 129px;
 }
-.modalBody .competition .right-box .slide-pagination span {
-  display: block;
+.modalBody .competition .pagination-slide span {
+  display: inline-block;
+}
+.modalBody .competition .pagination-top {
+  font-size: 18px;
+  line-height: 22px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.modalBody .competition .pagination-top span {
   margin-top: 6px;
+}
+.modalBody .competition .pagination-bottom {
+  display: none;
+  font-size: 24px;
+  line-height: 31px;
+  margin: 0 auto;
+}
+.modalBody .competition .pagination-bottom span {
+  margin-top: 16px;
+}
+@media (min-width: 480px) {
+  .modalBody .competition .pagination-bottom {
+    display: block;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .modalBody .competition .pagination-bottom {
+    float: none;
+  }
+}
+.modalBody .competition .take-part {
+  cursor: pointer;
+  background-color: #3a3a3a;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 60px;
+  padding-left: 20px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  width: 100%;
+  float: right;
+  font-size: 17px;
+}
+.modalBody .competition .take-part i {
+  background-color: #fdc010;
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  height: 40px;
+  margin: 10px 10px 0 20px;
+  width: 53px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.modalBody .competition .take-part:hover {
+  background-color: #262626;
+  text-decoration: none;
+}
+@media (min-width: 480px) {
+  .modalBody .competition .take-part {
+    font-size: 24px;
+    width: 67%;
+  }
+}
+@media (min-width: 768px) {
+  .modalBody .competition .take-part {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .modalBody .competition .take-part {
+    margin-top: -34px;
+    width: 30%;
+  }
 }
 .pointCounter {
   max-width: 468px;
@@ -9261,12 +9374,14 @@ h1 {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   color: #fff;
-  display: block;
+  display: inline-block;
   font-size: 24px;
   font-style: italic;
   line-height: 60px;
   padding-left: 20px;
-  min-width: 100px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  width: 100%;
   position: absolute;
   z-index: 1;
   bottom: 5px;
@@ -9276,7 +9391,6 @@ h1 {
   background-color: #fdc010;
   text-align: center;
   line-height: 40px;
-  display: block;
   float: right;
   height: 40px;
   margin: 10px 10px 0 20px;
