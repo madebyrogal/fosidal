@@ -4,6 +4,32 @@
 
 {% block body %}
     <div class="modalBody clearfix">
-        <h1>Slide2</h1>
-    </div>
+		<div class="competition">
+			<div class="row">
+				<div class="col-md-6 left-box">
+				    <h1>Kliniczne objawy I fazy zakażenia górnych dróg oddechowych</h1>
+				    <ul>
+				    	<li>Wodnisty katar</li>
+				    	<li>Stan podgorączkowy</li>
+				    	<li>Suchy kaszel</li>
+				    	<li class="active">Trudności w połykaniu</li>
+				    	<li>Bóle głowy </li>
+				    </ul>
+				</div>
+				<div class="col-md-6 right-box">
+					<div class="pagination-slide pagination-top">
+						<span>Slajd 02/08</span>
+					</div>
+				    <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/fantom2.png') }}">
+				</div>
+			</div>
+			<div class="bottom-modal">
+				<a class="button back" title="" href="{{ path('competition', {'slideNr': 1}) }}"><i class="fa fa-angle-double-left"></i>Poprzedni slajd</a>
+				<div class="pagination-slide pagination-bottom">
+					<span>Slajd 02/08</span>
+				</div>
+				<a class="button next" title="" href="{{ path('competition', {'slideNr': 3}) }}">Następny slajd<i class="fa fa-angle-double-right"></i></a>
+			</div>
+		</div>
+	</div>
 {% endblock %}

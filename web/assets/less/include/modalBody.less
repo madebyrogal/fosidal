@@ -194,9 +194,25 @@
                 float: none;
             }
         }
-        .take-part {
+        .next {
             .button(@bgColorDark, @bgColorDarkHover, @colorYellow, @colorWhite, right);
             float: right;
+            font-size: 17px;
+            @media (min-width: @screen-xs-min) {
+                font-size: 24px;
+                width: 67%;
+            }
+            @media (min-width: @screen-sm-min) {
+                width: 50%;
+            }
+            @media (min-width: @screen-md-min) {
+                margin-top: -34px;
+                width: 30%;
+            }
+        }
+        .back {
+            .button(@bgColorGrey, @bgColorGreyHover, @colorGray, @colorWhite, left);
+            float: left;
             font-size: 17px;
             @media (min-width: @screen-xs-min) {
                 font-size: 24px;

@@ -9204,7 +9204,7 @@ h1 {
     float: none;
   }
 }
-.modalBody .competition .take-part {
+.modalBody .competition .next {
   cursor: pointer;
   background-color: #3a3a3a;
   -webkit-border-radius: 10px;
@@ -9220,7 +9220,7 @@ h1 {
   float: right;
   font-size: 17px;
 }
-.modalBody .competition .take-part i {
+.modalBody .competition .next i {
   background-color: #fdc010;
   text-align: center;
   line-height: 40px;
@@ -9231,23 +9231,71 @@ h1 {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-.modalBody .competition .take-part:hover {
+.modalBody .competition .next:hover {
   background-color: #262626;
   text-decoration: none;
 }
 @media (min-width: 480px) {
-  .modalBody .competition .take-part {
+  .modalBody .competition .next {
     font-size: 24px;
     width: 67%;
   }
 }
 @media (min-width: 768px) {
-  .modalBody .competition .take-part {
+  .modalBody .competition .next {
     width: 50%;
   }
 }
 @media (min-width: 992px) {
-  .modalBody .competition .take-part {
+  .modalBody .competition .next {
+    margin-top: -34px;
+    width: 30%;
+  }
+}
+.modalBody .competition .back {
+  cursor: pointer;
+  background-color: #ccc;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 60px;
+  padding-left: 20px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  float: left;
+  font-size: 17px;
+}
+.modalBody .competition .back i {
+  background-color: #999999;
+  text-align: center;
+  line-height: 40px;
+  float: left;
+  height: 40px;
+  margin: 10px 10px 0 20px;
+  width: 53px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.modalBody .competition .back:hover {
+  background-color: #abaaaa;
+  text-decoration: none;
+}
+@media (min-width: 480px) {
+  .modalBody .competition .back {
+    font-size: 24px;
+    width: 67%;
+  }
+}
+@media (min-width: 768px) {
+  .modalBody .competition .back {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .modalBody .competition .back {
     margin-top: -34px;
     width: 30%;
   }
