@@ -27,18 +27,13 @@
         <div class="questionCounterTop"><b>Quiz.</b> Pytanie {{questionNumber | qNumber}}/{{quiz.getQuestions.count | qNumber}}</div>
         <div class="questionContainer">
             <h1>{{question.name}}</h1>
-            <ul class='questions'>
-                <li class='clearfix'>
-                    <div class='boxLetter'><span>A</span></div>
-                    <div class='boxQuestion'>Do godziny 16-17, żeby nie pobudzać sekrecji w godzinach nocnych.</div>
+            <ul class='questions' data-question="{{question.id}}" data-token="{{token}}" data-url="{{path('competitionCheckAnswer')}}">
+                {% for answer in question.getAnswers %}
+                <li class='clearfix' data-answer="{{answer.id}}">
+                    <div class='boxLetter'><span>{{ loop.index | convToLetter }}</span></div>
+                    <div class='boxQuestion'>{{answer.name}}.</div>
                 </li>
-                <li class='clearfix'>
-                    <div class='boxLetter'><span>B</span></div>
-                    <div class='boxQuestion'>O każdej porze dnia i nocy.</div>
-                <li class='clearfix'>
-                    <div class='boxLetter'><span>C</span></div>
-                    <div class='boxQuestion'>Do trzech razy dziennie tylko w ciągu dnia.</div>
-                </li>
+                {% endfor %}
             </ul>
         </div>
         <div class="questionCounterBottom">Pytanie {{questionNumber | qNumber}}/{{quiz.getQuestions.count | qNumber}}</div>
