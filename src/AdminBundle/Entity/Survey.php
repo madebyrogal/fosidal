@@ -53,6 +53,15 @@ class Survey
     {
         $this->questions = new ArrayCollection();
     }
+    
+    public function getMaxPoints(){
+        $points = 0;
+        foreach($this->questions as $question) {
+            $points += $question->getPoints();
+        }
+        
+        return $points;
+    }
 
     /**
      * Get id

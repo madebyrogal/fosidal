@@ -24,8 +24,13 @@ class CompetitionController extends Controller
      */
     public function questionAction()
     {
-        $survey = null;
-        return $this->render('AppBundle:Competition:question.html.twig', array('survey'=>$survey));
+        $survey = $this->getDoctrine()->getRepository('AdminBundle:Survey')->findActive();
+        if (!$survey) {
+
+            throw $this->createNotFoundException('Sorry, there are no quiz');
+        } 
+
+        return $this->render('AppBundle:Competition:question.html.twig', array('quiz' => $survey));
     }
 
 }

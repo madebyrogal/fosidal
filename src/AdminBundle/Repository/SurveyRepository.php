@@ -3,6 +3,7 @@
 namespace AdminBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use AdminBundle\Entity\Survey;
 
 /**
  * SurveyRepository
@@ -12,10 +13,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class SurveyRepository extends EntityRepository
 {
-    public function findActive(){
-        //TODO Query for active survey
-        //$this->createQueryBuilder($alias);
-        
-        return array();
+
+    public function findActive()
+    {
+        $em = $this->getEntityManager();
+        $now = new \DateTime('now');
+
+        $query = $this->createQueryBuilder('s')
+                ->where('s.start <= :start')
+                ->andWhere('s.end > :end')
+                ->setParameters(array('start' => $now, 'end' => $now))
+                ->setMaxResults(1)
+                ->getQuery();
+        return $query->getOneOrNullResult();
     }
+
 }
