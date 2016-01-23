@@ -9141,6 +9141,92 @@ h1 {
   display: block;
   margin-top: 6px;
 }
+.pointCounter {
+  max-width: 468px;
+  margin: 15px auto 0 auto;
+}
+.pointCounter ul {
+  font-family: 'Lato';
+  display: block;
+}
+.pointCounter ul li {
+  display: block;
+  float: left;
+  min-height: 82px;
+  background-color: #fff;
+  padding: 10px 10px 5px 10px;
+  margin-right: 10px;
+}
+.pointCounter ul li:last-child {
+  margin-right: 0;
+}
+.pointCounter ul .timer {
+  width: 80px;
+  text-align: center;
+  font-size: 23px;
+  line-height: 23px;
+  font-weight: bold;
+  color: #fdc010;
+}
+.pointCounter ul .timer .clock {
+  background-image: url('/assets/images/sprite.png');
+  background-position: 79px 0px;
+  width: 40px;
+  height: 36px;
+  margin: 0 auto 5px auto;
+}
+.pointCounter ul .pointSummar {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+}
+.pointCounter ul .pointSummar .podium {
+  background-image: url('/assets/images/sprite.png');
+  background-position: 142px 0px;
+  width: 58px;
+  height: 58px;
+  float: left;
+  margin-right: 20px;
+}
+.pointCounter ul .pointSummar .pointDesc {
+  position: relative;
+  margin-top: 5px;
+  float: left;
+}
+.pointCounter ul .pointSummar .pointDesc .core {
+  font-size: 18px;
+  line-height: 14px;
+}
+.pointCounter ul .pointSummar .pointDesc .allPoint {
+  font-size: 14px;
+  color: #999999;
+}
+.pointCounter ul .pointSummar .pointDesc .pointAssume {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  z-index: 1;
+  font-size: 24px;
+  color: #fdc010;
+}
+.pointCounter ul .pointSummar .pointDesc .pointAssume b {
+  font-size: 48px;
+  line-height: 48px;
+}
+.pointCounter ul .pointToCollect {
+  width: 80px;
+  text-align: center;
+  line-height: 14px;
+  color: #999999;
+}
+.pointCounter ul .pointToCollect .point {
+  display: block;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 26px;
+  color: #253583;
+  padding-bottom: 10px;
+}
 .question {
   margin-top: 0px;
   position: relative;
