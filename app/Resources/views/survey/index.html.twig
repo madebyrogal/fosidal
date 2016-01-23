@@ -1,0 +1,43 @@
+{% extends 'AdminBundle::base.html.twig' %}
+
+{% block body %}
+    <h1>Survey list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for survey in surveys %}
+            <tr>
+                <td><a href="{{ path('survey_show', { 'id': survey.id }) }}">{{ survey.id }}</a></td>
+                <td>{{ survey.name }}</td>
+                <td>{% if survey.start %}{{ survey.start|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if survey.end %}{{ survey.end|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('survey_show', { 'id': survey.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('survey_edit', { 'id': survey.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('survey_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * Survey
  *
  * @ORM\Table(name="survey")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\SurveyRepository")
+ * @ORM\Entity(repositoryClass="AdminBundle\Repository\SurveyRepository")
  */
 class Survey
 {
@@ -136,10 +136,10 @@ class Survey
     /**
      * Add questions
      *
-     * @param \AppBundle\Entity\Question $questions
+     * @param \AdminBundle\Entity\Question $questions
      * @return Survey
      */
-    public function addQuestion(\AppBundle\Entity\Question $questions)
+    public function addQuestion(\AdminBundle\Entity\Question $questions)
     {
         $this->questions[] = $questions;
 
@@ -149,9 +149,9 @@ class Survey
     /**
      * Remove questions
      *
-     * @param \AppBundle\Entity\Question $questions
+     * @param \AdminBundle\Entity\Question $questions
      */
-    public function removeQuestion(\AppBundle\Entity\Question $questions)
+    public function removeQuestion(\AdminBundle\Entity\Question $questions)
     {
         $this->questions->removeElement($questions);
     }
