@@ -9162,6 +9162,32 @@ h1 {
   display: block;
   font-size: 18px;
 }
+.modalBody .competition.slide3 {
+  position: relative;
+}
+.modalBody .competition.slide3 .left-box {
+  position: static;
+}
+.modalBody .competition.slide3 .head h1 {
+  margin: 0;
+}
+@media (min-width: 1200px) {
+  .modalBody .competition.slide3 .head {
+    left: 3.5%;
+    margin-top: 0;
+    position: absolute;
+    top: 25px;
+  }
+}
+.modalBody .competition.slide3 h2 {
+  font-size: 24px;
+  line-height: 30px;
+}
+@media (min-width: 1200px) {
+  .modalBody .competition.slide3 h2 {
+    margin: 150px 0 0 7.5%;
+  }
+}
 .modalBody .competition .right-box {
   position: relative;
 }
@@ -9173,7 +9199,7 @@ h1 {
 .modalBody .competition .bottom-modal {
   background-color: #fff;
   float: left;
-  padding: 30px 0 26px 0;
+  padding: 30px 0 0 0;
   width: 100%;
 }
 .modalBody .competition .pagination-slide {

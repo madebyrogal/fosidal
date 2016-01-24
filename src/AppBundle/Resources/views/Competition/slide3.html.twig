@@ -4,6 +4,28 @@
 
 {% block body %}
     <div class="modalBody clearfix">
-        <h1>Slide3</h1>
-    </div>
+		<div class="competition slide3">
+			<div class="row">
+				<div class="col-md-6 left-box">
+					<div class="head">
+					    <h1>Terapia <span class="yellow">I-szej fazy</span> (obrzękowo-wysiękowej) zakażenia górnych dróg oddechowych</h1>
+					</div>
+				    <h2>Zalecenia dotyczące leczenia objawowego i przyczynowego kaszlu.</h2>
+				</div>
+				<div class="col-md-6 right-box">
+					<div class="pagination-slide pagination-top">
+						<span>Slajd 03/08</span>
+					</div>
+				    <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/fantom2.png') }}">
+				</div>
+			</div>
+			<div class="bottom-modal">
+				<a class="button back" title="" href="{{ path('competition', {'slideNr': 2}) }}"><i class="fa fa-angle-double-left"></i>Poprzedni slajd</a>
+				<div class="pagination-slide pagination-bottom">
+					<span>Slajd 03/08</span>
+				</div>
+				<a class="button next" title="" href="{{ path('competition', {'slideNr': 4}) }}">Następny slajd<i class="fa fa-angle-double-right"></i></a>
+			</div>
+		</div>
+	</div>
 {% endblock %}
