@@ -308,26 +308,26 @@ class Result
     }
 
     /**
-     * Set postcode
+     * Set postCode
      *
-     * @param string $postcode
+     * @param string $postCode
      * @return Result
      */
-    public function setPostcode($postcode)
+    public function setPostCode($postCode)
     {
-        $this->postcode = $postcode;
+        $this->postCode = $postCode;
 
         return $this;
     }
 
     /**
-     * Get postcode
+     * Get postCode
      *
      * @return string 
      */
     public function getPostcode()
     {
-        return $this->postcode;
+        return $this->postCode;
     }
 
     /**

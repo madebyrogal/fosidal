@@ -8820,6 +8820,9 @@ ul {
 h1 {
   margin: 0;
 }
+label {
+  margin: 0;
+}
 .headerBox {
   background-color: #fff;
 }
@@ -9613,8 +9616,93 @@ h1 {
   display: table-cell;
   vertical-align: middle;
 }
-.p40 {
+.form {
   padding: 40px;
+}
+.form h1 {
+  margin-bottom: 40px;
+}
+.form .right {
+  padding-top: 70px;
+  padding-left: 30px;
+}
+.form .left {
+  padding-right: 30px;
+}
+.form form .formRow {
+  margin-top: 10px;
+}
+.form form .formRow:first-child {
+  margin-top: 0;
+}
+.form form .formRow div:first-child {
+  width: 34%;
+}
+.form form .formRow div:nth-child(2) {
+  width: 66%;
+}
+.form form .formRow label {
+  line-height: 30px;
+}
+.form form .formRow label.required::after {
+  content: '*';
+  color: #da2828;
+}
+.form form .formRow input {
+  width: 100%;
+  height: 30px;
+  padding: 0 10px 0 10px;
+}
+.form form .formDesc {
+  color: #da2828;
+  margin-top: 15px;
+}
+.form form .checkBoxWraper {
+  padding-left: 25px;
+  position: relative;
+  margin-top: 20px;
+}
+.form form .checkBoxWraper:first-child {
+  margin-top: 40px;
+}
+.form form .checkBoxWraper .checkBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.form form .checkBoxDesc {
+  float: left;
+  width: 90%;
+}
+.form form .saveForm {
+  cursor: pointer;
+  background-color: #3a3a3a;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 60px;
+  padding-left: 20px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  margin-top: 40px;
+}
+.form form .saveForm i {
+  background-color: #fdc010;
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  height: 40px;
+  margin: 10px 10px 0 20px;
+  width: 53px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.form form .saveForm:hover {
+  background-color: #262626;
+  text-decoration: none;
 }
 body {
   font-family: 'Open sans';
