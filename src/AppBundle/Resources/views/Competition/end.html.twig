@@ -3,7 +3,36 @@
 {% block title %}Fosidal - Konkurs{% endblock %}
 
 {% block body %}
-    <div class='modalBody clearfix'>
-        Formularz
+    <div class='modalBody p40 clearfix'>
+        <form action="{{ path('competitionSave')}}" method="POST">
+            <div class="row">
+                <div class="col-sm-6 left">
+                    <h1>REJESTRACJA</h1>
+
+                    <div class="row formRow">
+                        <div class="col-sm-4"><label>Imię<span class="required">*</span>:</label></div>
+                        <div class="col-sm-8"><input type="text" /></div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6 right">
+                    <p>
+                        Informujemy, że podane dane osobowe przetwarzane będą przez Polpharma Biuro Handlowe Sp. o.o. z siedzibą
+                        w Warszawie 00-728, przy ul. Bobrowieckiej 6, zgodnie z ustawą z dnia 29 sierpnia 1997 r. o ochronie  danych
+                        osobowych (t.j. Dz. U. z 2014 r., poz. 1182 ze zm.) w celu informowania o produktach i usługach spółek należących
+                        do Grupy Polpharma. Podanie danych jest dobrowolne. Każda osoba ma prawo dostępu do treści swoich danych
+                        i ich poprawiania.
+                    </p>
+                    <div class="formRow">
+                        Wyrażam zgodę na przetwarzanie moich danych osobowych w określonych powyżej celachpowyżej celach.
+                    </div>
+                    <div class="formRow">
+                        Wyrażam zgodę na otrzymywanie od Polpharma Biuro Handlowe Sp. z o.o. informacji handlowych drogą elektroniczną
+                        na podany przeze mnie adres e-mail, zgodnie z ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną
+                        (t.j. Dz. U. z 2013 r., poz. 1422).
+                    </div> 
+                </div>
+            </div>
+        </form>
     </div>
 {% endblock %}
