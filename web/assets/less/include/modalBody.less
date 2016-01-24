@@ -123,24 +123,38 @@
             }
         }
         ul {
-            margin: 20px 5% 0 10%;
-            @media (min-width: @screen-xs-min) {
-                margin: 70px 5% 0 20%;
-            }
+            margin: 50px 0 0 22%;
             li {
-                color: #3a3a3a;
-                font-size: 30px;
+                color: @colorYellow;
+                font-size: 24px;
                 font-weight: bold;
-                line-height: 24px;
-                list-style-type: none;
-                margin-bottom: 30px;
-                &.active {
-                    color: #fdc010;
-                    list-style-type: initial;
-                }
+                line-height: 30px;
                 span {
-                    display: block;
-                    font-size: 18px;
+                    color: @colorTextMain;
+                }
+            }
+        }
+        &.slide1 {
+            ul {
+                margin: 20px 5% 0 10%;
+                @media (min-width: @screen-xs-min) {
+                    margin: 70px 5% 0 20%;
+                }
+                li {
+                    color: #3a3a3a;
+                    font-size: 30px;
+                    font-weight: bold;
+                    line-height: 24px;
+                    list-style-type: none;
+                    margin-bottom: 30px;
+                    &.active {
+                        color: #fdc010;
+                        list-style-type: initial;
+                    }
+                    span {
+                        display: block;
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -154,6 +168,7 @@
         }
         .bottom-modal {
             background-color: #fff;
+            float: left;
             padding: 30px 0 26px 0;
             width: 100%;
         }
@@ -194,7 +209,7 @@
                 float: none;
             }
         }
-        .take-part {
+        .next {
             .button(@bgColorDark, @bgColorDarkHover, @colorYellow, @colorWhite, right);
             float: right;
             font-size: 17px;
@@ -208,6 +223,26 @@
             @media (min-width: @screen-md-min) {
                 margin-top: -34px;
                 width: 30%;
+            }
+        }
+        .back {
+            .button(@bgColorGrey, @bgColorGreyHover, @colorGray, @colorWhite, left);
+            float: left;
+            font-size: 17px;
+            padding-left: 0;
+            @media (min-width: @screen-xs-min) {
+                font-size: 24px;
+                width: 67%;
+            }
+            @media (min-width: @screen-sm-min) {
+                width: 50%;
+            }
+            @media (min-width: @screen-md-min) {
+                //margin-top: -34px;
+                width: 30%;
+            }
+            i {
+                margin: 10px 20px 0 10px;
             }
         }
     }
