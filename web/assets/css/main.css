@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -8871,7 +8872,6 @@ h1 {
 }
 .barBox .side {
   font-size: 42px;
-  font-family: "Calibri";
   line-height: 40px;
   color: #fff;
   position: absolute;
@@ -9317,11 +9317,10 @@ h1 {
   margin: 10px 20px 0 10px;
 }
 .pointCounter {
-  max-width: 468px;
+  max-width: 460px;
   margin: 15px auto 0 auto;
 }
 .pointCounter ul {
-  font-family: 'Lato';
   display: block;
 }
 .pointCounter ul li {
@@ -9373,7 +9372,7 @@ h1 {
   line-height: 14px;
 }
 .pointCounter ul .pointSummar .pointDesc .allPoint {
-  font-size: 14px;
+  font-size: 12px;
   color: #999999;
 }
 .pointCounter ul .pointSummar .pointDesc .pointAssume {
