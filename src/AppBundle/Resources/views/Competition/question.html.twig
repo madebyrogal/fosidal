@@ -37,6 +37,10 @@
             </ul>
         </div>
         <div class="questionCounterBottom">Pytanie {{questionNumber | qNumber}}/{{quiz.getQuestions.count | qNumber}}</div>
-        <div class="nextQuestion">Następne pytanie <i class="fa fa-angle-double-right"></i></div>
+        {% if questionNumber < quiz.getQuestions.count %}
+        <a href="{{ path('competitionNexQuestion')}}"><div id="nextQuestion" class="nextQuestion">Następne pytanie <i class="fa fa-angle-double-right"></i></div></a>
+        {% else %}
+        <a href="{{ path('competitionEnd')}}"><div id="nextQuestion" class="nextQuestion">Zakończ <i class="fa fa-angle-double-right"></i></div></a>
+        {% endif%}
     </div>
 {% endblock %}

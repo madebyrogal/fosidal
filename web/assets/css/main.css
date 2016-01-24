@@ -9407,6 +9407,35 @@ h1 {
     width: 300px;
   }
 }
+.question .nextQuestion.disabled {
+  cursor: pointer;
+  background-color: #999999;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 60px;
+  padding-left: 20px;
+  transition-property: background-color;
+  transition-duration: 2s;
+}
+.question .nextQuestion.disabled i {
+  background-color: #3a3a3a;
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  height: 40px;
+  margin: 10px 10px 0 20px;
+  width: 53px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.question .nextQuestion.disabled:hover {
+  background-color: #999999;
+  text-decoration: none;
+}
 .question .questions {
   list-style-type: none;
   margin-top: 30px;

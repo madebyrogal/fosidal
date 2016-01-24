@@ -8,7 +8,7 @@
                 <div class="col-md-9">
                     <nav>
                         <ul class="clearfix">
-                            <li {% if app.request.get('_route') == 'competition' %}class="active"{% endif %}><a href="{{ path('competition') }}">Konkurs</a></li>
+                            <li {% if (app.request.get('_route') == 'competition' or app.request.get('_route') == 'competitionQuestion' or app.request.get('_route') == 'competitionNexQuestion' or app.request.get('_route') == 'competitionEnd' or app.request.get('_route') == 'competitionSave') %}class="active"{% endif %}><a href="{{ path('competition') }}">Konkurs</a></li>
                             <li {% if app.request.get('_route') == 'award' %}class="active"{% endif %}><a href="{{ path('award') }}">Nagrody</a></li>
                             <li {% if app.request.get('_route') == 'winner' %}class="active"{% endif %}><a href="{{ path('winner') }}">Zwycięzcy</a></li>
                             <li {% if app.request.get('_route') == 'term' %}class="active"{% endif %}><a href="{{ path('term')}}">Reguamin</a></li>

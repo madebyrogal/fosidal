@@ -46,6 +46,7 @@ class Survey
 
     /**
      * @ORM\OneToMany(targetEntity="Question", mappedBy="survey")
+     * @ORM\OrderBy({"position" = "ASC"})
      */
     private $questions;
     

@@ -22,7 +22,6 @@ class QuestionType extends AbstractType
                 ->add('points')
                 ->add('position')
                 ->add('survey', EntityType::class, array('class' => 'AdminBundle:Survey', 'choice_label' => 'name'))
-                ->add('answers')
         ;
     }
 

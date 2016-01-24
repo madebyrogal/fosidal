@@ -58,6 +58,7 @@ class Question
     
     /**
      * @ORM\OneToMany(targetEntity="Answer", mappedBy="question")
+     * @ORM\OrderBy({"position" = "ASC"})
      */
     private $answers;
     
@@ -66,6 +67,16 @@ class Question
         $this->answers = new ArrayCollection();
     }
 
+    public function getCorrectAnswer()
+    {
+        foreach($this->getAnswers() as $answer){
+            if($answer->getIsCorrect()) {
+                return $answer;
+            }
+        }
+        
+        return false;
+    }
     /**
      * Get id
      *
