@@ -9679,6 +9679,17 @@ label {
   height: 30px;
   padding: 0 10px 0 10px;
 }
+.form form .formRow.npwz input {
+  width: 18px;
+  padding: 0 2px 0 2px;
+}
+.form form .formRow.postCode input {
+  width: 18px;
+  padding: 0 2px 0 2px;
+}
+.form form .formRow.postCode input:nth-child(3) {
+  margin-left: 10px;
+}
 .form form .formDesc {
   color: #da2828;
   margin-top: 15px;

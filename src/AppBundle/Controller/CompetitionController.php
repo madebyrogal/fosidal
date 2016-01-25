@@ -36,11 +36,10 @@ class CompetitionController extends Controller
         $quiz = $this->get('app.quiz');
         $quiz->init();
         $survey = $quiz->getQuiz();
-        $data = $quiz->getNextQuestion();
-        //dump($this->get('session')->get('quiz'));die
         if (!$survey) {
             throw $this->createNotFoundException('Sorry, there are no quiz');
         }
+        $data = $quiz->getNextQuestion();
 
         return $this->render('AppBundle:Competition:question.html.twig', $this->prepareViewData($survey, $data->question, $data->questionNr));
     }
@@ -68,6 +67,10 @@ class CompetitionController extends Controller
      */
     public function endAction(Request $request)
     {
+        if($request->isMethod(Request::METHOD_POST)){
+            $this->mainpulateRequst($request);
+        }
+        
         $quiz = $this->get('app.quiz');
         if (!$quiz->validEnd()) {
             return $this->redirectToRoute('competitionQuestion');
@@ -77,7 +80,6 @@ class CompetitionController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // ... perform some action, such as saving the task to the database
-            dump($form);die;
             return $this->redirectToRoute('competitionThanks');
         }
 
@@ -125,6 +127,19 @@ class CompetitionController extends Controller
         );
 
         return $data;
+    }
+    
+    private function mainpulateRequst(Request $request){
+        $result = $request->request->get('result');
+        //NPWZ
+        $fakeNpwz = $request->request->get('npwz');
+        $result['npwz'] = $result['npwz'] . join('', $fakeNpwz);
+        $request->request->set('result', $result);
+        //Clear
+        $request->request->remove('npwz');
+        
+        
+        return $request;
     }
 
 }

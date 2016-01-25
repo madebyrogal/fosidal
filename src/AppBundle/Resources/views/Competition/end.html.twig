@@ -21,9 +21,17 @@
                 <div class="col-sm-4">{{ form_label(form.email) }}</div>
                 <div class="col-sm-8">{{ form_widget(form.email, {'attr': {'placeholder': 'Wpisz adres e-mail'}}) }}</div>
             </div>
-            <div class="row formRow">
+            <div class="row formRow npwz">
                 <div class="col-sm-4">{{ form_label(form.npwz) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.npwz) }}</div>
+                <div class="col-sm-8">
+                    {{ form_widget(form.npwz, {'attr': {'maxlength': 1}}) }}
+                    <input type="text" name="npwz[]" required="required" maxlength="1">
+                    <input type="text" name="npwz[]" required="required" maxlength="1">
+                    <input type="text" name="npwz[]" required="required" maxlength="1">
+                    <input type="text" name="npwz[]" required="required" maxlength="1">
+                    <input type="text" name="npwz[]" required="required" maxlength="1">
+                    <input type="text" name="npwz[]" required="required" maxlength="1">
+                </div>
             </div>
             <div class="row formRow">
                 <div class="col-sm-4">{{ form_label(form.specialization) }}</div>
@@ -41,9 +49,15 @@
                 <div class="col-sm-4">{{ form_label(form.flatNr) }}</div>
                 <div class="col-sm-8">{{ form_widget(form.flatNr) }}</div>
             </div>
-            <div class="row formRow">
+            <div class="row formRow postCode">
                 <div class="col-sm-4">{{ form_label(form.postCode) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.postCode) }}</div>
+                <div class="col-sm-8">
+                    {{ form_widget(form.postCode, {'attr': {'maxlength': 1}}) }}
+                    <input type="text" name="postCode[]" required="required" maxlength="1">
+                    <input type="text" name="postCode[]" required="required" maxlength="1">
+                    <input type="text" name="postCode[]" required="required" maxlength="1">
+                    <input type="text" name="postCode[]" required="required" maxlength="1">
+                </div>
             </div>
             <div class="row formRow">
                 <div class="col-sm-4">{{ form_label(form.city) }}</div>
