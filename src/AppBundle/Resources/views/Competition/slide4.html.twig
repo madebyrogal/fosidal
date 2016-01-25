@@ -4,6 +4,28 @@
 
 {% block body %}
     <div class="modalBody clearfix">
-        <h1>Slide4</h1>
+        <div class="competition slide4">
+			<div class="row">
+				<div class="col-md-6 left-box">
+				    <h1>Objawy <span class="yellow">II fazy</span> zakażenia górnych dróg oddechowych:</h1>
+				    <ul>
+				    	<li><span>Gęsty, lepki śluz w nosie</span></li>
+				    </ul>
+				</div>
+				<div class="col-md-6 right-box">
+					<div class="pagination-slide pagination-top">
+						<span>Slajd 04/08</span>
+					</div>
+				    <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/fantom3.png') }}">
+				</div>
+			</div>
+			<div class="bottom-modal">
+				<a class="button back" title="" href="{{ path('competition', {'slideNr': 3}) }}"><i class="fa fa-angle-double-left"></i>Poprzedni slajd</a>
+				<div class="pagination-slide pagination-bottom">
+					<span>Slajd 04/08</span>
+				</div>
+				<a class="button next" title="" href="{{ path('competition', {'slideNr': 5}) }}">Następny slajd<i class="fa fa-angle-double-right"></i></a>
+			</div>
+		</div>
     </div>
 {% endblock %}

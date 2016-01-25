@@ -160,10 +160,20 @@
         }
         &.slide3 {
             position: relative;
+            .row {
+                @media (min-width: @screen-lg-min) {
+                    background: url('/assets/images/bottle.png') 304px 260px no-repeat;
+                    padding-bottom: 100px;
+                }
+            }
             .left-box {
                 position: static;
+                @media (min-width: @screen-sm-min) {
+                    padding-left: 3.5%
+                }
             }
             .head {
+                margin-top: 20px;
                 h1 {
                     margin: 0;
                 }
@@ -171,7 +181,7 @@
                     left: 3.5%;
                     margin-top: 0;
                     position: absolute;
-                    top: 25px;
+                    top: 80px;
                     //width: 70%;
                 }
             }
@@ -179,7 +189,22 @@
                 font-size: 24px;
                 line-height: 30px;
                 @media (min-width: @screen-lg-min) {
-                    margin: 150px 0 0 7.5%;
+                    margin: 215px 0 0 4%;
+                }
+            }
+            .right-box img {
+                @media (min-width: @screen-md-min) {
+                    margin-top: 100px;
+                }
+                @media (min-width: @screen-lg-min) {
+                    margin-top: 215px;
+                }
+            }
+        }
+        &.slide4 {
+            h1 {
+                @media (min-width: @screen-lg-min) {
+                    margin-top: 190px;
                 }
             }
         }
@@ -226,24 +251,27 @@
             span {
                 margin-top: 16px;
             }
-            @media (min-width: @screen-xs-min) {
+            @media (min-width: @screen-md-min) {
+                display: block;
+            }
+            /*@media (min-width: @screen-xs-min) {
                 display: block;
                 float: left;
             }
             @media (min-width: @screen-md-min) {
                 float: none;
-            }
+            }*/
         }
         .next {
             .button(@bgColorDark, @bgColorDarkHover, @colorYellow, @colorWhite, right);
             float: right;
             font-size: 17px;
+            width: 100%;
             @media (min-width: @screen-xs-min) {
                 font-size: 24px;
-                width: 67%;
             }
             @media (min-width: @screen-sm-min) {
-                width: 50%;
+                width: 49%;
             }
             @media (min-width: @screen-md-min) {
                 margin-top: -34px;
@@ -255,12 +283,13 @@
             float: left;
             font-size: 17px;
             padding-left: 0;
+            margin-bottom: 10px;
+            width: 100%;
             @media (min-width: @screen-xs-min) {
                 font-size: 24px;
-                width: 67%;
             }
             @media (min-width: @screen-sm-min) {
-                width: 50%;
+                width: 49%;
             }
             @media (min-width: @screen-md-min) {
                 //margin-top: -34px;
