@@ -9215,6 +9215,11 @@ label {
     margin-top: 215px;
   }
 }
+@media (min-width: 1200px) {
+  .modalBody .competition.slide4 h1 {
+    margin-top: 190px;
+  }
+}
 .modalBody .competition .right-box {
   position: relative;
 }
