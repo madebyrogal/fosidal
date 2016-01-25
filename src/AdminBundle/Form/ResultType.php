@@ -5,7 +5,6 @@ namespace AdminBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class ResultType extends AbstractType
 {
@@ -17,19 +16,19 @@ class ResultType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('name', TextType::class, array('label' => 'Imię:', 'max_length'=> '255'))
-                ->add('surname', TextType::class, array('label' => 'Nazwisko:', 'max_length'=> '255'))
-                ->add('email', TextType::class, array('label' => 'Adres e-mail:', 'max_length'=> '255'))
-                ->add('npwz', TextType::class, array('label' => 'NPWZ:', 'max_length'=> '255'))
-                ->add('specialization', TextType::class, array('label' => 'Specjalizacja:', 'max_length'=> '255'))
-                ->add('street', TextType::class, array('label' => 'Ulica:', 'max_length'=> '255'))
-                ->add('houseNr', TextType::class, array('label' => 'Nr domu:', 'max_length'=> '255'))
-                ->add('flatNr', TextType::class, array('label' => 'Lokal:', 'max_length'=> '255', 'required'=>false))
-                ->add('postCode', TextType::class, array('label' => 'Kod pocztowy:', 'max_length'=> '255'))
-                ->add('city', TextType::class, array('label' => 'Miasto:', 'max_length'=> '255'))
-                ->add('phone', TextType::class, array('label' => 'Telefon:', 'max_length'=> '255'))
-                ->add('agree1')
-                ->add('agree2')
+                ->add('name', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Imię:', 'max_length'=> '255'))
+                ->add('surname', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Nazwisko:', 'max_length'=> '255'))
+                ->add('email', 'Symfony\Component\Form\Extension\Core\Type\EmailType', array('label' => 'Adres e-mail:', 'max_length'=> '255'))
+                ->add('street', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Ulica:', 'max_length'=> '255'))
+                ->add('houseNr', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Nr domu:', 'max_length'=> '255'))
+                ->add('flatNr', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Lokal:', 'max_length'=> '255', 'required'=>false))
+                ->add('postCode', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Kod pocztowy:', 'max_length'=> '255'))
+                ->add('city', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Miasto:', 'max_length'=> '255', 'required'=>true))
+                ->add('phone', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Telefon:', 'max_length'=> '255'))
+                ->add('agree1', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array('required'=>true))
+                ->add('agree2', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array('required'=>true))
+                ->add('points', 'Symfony\Component\Form\Extension\Core\Type\HiddenType')
+                ->add('content', 'Symfony\Component\Form\Extension\Core\Type\HiddenType')
         ;
     }
 

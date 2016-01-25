@@ -19,7 +19,7 @@ class AnswerType extends AbstractType
             ->add('name')
             ->add('isCorrect')
             ->add('position')
-            ->add('question', EntityType::class, array('class' => 'AdminBundle:Question', 'choice_label' => 'name'))
+            ->add('question', 'Symfony\Bridge\Doctrine\Form\Type\EntityType', array('class' => 'AdminBundle:Question', 'choice_label' => 'name'))
         ;
     }
     

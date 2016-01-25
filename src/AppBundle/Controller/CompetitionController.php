@@ -8,7 +8,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use AdminBundle\Entity\Result;
-use AdminBundle\Form\ResultType;
 
 /**
  * @Route("konkurs")
@@ -76,13 +75,15 @@ class CompetitionController extends Controller
             return $this->redirectToRoute('competitionQuestion');
         }
         $result = new Result();
-        $form = $this->createForm(ResultType::class, $result, array('action' => $this->generateUrl('competitionEnd')));
+        $form = $this->createForm('AdminBundle\Form\ResultType', $result, array('action' => $this->generateUrl('competitionEnd')));
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // ... perform some action, such as saving the task to the database
+            $result->setSurvey($quiz->getQuiz());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($result);
+            $em->flush();
             return $this->redirectToRoute('competitionThanks');
         }
-
 
         return $this->render('AppBundle:Competition:end.html.twig', array('form' => $form->createView()));
     }
@@ -91,9 +92,13 @@ class CompetitionController extends Controller
      * @Route("/dziekujemy.html", name="competitionThanks")
      * @Method({"GET", "HEAD"})
      */
-    public function saveQuizAction()
+    public function saveQuizAction(Request $request)
     {
-
+        $quiz = $this->get('app.quiz');
+        if (!$quiz->validEnd() || empty($request->headers->get('referer'))) {
+            return $this->redirectToRoute('competitionQuestion');
+        }
+        $quiz->close();
         return $this->render('AppBundle:Competition:thanksPage.html.twig', array());
     }
 
@@ -131,13 +136,17 @@ class CompetitionController extends Controller
     
     private function mainpulateRequst(Request $request){
         $result = $request->request->get('result');
-        //NPWZ
-        $fakeNpwz = $request->request->get('npwz');
-        $result['npwz'] = $result['npwz'] . join('', $fakeNpwz);
+        $session = $this->get('session');
+        $sessionData = $session->get('quiz');
+        //From session points and content
+        $result['points'] = $sessionData['points'];
+        $result['content'] = json_encode($sessionData['question']);
+        //postCode
+        $fakePostCode = $request->request->get('postCode');
+        $result['postCode'] = $result['postCode'] . join('', $fakePostCode);
         $request->request->set('result', $result);
-        //Clear
-        $request->request->remove('npwz');
-        
+        //Clear request
+        $request->request->remove('postCode');
         
         return $request;
     }

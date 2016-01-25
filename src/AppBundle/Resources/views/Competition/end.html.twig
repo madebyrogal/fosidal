@@ -11,52 +11,56 @@
             <div class="errors">{{ form_errors(form) }}</div>
             <div class="row formRow">
                 <div class="col-sm-4">{{ form_label(form.name) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.name, {'attr': {'placeholder': 'Wpisz imię'}}) }}</div>
-            </div>
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.surname) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.surname, {'attr': {'placeholder': 'Wpisz nazwisko'}}) }}</div>
-            </div>
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.email) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.email, {'attr': {'placeholder': 'Wpisz adres e-mail'}}) }}</div>
-            </div>
-            <div class="row formRow npwz">
-                <div class="col-sm-4">{{ form_label(form.npwz) }}</div>
                 <div class="col-sm-8">
-                    {{ form_widget(form.npwz, {'attr': {'maxlength': 1}}) }}
-                    <input type="text" name="npwz[]" required="required" maxlength="1">
-                    <input type="text" name="npwz[]" required="required" maxlength="1">
-                    <input type="text" name="npwz[]" required="required" maxlength="1">
-                    <input type="text" name="npwz[]" required="required" maxlength="1">
-                    <input type="text" name="npwz[]" required="required" maxlength="1">
-                    <input type="text" name="npwz[]" required="required" maxlength="1">
+                    {{ form_errors(form.name) }}
+                    {{ form_widget(form.name, {'attr': {'placeholder': 'Wpisz imię', 'pattern':"[a-zA-Z -]*"}}) }}
                 </div>
             </div>
             <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.specialization) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.specialization, {'attr': {'placeholder': 'Wpisz specjalizację'}}) }}</div>
+                <div class="col-sm-4">{{ form_label(form.surname) }}</div>
+                <div class="col-sm-8">
+                     {{ form_errors(form.surname) }}
+                    {{ form_widget(form.surname, {'attr': {'placeholder': 'Wpisz nazwisko', 'pattern':"[a-zA-Z -]*"}}) }}
+                </div>
             </div>
             <div class="row formRow">
+                <div class="col-sm-4">{{ form_label(form.email) }}</div>
+                <div class="col-sm-8">
+                    {{ form_errors(form.email) }}
+                    {{ form_widget(form.email, {'attr': {'placeholder': 'Wpisz adres e-mail'}}) }}
+                </div>
+            </div>         
+            <div class="row formRow">
                 <div class="col-sm-4">{{ form_label(form.street) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.street, {'attr': {'placeholder': 'Wpisz ulicę'}}) }}</div>
+                <div class="col-sm-8">
+                    {{ form_errors(form.street) }}
+                    {{ form_widget(form.street, {'attr': {'placeholder': 'Wpisz ulicę'}}) }}
+                </div>
             </div>
             <div class="row formRow">
                 <div class="col-sm-4">{{ form_label(form.houseNr) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.houseNr) }}</div>
+                <div class="col-sm-8">
+                    {{ form_errors(form.houseNr) }}
+                    {{ form_widget(form.houseNr) }}
+                </div>
             </div>
             <div class="row formRow">
                 <div class="col-sm-4">{{ form_label(form.flatNr) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.flatNr) }}</div>
+                <div class="col-sm-8">
+                    {{ form_errors(form.flatNr) }}
+                    {{ form_widget(form.flatNr) }}
+                </div>
             </div>
             <div class="row formRow postCode">
                 <div class="col-sm-4">{{ form_label(form.postCode) }}</div>
                 <div class="col-sm-8">
-                    {{ form_widget(form.postCode, {'attr': {'maxlength': 1}}) }}
-                    <input type="text" name="postCode[]" required="required" maxlength="1">
-                    <input type="text" name="postCode[]" required="required" maxlength="1">
-                    <input type="text" name="postCode[]" required="required" maxlength="1">
-                    <input type="text" name="postCode[]" required="required" maxlength="1">
+                    {{ form_errors(form.postCode) }}
+                    {{ form_widget(form.postCode, {value : form.vars.value.postCode | slice(0, 1)}) }}
+{#                    <input type="text" id="result_postCode" name="result[postCode]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(0, 1)}}" pattern="\d{1}">#}
+                    <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(1, 1)}}" pattern="\d{1}">
+                    <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(2, 1)}}" pattern="\d{1}">
+                    <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(3, 1)}}" pattern="\d{1}">
+                    <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(4, 1)}}" pattern="\d{1}">
                 </div>
             </div>
             <div class="row formRow">

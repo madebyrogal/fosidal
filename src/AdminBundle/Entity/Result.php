@@ -2,7 +2,9 @@
 
 namespace AdminBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
+use AdminBundle\Entity\Survey;
 
 /**
  * Result
@@ -38,23 +40,9 @@ class Result
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="npwz", type="string", length=255, unique=true)
-     */
-    private $npwz;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="specialization", type="string", length=255)
-     */
-    private $specialization;
 
     /**
      * @var string
@@ -112,6 +100,31 @@ class Result
      */
     private $agree2;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="points", type="integer")
+     */
+    private $points;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Survey")
+     * @ORM\JoinColumn(name="survey_id", referencedColumnName="id")
+     */
+    private $survey;
+    
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="created", type="datetime")
+     */
+    private $created;
 
     /**
      * Get id
@@ -190,52 +203,6 @@ class Result
     public function getEmail()
     {
         return $this->email;
-    }
-
-    /**
-     * Set npwz
-     *
-     * @param string $npwz
-     * @return Result
-     */
-    public function setNpwz($npwz)
-    {
-        $this->npwz = $npwz;
-
-        return $this;
-    }
-
-    /**
-     * Get npwz
-     *
-     * @return string 
-     */
-    public function getNpwz()
-    {
-        return $this->npwz;
-    }
-
-    /**
-     * Set specialization
-     *
-     * @param string $specialization
-     * @return Result
-     */
-    public function setSpecialization($specialization)
-    {
-        $this->specialization = $specialization;
-
-        return $this;
-    }
-
-    /**
-     * Get specialization
-     *
-     * @return string 
-     */
-    public function getSpecialization()
-    {
-        return $this->specialization;
     }
 
     /**
@@ -421,4 +388,46 @@ class Result
     {
         return $this->agree2;
     }
+    
+     /**
+     * Get created
+     *
+     * @return Datetime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+    
+    function getPoints()
+    {
+        return $this->points;
+    }
+
+    function getContent()
+    {
+        return $this->content;
+    }
+
+    function setPoints($points)
+    {
+        $this->points = $points;
+    }
+
+    function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    function getSurvey()
+    {
+        return $this->survey;
+    }
+
+    function setSurvey(Survey $survey)
+    {
+        $this->survey = $survey;
+    }
+
+
 }

@@ -21,7 +21,7 @@ class QuestionType extends AbstractType
                 ->add('timeToAnswer')
                 ->add('points')
                 ->add('position')
-                ->add('survey', EntityType::class, array('class' => 'AdminBundle:Survey', 'choice_label' => 'name'))
+                ->add('survey', 'Symfony\Bridge\Doctrine\Form\Type\EntityType', array('class' => 'AdminBundle:Survey', 'choice_label' => 'name'))
         ;
     }
 

@@ -44,6 +44,10 @@ class Quiz
     {
         $this->session->set('quiz', $this->prepareDataSession());
     }
+    
+    public function close(){
+        $this->session->remove('quiz');
+    }
 
     public function getQuiz()
     {
@@ -85,6 +89,10 @@ class Quiz
     public function valid($quesitonId)
     {
         $quize = $this->session->get('quiz');
+        if(empty($quize)){
+            return false;
+        }
+        //Dubel cofniecie pytani
         if(isset($quize['question'][$quesitonId])){
             
             return false;
