@@ -1,17 +1,27 @@
 (function ($) {
     $.fn.quiz = function (option) {
+        //Main container
         var container = $(this);
+        //Answer element
         var elems = container.find('li');
+        //Button to next question
         var nextButton = $('#nextQuestion');
-        var timer = $(".countdown");
+        //Visual of timer
+        var countdown = $(".countdown");
+        //Time to answer
+        var time = parseInt(container.data('time'));
+        var timerHandler;
+        //Url to check data
         var url = container.data('url');
         toogleNextButton();
+        timerStart();
         var data = {
             'questionNr': container.data('question'),
             'token': container.data('token')
         }
 
         function checkAnswer() {
+            timerStop();
             var selectedAnswer = $(this);
             data.answerNr = $(this).data('answer');
             selectedAnswer.addClass('active');
@@ -28,7 +38,7 @@
                     toogleNextButton('enabled');
                     disablePlugin();
                 },
-                error: function(response){
+                error: function (response) {
                     window.location.href = response.responseJSON.url;
                 }
             });
@@ -48,15 +58,15 @@
                 correctAnswer.addClass('ok');
             }
         }
-        
-        function toogleNextButton(status){
+
+        function toogleNextButton(status) {
             status = status || 'disabled';
-            
-            if(status === 'enabled'){
+
+            if (status === 'enabled') {
                 nextButton.removeClass('disabled');
                 nextButton.unbind('click');
             } else {
-                nextButton.on('click', function(e){
+                nextButton.on('click', function (e) {
                     e.preventDefault();
                 });
                 nextButton.addClass('disabled');
@@ -68,14 +78,31 @@
                 $(this).unbind('click');
             });
         }
+        
+        function timerStart() {
+            timerHandler = setInterval(countDown, 1000)
+        }
 
-        function timerStart(){
-            
+         function countDown() {
+            if(time > 0){
+                time--;
+                displayCountDown(time);
+            } else {
+                //TODO go to next question and save the answer
+            }
+        }
+
+        function displayCountDown(timeToDisplay) {
+            countdown.html(timeToDisplay);
+        }
+
+        function timerStop() {
+            clearInterval(timerHandler);
+            data.timeLeft = time;
         }
 
         return elems.each(function () {
             $(this).on('click', checkAnswer);
-            timerStart();
         });
     }
 })(jQuery);
