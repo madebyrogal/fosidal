@@ -9220,6 +9220,19 @@ label {
     margin-top: 190px;
   }
 }
+.modalBody .competition.slide6 .right-box img {
+  margin-top: 90px;
+}
+@media (min-width: 992px) {
+  .modalBody .competition.slide7 .right-box img {
+    margin-left: -20px;
+  }
+}
+.modalBody .competition .left-box p {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 40px 8% 0 9%;
+}
 .modalBody .competition .right-box {
   position: relative;
 }
@@ -9260,13 +9273,6 @@ label {
   font-size: 24px;
   line-height: 31px;
   margin: 0 auto;
-  /*@media (min-width: @screen-xs-min) {
-                display: block;
-                float: left;
-            }
-            @media (min-width: @screen-md-min) {
-                float: none;
-            }*/
 }
 .modalBody .competition .pagination-bottom span {
   margin-top: 16px;
