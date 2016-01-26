@@ -2,6 +2,7 @@
 /app/cache/*
 !app/cache/.gitkeep
 /app/bootstrap.php.cache
+/composer.lock
 
 #Logs
 /app/logs/*

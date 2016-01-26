@@ -3,6 +3,7 @@
         var container = $(this);
         var elems = container.find('li');
         var nextButton = $('#nextQuestion');
+        var timer = $(".countdown");
         var url = container.data('url');
         toogleNextButton();
         var data = {
@@ -68,13 +69,13 @@
             });
         }
 
+        function timerStart(){
+            
+        }
 
         return elems.each(function () {
             $(this).on('click', checkAnswer);
+            timerStart();
         });
     }
 })(jQuery);
-
-$(document).ready(function () {
-
-});
