@@ -72,6 +72,7 @@ class CompetitionController extends Controller
         
         $quiz = $this->get('app.quiz');
         if (!$quiz->validEnd()) {
+            
             return $this->redirectToRoute('competitionQuestion');
         }
         $result = new Result();
@@ -82,6 +83,7 @@ class CompetitionController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($result);
             $em->flush();
+            
             return $this->redirectToRoute('competitionThanks');
         }
 
@@ -96,9 +98,11 @@ class CompetitionController extends Controller
     {
         $quiz = $this->get('app.quiz');
         if (!$quiz->validEnd() || empty($request->headers->get('referer'))) {
+            
             return $this->redirectToRoute('competitionQuestion');
         }
         $quiz->close();
+        
         return $this->render('AppBundle:Competition:thanksPage.html.twig', array());
     }
 
@@ -109,16 +113,19 @@ class CompetitionController extends Controller
     public function checkAnswerAction(Request $request)
     {
         if ($request->request->get('token') !== $this->get('form.csrf_provider')->generateCsrfToken('')) {
+            
             return new JsonResponse(null, JsonResponse::HTTP_FORBIDDEN);
         }
         $quiz = $this->get('app.quiz');
         if (!$quiz->valid($request->get('questionNr'))) {
             $data = array('url' => $this->generateUrl('competitionQuestion'));
+            
             return new JsonResponse($data, JsonResponse::HTTP_GONE);
         }
 
         $answer = $quiz->getCorrectAnswer($request->get('questionNr'), $request->get('answerNr'));
         $data = array('answerId' => $answer->getId());
+        
         return new JsonResponse($data, JsonResponse::HTTP_OK);
     }
 
