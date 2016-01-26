@@ -4,6 +4,26 @@
 
 {% block body %}
     <div class="modalBody clearfix">
-        <h1>Slide7</h1>
+        <div class="competition slide7">
+			<div class="row">
+				<div class="col-md-6 left-box">
+				    <h1>Terapia w III fazie (nadkażenia bakteryjnego) zakażenia górnych dróg oddechowych</h1>
+				    <p><span class="yellow">Konieczna jest konsultacja lekarska</span> oraz włączenie odpowiedniego antybiotyku, wspomaganego przez niesteroidowe lek przeciwzapalne i fenspiryd. <b>Fenspiryd hamując proces zapalny w oskrzelach zmniejsza odruch kaszlu.</b></p>
+				</div>
+				<div class="col-md-6 right-box">
+					<div class="pagination-slide pagination-top">
+						<span>Slajd 07/08</span>
+					</div>
+				    <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/fantom4.png') }}">
+				</div>
+			</div>
+			<div class="bottom-modal">
+				<a class="button back" title="" href="{{ path('competition', {'slideNr': 6}) }}"><i class="fa fa-angle-double-left"></i>Poprzedni slajd</a>
+				<div class="pagination-slide pagination-bottom">
+					<span>Slajd 07/08</span>
+				</div>
+				<a class="button next" title="" href="{{ path('competition', {'slideNr': 8}) }}">Następny slajd<i class="fa fa-angle-double-right"></i></a>
+			</div>
+		</div>
     </div>
 {% endblock %}
