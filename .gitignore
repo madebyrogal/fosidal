@@ -18,3 +18,5 @@
 
 #others
 /nbproject
+.idea/
+.DS_Store
