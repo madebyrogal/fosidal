@@ -49,6 +49,10 @@
                 }
             });
         }
+        
+        function sendFakeAnswer(){
+            
+        }
 
         function toogleClasses(correct, elem, answerId) {
             answerId = answerId || 0;
@@ -100,6 +104,9 @@
                 displayCountDown(time);
             } else {
                 //TODO go to next question and save the answer
+                disablePlugin();
+                toogleNextButton('enabled');
+                sendFakeAnswer();
             }
         }
 
