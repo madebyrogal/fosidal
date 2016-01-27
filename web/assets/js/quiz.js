@@ -123,6 +123,9 @@
         }
 
         function displayCountDown(timeToDisplay) {
+            var min = sprintf("%02d", Math.floor(timeToDisplay) / 60);
+            var sec = sprintf("%02d", timeToDisplay % 60);
+            timeToDisplay = min + ':' + sec;
             countdown.html(timeToDisplay);
         }
 
