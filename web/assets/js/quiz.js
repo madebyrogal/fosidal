@@ -13,6 +13,10 @@
         var timerHandler;
         //Url to check data
         var url = container.data('url');
+        //Point for question
+        var point = parseInt(container.data('point'));
+        //Points assume
+        var points = parseInt(container.data('points'));
         toogleNextButton();
         timerStart();
         var data = {
@@ -32,6 +36,8 @@
                 success: function (response) {
                     if (data.answerNr === response.answerId) {
                         toogleClasses(true, selectedAnswer)
+                        //Add points
+                        addPoints();
                     } else {
                         toogleClasses(false, selectedAnswer, response.answerId)
                     }
@@ -57,6 +63,11 @@
                 correctAnswer.find('.boxLetter span').empty();
                 correctAnswer.addClass('ok');
             }
+        }
+        
+        function addPoints(){
+            var newPoints = points + point;
+            $('#pointAssume').html(newPoints);
         }
 
         function toogleNextButton(status) {

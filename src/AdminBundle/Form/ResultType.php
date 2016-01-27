@@ -22,7 +22,7 @@ class ResultType extends AbstractType
                 ->add('street', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Ulica:', 'max_length'=> '255'))
                 ->add('houseNr', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Nr domu:', 'max_length'=> '255'))
                 ->add('flatNr', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Lokal:', 'max_length'=> '255', 'required'=>false))
-                ->add('postCode', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Kod pocztowy:', 'max_length'=> '255'))
+                ->add('postCode', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Kod pocztowy:', 'max_length'=> '1'))
                 ->add('city', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Miasto:', 'max_length'=> '255', 'required'=>true))
                 ->add('phone', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Telefon:', 'max_length'=> '255'))
                 ->add('agree1', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array('required'=>true))

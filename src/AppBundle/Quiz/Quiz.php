@@ -44,8 +44,9 @@ class Quiz
     {
         $this->session->set('quiz', $this->prepareDataSession());
     }
-    
-    public function close(){
+
+    public function close()
+    {
         $this->session->remove('quiz');
     }
 
@@ -70,16 +71,16 @@ class Quiz
         return $data;
     }
 
-    public function getCorrectAnswer($questionId, $answerId)
+    public function getCorrectAnswer($questionId, $answerId, $timeLeft)
     {
         $question = $this->em->getRepository('AdminBundle:Question')->find($questionId);
         $answer = $question->getCorrectAnswer();
         $quizData = $this->session->get('quiz');
         if ($answer->getId() == $answerId) {
             $quizData['points'] += $question->getPoints();
-            $quizData['question'][$question->getId()] = $question->getPoints();
+            $quizData['question'][$question->getId()] = array('point' => $question->getPoints(), 'timeLeft' => $timeLeft);
         } else {
-            $quizData['question'][$question->getId()] = 0;
+            $quizData['question'][$question->getId()] = array('point' => 0, 'timeLeft' => $timeLeft);
         }
         $this->session->set('quiz', $quizData);
 
@@ -89,25 +90,33 @@ class Quiz
     public function valid($quesitonId)
     {
         $quize = $this->session->get('quiz');
-        if(empty($quize)){
+        if (empty($quize)) {
             return false;
         }
-        //Dubel cofniecie pytani
-        if(isset($quize['question'][$quesitonId])){
-            
+        //Dubel cofniecie pytania
+        if (isset($quize['question'][$quesitonId])) {
+
             return false;
         } else {
             return true;
         }
     }
-    
-    public function validEnd(){
+
+    public function validEnd()
+    {
         $quize = $this->session->get('quiz');
-        if(count($quize['question']) === $this->quiz->getQuestions()->count()){
+        if (count($quize['question']) === $this->quiz->getQuestions()->count()) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public function getPoints()
+    {
+        $quizData = $this->session->get('quiz');
+
+        return $quizData['points'];
     }
 
 }

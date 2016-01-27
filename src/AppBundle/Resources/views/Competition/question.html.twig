@@ -14,7 +14,7 @@
                 <div class="pointDesc">
                     <span class="core">Twój<br/>wynik:<br /></span>
                     <span class="allPoint">(Możliwych do zdobycia: {{quiz.getMaxPoints}})</span>
-                    <div class="pointAssume"><b>0</b> pkt</span>
+                    <div class="pointAssume"><b id="pointAssume">{{ points }}</b> pkt</span>
                 </div>
             </li>
             <li class="pointToCollect">
@@ -27,7 +27,7 @@
         <div class="questionCounterTop"><b>Quiz.</b> Pytanie {{questionNumber | qNumber}}/{{quiz.getQuestions.count | qNumber}}</div>
         <div class="questionContainer">
             <h1>{{question.name}}</h1>
-            <ul class='questions' data-question="{{question.id}}" data-token="{{token}}" data-url="{{path('competitionCheckAnswer')}}" data-time="{{question.timeToAnswer}}">
+            <ul class='questions' data-question="{{question.id}}" data-token="{{token}}" data-url="{{path('competitionCheckAnswer')}}" data-time="{{question.timeToAnswer}}" data-point="{{question.getPoints}}" data-points="{{points}}">
                 {% for answer in question.getAnswers %}
                 <li class='clearfix' data-answer="{{answer.id}}">
                     <div class='boxLetter'><span>{{ loop.index | convToLetter }}</span></div>

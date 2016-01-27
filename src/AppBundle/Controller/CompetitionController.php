@@ -40,7 +40,7 @@ class CompetitionController extends Controller
         }
         $data = $quiz->getNextQuestion();
 
-        return $this->render('AppBundle:Competition:question.html.twig', $this->prepareViewData($survey, $data->question, $data->questionNr));
+        return $this->render('AppBundle:Competition:question.html.twig', $this->prepareViewData($survey, $data->question, $quiz->getPoints(), $data->questionNr));
     }
 
     /**
@@ -57,7 +57,7 @@ class CompetitionController extends Controller
             return $this->redirectToRoute('competitionEnd');
         }
 
-        return $this->render('AppBundle:Competition:question.html.twig', $this->prepareViewData($survey, $data->question, $data->questionNr));
+        return $this->render('AppBundle:Competition:question.html.twig', $this->prepareViewData($survey, $data->question, $quiz->getPoints(), $data->questionNr));
     }
 
     /**
@@ -123,17 +123,18 @@ class CompetitionController extends Controller
             return new JsonResponse($data, JsonResponse::HTTP_GONE);
         }
 
-        $answer = $quiz->getCorrectAnswer($request->get('questionNr'), $request->get('answerNr'));
+        $answer = $quiz->getCorrectAnswer($request->get('questionNr'), $request->get('answerNr'), $request->get('timeLeft'));
         $data = array('answerId' => $answer->getId());
         
         return new JsonResponse($data, JsonResponse::HTTP_OK);
     }
 
-    private function prepareViewData($quize, $question, $questionNr = 1)
+    private function prepareViewData($quize, $question, $points = 0, $questionNr = 1)
     {
         $data = array(
             'quiz' => $quize,
             'question' => $question,
+            'points' => $points,
             'questionNumber' => $questionNr,
             'token' => $this->get('form.csrf_provider')->generateCsrfToken('')
         );
