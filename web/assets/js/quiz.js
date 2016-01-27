@@ -51,7 +51,20 @@
         }
         
         function sendFakeAnswer(){
-            
+            data.timeLeft = 0;
+            data.answerNr = 0;
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: data,
+                success: function (response) {
+                    toogleNextButton('enabled');
+                    moveToNextQuestion();
+                },
+                error: function (response) {
+                    window.location.href = response.responseJSON.url;
+                }
+            });
         }
 
         function toogleClasses(correct, elem, answerId) {
@@ -103,9 +116,8 @@
                 time--;
                 displayCountDown(time);
             } else {
-                //TODO go to next question and save the answer
+                timerStop();
                 disablePlugin();
-                toogleNextButton('enabled');
                 sendFakeAnswer();
             }
         }
@@ -117,6 +129,10 @@
         function timerStop() {
             clearInterval(timerHandler);
             data.timeLeft = time;
+        }
+        
+        function moveToNextQuestion(){
+            nextButton.trigger('click');
         }
 
         return elems.each(function () {

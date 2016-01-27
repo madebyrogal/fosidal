@@ -10,7 +10,7 @@ class NotificationController extends Controller
 {
     /**
      * @Route("zglos_dzialania_nieporzadane.html", name="notification")
-     * @Method({"GET", "HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {

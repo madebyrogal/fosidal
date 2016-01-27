@@ -10,7 +10,7 @@ class AwardController extends Controller
 {
     /**
      * @Route("nagrody.html",  name="award")
-     * @Method({"GET", "HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {

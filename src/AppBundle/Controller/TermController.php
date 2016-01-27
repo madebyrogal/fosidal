@@ -10,7 +10,7 @@ class TermController extends Controller
 {
     /**
      * @Route("regulamin.html", name="term")
-     * @Method({"GET","HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {

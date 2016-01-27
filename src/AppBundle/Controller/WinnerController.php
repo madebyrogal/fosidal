@@ -10,7 +10,7 @@ class WinnerController extends Controller
 {
     /**
      * @Route("zwyciezcy.html", name="winner")
-     * @Method({"GET", "HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {

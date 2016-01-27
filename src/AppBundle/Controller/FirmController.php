@@ -10,7 +10,7 @@ class FirmController extends Controller
 {
     /**
      * @Route("o_firmie.html", name="firm")
-     * @Method({"GET", "HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {

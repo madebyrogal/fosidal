@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     /**
      * @Route("kontakt.html", name="contact")
-     * @Method({"GET", "HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {

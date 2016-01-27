@@ -19,7 +19,7 @@ class CompetitionController extends Controller
      * @Route("/slajd/{slideNr}.html", defaults={"slideNr" = 1}, name="competition", requirements={
      *     "page": "\d+"
      * })
-     * @Method({"GET", "HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction($slideNr)
     {
@@ -28,7 +28,7 @@ class CompetitionController extends Controller
 
     /**
      * @Route("/pytania.html", name="competitionQuestion")
-     * @Method({"GET","HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function questionAction()
     {
@@ -45,7 +45,7 @@ class CompetitionController extends Controller
 
     /**
      * @Route("/pytania-next.html", name="competitionNexQuestion")
-     * @Method({"GET","HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function nextQuestionAction()
     {
@@ -62,14 +62,10 @@ class CompetitionController extends Controller
 
     /**
      * @Route("/formularz.html", name="competitionEnd")
-     * @Method({"GET", "POST","HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function endAction(Request $request)
     {
-        if($request->isMethod(Request::METHOD_POST)){
-            $this->mainpulateRequst($request);
-        }
-        
         $quiz = $this->get('app.quiz');
         if (!$quiz->validEnd()) {
             
@@ -77,7 +73,10 @@ class CompetitionController extends Controller
         }
         $result = new Result();
         $form = $this->createForm('AdminBundle\Form\ResultType', $result, array('action' => $this->generateUrl('competitionEnd')));
+        
+        $this->mainpulateRequst($request);
         $form->handleRequest($request);
+       
         if ($form->isSubmitted() && $form->isValid()) {
             $result->setSurvey($quiz->getQuiz());
             $em = $this->getDoctrine()->getManager();
@@ -92,7 +91,7 @@ class CompetitionController extends Controller
 
     /**
      * @Route("/dziekujemy.html", name="competitionThanks")
-     * @Method({"GET", "HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function saveQuizAction(Request $request)
     {
@@ -143,20 +142,20 @@ class CompetitionController extends Controller
     }
     
     private function mainpulateRequst(Request $request){
-        $result = $request->request->get('result');
-        $session = $this->get('session');
-        $sessionData = $session->get('quiz');
-        //From session points and content
-        $result['points'] = $sessionData['points'];
-        $result['content'] = json_encode($sessionData['question']);
-        //postCode
-        $fakePostCode = $request->request->get('postCode');
-        $result['postCode'] = $result['postCode'] . join('', $fakePostCode);
-        $request->request->set('result', $result);
-        //Clear request
-        $request->request->remove('postCode');
-        
-        return $request;
+        if($request->request->get('result')){
+            $result = $request->request->get('result');
+            $session = $this->get('session');
+            $sessionData = $session->get('quiz');
+            //From session points and content
+            $result['points'] = $sessionData['points'];
+            $result['content'] = json_encode($sessionData['question']);
+            //postCode
+            $fakePostCode = $request->request->get('postCode');
+            $result['postCode'] = $result['postCode'] . join('', $fakePostCode);
+            $request->request->set('result', $result);
+            //Clear request
+            $request->request->remove('postCode');
+        }
     }
 
 }

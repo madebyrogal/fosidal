@@ -10,7 +10,7 @@ class ResponsibilityController extends Controller
 {
     /**
      * @Route("odpowiedzialnosc_spoleczna.html", name="responsibility")
-     * @Method({"GET", "HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {

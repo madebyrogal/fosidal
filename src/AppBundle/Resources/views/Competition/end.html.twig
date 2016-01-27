@@ -55,7 +55,7 @@
                 <div class="col-sm-4">{{ form_label(form.postCode) }}</div>
                 <div class="col-sm-8">
                     {{ form_errors(form.postCode) }}
-                    {{ form_widget(form.postCode, {value : form.vars.value.postCode | slice(0, 1)}) }}
+                    {{ form_widget(form.postCode, {'attr': {'pattern':"\\d{1}", 'maxlength': '1'}}) }}
 {#                    <input type="text" id="result_postCode" name="result[postCode]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(0, 1)}}" pattern="\d{1}">#}
                     <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(1, 1)}}" pattern="\d{1}">
                     <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(2, 1)}}" pattern="\d{1}">
@@ -69,7 +69,7 @@
             </div>
             <div class="row formRow">
                 <div class="col-sm-4">{{ form_label(form.phone) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.phone, {'attr': {'placeholder': 'Wpisz nr telefonu'}}) }}</div>
+                <div class="col-sm-8">{{ form_widget(form.phone, {'attr': {'placeholder': 'Wpisz nr telefonu', 'pattern':'[0-9+- ]{9,16}'}}) }}</div>
             </div>
             <div class="row formRow formDesc">
                 <div class="col-sm-4"></div>

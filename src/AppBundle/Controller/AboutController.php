@@ -10,7 +10,7 @@ class AboutController extends Controller
 {
     /**
      * @Route("o_produkcie.html", name="about")
-     * @Method({"GET","HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {

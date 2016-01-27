@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     /**
      * @Route("/", name="home")
-     * @Method({"GET","HEAD"})
+     * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {
