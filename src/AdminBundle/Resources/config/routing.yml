@@ -1,0 +1,14 @@
+admin_answer:
+    resource: "@AdminBundle/Controller/AnswerController.php"
+    type:     annotation
+
+admin_question:
+    resource: "@AdminBundle/Controller/QuestionController.php"
+    type:     annotation
+
+admin:
+    resource: "@AdminBundle/Controller"
+    prefix:   /admin/
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
