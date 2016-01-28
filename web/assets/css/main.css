@@ -9223,6 +9223,9 @@ label {
 .modalBody .competition.slide6 .right-box img {
   margin-top: 90px;
 }
+.modalBody .competition.slide8 {
+  background: url('/assets/images/fosidal.png') no-repeat 0 0;
+}
 @media (min-width: 992px) {
   .modalBody .competition.slide7 .right-box img {
     margin-left: -20px;
