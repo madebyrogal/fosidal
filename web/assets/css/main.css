@@ -9226,6 +9226,16 @@ label {
 .modalBody .competition.slide8 {
   background: url('/assets/images/fosidal.png') no-repeat 0 0;
 }
+.modalBody .competition.slide8 p {
+  font-family: 'Open Sans';
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+}
+.modalBody .competition.slide8 p span {
+  font-size: 30px;
+  font-weight: 800;
+}
 @media (min-width: 992px) {
   .modalBody .competition.slide7 .right-box img {
     margin-left: -20px;
