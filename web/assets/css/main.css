@@ -9780,6 +9780,9 @@ label {
 .form form .checkBoxWraper:first-child {
   margin-top: 40px;
 }
+.form form .checkBoxWraper.last {
+  margin-bottom: 20px;
+}
 .form form .checkBoxWraper .checkBox {
   position: absolute;
   top: 0;

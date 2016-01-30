@@ -3,80 +3,80 @@
 {% block title %}Fosidal - Konkurs{% endblock %}
 
 {% block body %}
-<div class='modalBody clearfix form'>
-    {{ form_start(form) }}
-    <div class="row">
-        <div class="col-sm-6 left">
-            <h1>REJESTRACJA</h1>
-            <div class="errors">{{ form_errors(form) }}</div>
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.name) }}</div>
-                <div class="col-sm-8">
-                    {{ form_errors(form.name) }}
-                    {{ form_widget(form.name, {'attr': {'placeholder': 'Wpisz imię', 'pattern':"[a-zA-Z -]*"}}) }}
+    <div class='modalBody clearfix form'>
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-sm-6 left">
+                <h1>REJESTRACJA</h1>
+                <div class="errors">{{ form_errors(form) }}</div>
+                <div class="row formRow">
+                    <div class="col-sm-4">{{ form_label(form.name) }}</div>
+                    <div class="col-sm-8">
+                        {{ form_errors(form.name) }}
+                        {{ form_widget(form.name, {'attr': {'placeholder': 'Wpisz imię', 'pattern':"[a-zA-Z -]*"}}) }}
+                    </div>
+                </div>
+                <div class="row formRow">
+                    <div class="col-sm-4">{{ form_label(form.surname) }}</div>
+                    <div class="col-sm-8">
+                        {{ form_errors(form.surname) }}
+                        {{ form_widget(form.surname, {'attr': {'placeholder': 'Wpisz nazwisko', 'pattern':"[a-zA-Z -]*"}}) }}
+                    </div>
+                </div>
+                <div class="row formRow">
+                    <div class="col-sm-4">{{ form_label(form.email) }}</div>
+                    <div class="col-sm-8">
+                        {{ form_errors(form.email) }}
+                        {{ form_widget(form.email, {'attr': {'placeholder': 'Wpisz adres e-mail'}}) }}
+                    </div>
+                </div>         
+                <div class="row formRow">
+                    <div class="col-sm-4">{{ form_label(form.street) }}</div>
+                    <div class="col-sm-8">
+                        {{ form_errors(form.street) }}
+                        {{ form_widget(form.street, {'attr': {'placeholder': 'Wpisz ulicę'}}) }}
+                    </div>
+                </div>
+                <div class="row formRow">
+                    <div class="col-sm-4">{{ form_label(form.houseNr) }}</div>
+                    <div class="col-sm-8">
+                        {{ form_errors(form.houseNr) }}
+                        {{ form_widget(form.houseNr) }}
+                    </div>
+                </div>
+                <div class="row formRow">
+                    <div class="col-sm-4">{{ form_label(form.flatNr) }}</div>
+                    <div class="col-sm-8">
+                        {{ form_errors(form.flatNr) }}
+                        {{ form_widget(form.flatNr) }}
+                    </div>
+                </div>
+                <div class="row formRow postCode">
+                    <div class="col-sm-4">{{ form_label(form.postCode) }}</div>
+                    <div class="col-sm-8">
+                        {{ form_errors(form.postCode) }}
+                        {{ form_widget(form.postCode, {'attr': {'pattern':"\\d{1}", 'maxlength': '1'}}) }}
+                        {#                    <input type="text" id="result_postCode" name="result[postCode]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(0, 1)}}" pattern="\d{1}">#}
+                        <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(1, 1)}}" pattern="\d{1}">
+                        <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(2, 1)}}" pattern="\d{1}">
+                        <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(3, 1)}}" pattern="\d{1}">
+                        <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(4, 1)}}" pattern="\d{1}">
+                    </div>
+                </div>
+                <div class="row formRow">
+                    <div class="col-sm-4">{{ form_label(form.city) }}</div>
+                    <div class="col-sm-8">{{ form_widget(form.city, {'attr': {'placeholder': 'Wpisz miasto'}}) }}</div>
+                </div>
+                <div class="row formRow">
+                    <div class="col-sm-4">{{ form_label(form.phone) }}</div>
+                    <div class="col-sm-8">{{ form_widget(form.phone, {'attr': {'placeholder': 'Wpisz nr telefonu', 'pattern':'[0-9+- ]{9,16}'}}) }}</div>
+                </div>
+                <div class="row formRow formDesc">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-8">* Pola obowiązkowe</div>
                 </div>
             </div>
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.surname) }}</div>
-                <div class="col-sm-8">
-                     {{ form_errors(form.surname) }}
-                    {{ form_widget(form.surname, {'attr': {'placeholder': 'Wpisz nazwisko', 'pattern':"[a-zA-Z -]*"}}) }}
-                </div>
-            </div>
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.email) }}</div>
-                <div class="col-sm-8">
-                    {{ form_errors(form.email) }}
-                    {{ form_widget(form.email, {'attr': {'placeholder': 'Wpisz adres e-mail'}}) }}
-                </div>
-            </div>         
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.street) }}</div>
-                <div class="col-sm-8">
-                    {{ form_errors(form.street) }}
-                    {{ form_widget(form.street, {'attr': {'placeholder': 'Wpisz ulicę'}}) }}
-                </div>
-            </div>
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.houseNr) }}</div>
-                <div class="col-sm-8">
-                    {{ form_errors(form.houseNr) }}
-                    {{ form_widget(form.houseNr) }}
-                </div>
-            </div>
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.flatNr) }}</div>
-                <div class="col-sm-8">
-                    {{ form_errors(form.flatNr) }}
-                    {{ form_widget(form.flatNr) }}
-                </div>
-            </div>
-            <div class="row formRow postCode">
-                <div class="col-sm-4">{{ form_label(form.postCode) }}</div>
-                <div class="col-sm-8">
-                    {{ form_errors(form.postCode) }}
-                    {{ form_widget(form.postCode, {'attr': {'pattern':"\\d{1}", 'maxlength': '1'}}) }}
-{#                    <input type="text" id="result_postCode" name="result[postCode]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(0, 1)}}" pattern="\d{1}">#}
-                    <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(1, 1)}}" pattern="\d{1}">
-                    <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(2, 1)}}" pattern="\d{1}">
-                    <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(3, 1)}}" pattern="\d{1}">
-                    <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(4, 1)}}" pattern="\d{1}">
-                </div>
-            </div>
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.city) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.city, {'attr': {'placeholder': 'Wpisz miasto'}}) }}</div>
-            </div>
-            <div class="row formRow">
-                <div class="col-sm-4">{{ form_label(form.phone) }}</div>
-                <div class="col-sm-8">{{ form_widget(form.phone, {'attr': {'placeholder': 'Wpisz nr telefonu', 'pattern':'[0-9+- ]{9,16}'}}) }}</div>
-            </div>
-            <div class="row formRow formDesc">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-8">* Pola obowiązkowe</div>
-            </div>
-        </div>
-        <div class="col-sm-6 right">
+            <div class="col-sm-6 right">
                 <p>
                     Informujemy, że podane dane osobowe przetwarzane będą przez Polpharma Biuro Handlowe Sp. o.o. z siedzibą
                     w Warszawie 00-728, przy ul. Bobrowieckiej 6, zgodnie z ustawą z dnia 29 sierpnia 1997 r. o ochronie  danych
@@ -88,15 +88,19 @@
                     <div class="checkBox">{{ form_widget(form.agree1) }}</div>
                     Wyrażam zgodę na przetwarzanie moich danych osobowych w określonych powyżej celachpowyżej celach.
                 </div>
-                <div class="checkBoxWraper">
+                <div class="checkBoxWraper last">
                     <div class="checkBox">{{ form_widget(form.agree2) }} </div>
                     Wyrażam zgodę na otrzymywanie od Polpharma Biuro Handlowe Sp. z o.o. informacji handlowych drogą elektroniczną
                     na podany przeze mnie adres e-mail, zgodnie z ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną
                     (t.j. Dz. U. z 2013 r., poz. 1422).
                 </div>
+                <p>
+                    Uzupełnij poniższy formularz rejestracyjny w celu zapisania swojego zgłoszenia konkursowego. Podane dane
+                    będą niezbędne do dokonania wysyłki nagród do zwycięzców konkursu.
+                </p>
                 <button type="submit" class="saveForm">Zarejestruj się <i class="fa fa-angle-double-right"></i></button>
+            </div>
+            {{ form_end(form) }}
         </div>
-    {{ form_end(form) }}
     </div>
-</div>
 {% endblock %}
