@@ -4,14 +4,26 @@
 
 {% block body %}
     <div class='modalBody'>
-        <h1>Nagrody</h1>
-        <p>
-            Curabitur suscipit suscipit tellus. Sed aliquam ultrices mauris. Proin magna. Donec orci lectus, aliquam ut, faucibus non, 
-            euismod id, nulla. Nulla sit amet est. In ac felis quis tortor malesuada pretium. Praesent turpis. Nullam dictum felis eu
-            pede mollis pretium. Morbi nec metus. Vestibulum dapibus nunc ac augue. Maecenas vestibulum mollis diam. Fusce
-            ac felis sit amet ligula pharetra condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Fusce id purus. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi
-            sem ut ipsum. Pellentesque dapibus hendrerit tortor.
-        </p>
+        <div class="award">
+            <div class="row">
+                <div class="col-md-6 left-box">
+                    <div class="head">
+                        <h1>Na zwycięzców w konkursie czeka aż <b>150 atrakcyjnych nagród!</b></h1>
+                    </div>
+                    <div class="awardText">
+                        <p>W każdej z trzech tygodniowych edycji konkursu nagrodzonych zostanie <b>50 osób</b>, które jako pierwsze poprawnie odpowiedzą na wszystkie pytania zdobywając największą liczbę punktów. Łącznie w całym konkursie nagrodzonych zostanie <b>150 osób</b>.</p>
+                        <p>Każdy Uczestnik w danej tygodniowej edycji konkursu ma jedno podejście do rozwiązania zadania konkursowego.</p>
+                    </div>
+                    <a class="take-part" title="Konkus" href="{{path('competition')}}">Weź udział<i class="fa fa-angle-double-right"></i></a>
+                    <p>Konkurs trwa od 15.02 do 06.03.2016r.</p>
+                    <p>Tygodniowe edycje rozpoczynają się: 15.02, 22.02, 29.02.2016r.</p>
+                </div>
+                <div class="col-md-6 right-box">
+                    <div class="col-bg">
+                        <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/awards.png') }}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
