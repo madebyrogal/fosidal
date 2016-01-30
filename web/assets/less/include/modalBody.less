@@ -216,8 +216,15 @@
         &.slide8 {
             .row {
                 background: url('/assets/images/fosidal.png') no-repeat 0 0;
+                //background-size: contain;
                 margin: 0;
-                padding: 110px 0 89px;
+                padding: 10px 0 89px;
+                @media (min-width: @screen-sm-min) {
+                    padding-top: 50px;
+                }
+                @media (min-width: @screen-lg-min) {
+                    padding-top: 110px;
+                }
             }
             p {
                 font-family: 'Open Sans';
@@ -230,16 +237,23 @@
                     font-weight: 800;
                     line-height: 30px;
                 }
-                &.topText {
+                @media (min-width: @screen-sm-min) {
+                    &.topText, &.centerText, &.bottomText {
+                        margin-left: 5%;
+                    }
+                }
+                @media (min-width: @screen-lg-min) {
+                    &.topText {
                     margin: 0 0 0 148px;
-                }
-                &.centerText {
-                    margin: 64px 0 0 552px;
-                    width: 32%;
-                }
-                &.bottomText {
-                    margin: 30px 0 0 168px;
-                    width: 43%;
+                    }
+                    &.centerText {
+                        margin: 60px 0 0 552px;
+                        width: 32%;
+                    }
+                    &.bottomText {
+                        margin: 26px 0 0 168px;
+                        width: 43%;
+                    }
                 }
             }
         }
