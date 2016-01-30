@@ -9772,26 +9772,6 @@ label {
   color: #da2828;
   margin-top: 15px;
 }
-.form form .checkBoxWraper {
-  padding-left: 25px;
-  position: relative;
-  margin-top: 20px;
-}
-.form form .checkBoxWraper:first-child {
-  margin-top: 40px;
-}
-.form form .checkBoxWraper.last {
-  margin-bottom: 20px;
-}
-.form form .checkBoxWraper .checkBox {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.form form .checkBoxDesc {
-  float: left;
-  width: 90%;
-}
 .form form .saveForm {
   cursor: pointer;
   background-color: #3a3a3a;
@@ -9821,6 +9801,24 @@ label {
 .form form .saveForm:hover {
   background-color: #262626;
   text-decoration: none;
+}
+.form .checkBoxWraper {
+  padding-left: 25px;
+  position: relative;
+  margin-top: 20px;
+}
+.form .checkBoxWraper ul li {
+  color: red;
+  font-weight: bold;
+  list-style-type: none;
+}
+.form .checkBoxWraper.last {
+  margin-bottom: 20px;
+}
+.form .checkBoxWraper .checkBox {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 body {
   font-family: 'Open sans';

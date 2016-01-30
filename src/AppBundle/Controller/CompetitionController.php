@@ -76,7 +76,6 @@ class CompetitionController extends Controller
         
         $this->mainpulateRequst($request);
         $form->handleRequest($request);
-       
         if ($form->isSubmitted() && $form->isValid()) {
             $result->setSurvey($quiz->getQuiz());
             $em = $this->getDoctrine()->getManager();
@@ -151,7 +150,7 @@ class CompetitionController extends Controller
             $result['content'] = json_encode($sessionData['question']);
             //postCode
             $fakePostCode = $request->request->get('postCode');
-            $result['postCode'] = $result['postCode'] . join('', $fakePostCode);
+            $result['postCode'] = $result['postCode'][0] . join('', $fakePostCode);
             $request->request->set('result', $result);
             //Clear request
             $request->request->remove('postCode');

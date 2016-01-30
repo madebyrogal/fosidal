@@ -55,8 +55,7 @@
                     <div class="col-sm-4">{{ form_label(form.postCode) }}</div>
                     <div class="col-sm-8">
                         {{ form_errors(form.postCode) }}
-                        {{ form_widget(form.postCode, {'attr': {'pattern':"\\d{1}", 'maxlength': '1'}}) }}
-                        {#                    <input type="text" id="result_postCode" name="result[postCode]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(0, 1)}}" pattern="\d{1}">#}
+                        {{ form_widget(form.postCode, {'attr':{'value':form.vars.value.postCode | slice(0, 1), 'pattern':"\\d{1}", 'maxlength': '1'}}) }}
                         <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(1, 1)}}" pattern="\d{1}">
                         <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(2, 1)}}" pattern="\d{1}">
                         <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(3, 1)}}" pattern="\d{1}">
@@ -65,11 +64,17 @@
                 </div>
                 <div class="row formRow">
                     <div class="col-sm-4">{{ form_label(form.city) }}</div>
-                    <div class="col-sm-8">{{ form_widget(form.city, {'attr': {'placeholder': 'Wpisz miasto'}}) }}</div>
+                    <div class="col-sm-8">
+                        {{ form_errors(form.city) }}
+                        {{ form_widget(form.city, {'attr': {'placeholder': 'Wpisz miasto'}}) }}
+                    </div>
                 </div>
                 <div class="row formRow">
                     <div class="col-sm-4">{{ form_label(form.phone) }}</div>
-                    <div class="col-sm-8">{{ form_widget(form.phone, {'attr': {'placeholder': 'Wpisz nr telefonu', 'pattern':'[0-9+- ]{9,16}'}}) }}</div>
+                    <div class="col-sm-8">
+                        {{ form_errors(form.phone) }}
+                        {{ form_widget(form.phone, {'attr': {'placeholder': 'Wpisz nr telefonu', 'pattern':'[0-9- +]{9,16}'}}) }}
+                    </div>
                 </div>
                 <div class="row formRow formDesc">
                     <div class="col-sm-4"></div>
@@ -85,11 +90,17 @@
                     i ich poprawiania.
                 </p>
                 <div class="checkBoxWraper">
-                    <div class="checkBox">{{ form_widget(form.agree1) }}</div>
+                    {{ form_errors(form.agree1) }}
+                    <div class="checkBox">
+                        {{ form_widget(form.agree1) }}
+                    </div>
                     Wyrażam zgodę na przetwarzanie moich danych osobowych w określonych powyżej celachpowyżej celach.
                 </div>
                 <div class="checkBoxWraper last">
-                    <div class="checkBox">{{ form_widget(form.agree2) }} </div>
+                    {{ form_errors(form.agree2) }}
+                    <div class="checkBox">
+                        {{ form_widget(form.agree2) }}
+                    </div>
                     Wyrażam zgodę na otrzymywanie od Polpharma Biuro Handlowe Sp. z o.o. informacji handlowych drogą elektroniczną
                     na podany przeze mnie adres e-mail, zgodnie z ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną
                     (t.j. Dz. U. z 2013 r., poz. 1422).

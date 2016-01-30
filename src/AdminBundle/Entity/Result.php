@@ -5,6 +5,7 @@ namespace AdminBundle\Entity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use AdminBundle\Entity\Survey;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Result
@@ -26,7 +27,8 @@ class Result
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="To pole nie może być puste")
      */
     private $name;
 
@@ -34,6 +36,7 @@ class Result
      * @var string
      *
      * @ORM\Column(name="surname", type="string", length=255)
+     * @Assert\NotBlank(message="To pole nie może być puste")
      */
     private $surname;
 
@@ -41,6 +44,8 @@ class Result
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\NotBlank(message="To pole nie może być puste")
+     * @Assert\Email(message="Podaj poprawny e-mail")
      */
     private $email;
 
@@ -48,6 +53,7 @@ class Result
      * @var string
      *
      * @ORM\Column(name="street", type="string", length=255)
+     * @Assert\NotBlank(message="To pole nie może być puste")
      */
     private $street;
 
@@ -55,6 +61,7 @@ class Result
      * @var string
      *
      * @ORM\Column(name="houseNr", type="string", length=255)
+     * @Assert\NotBlank(message="To pole nie może być puste")
      */
     private $houseNr;
 
@@ -69,6 +76,12 @@ class Result
      * @var string
      *
      * @ORM\Column(name="postCode", type="string", length=255)
+     * @Assert\NotBlank(message="To pole nie może być puste")
+     * @Assert\Regex(
+     *     pattern="/[0-9 ]{5}/",
+     *     match=true,
+     *     message="Podaj prawidłowy kod"
+     * )
      */
     private $postCode;
 
@@ -76,6 +89,7 @@ class Result
      * @var string
      *
      * @ORM\Column(name="city", type="string", length=255)
+     * @Assert\NotBlank(message="To pole nie może być puste")
      */
     private $city;
 
@@ -83,6 +97,12 @@ class Result
      * @var string
      *
      * @ORM\Column(name="phone", type="string", length=255)
+     * @Assert\NotBlank(message="To pole nie może być puste")
+     * @Assert\Regex(
+     *     pattern="/[0-9- +]{9,16}/",
+     *     match=true,
+     *     message="Podaj prawidłowy nr telefon"
+     * )
      */
     private $phone;
 
@@ -90,6 +110,7 @@ class Result
      * @var bool
      *
      * @ORM\Column(name="agree1", type="boolean")
+     * @Assert\NotBlank(message="Musisz zaznaczyć to pole")
      */
     private $agree1;
 
