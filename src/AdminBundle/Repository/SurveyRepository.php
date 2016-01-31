@@ -16,9 +16,7 @@ class SurveyRepository extends EntityRepository
 
     public function findActive()
     {
-        $em = $this->getEntityManager();
         $now = new \DateTime('now');
-
         $query = $this->createQueryBuilder('s')
                 ->where('s.start <= :start')
                 ->andWhere('s.end > :end')

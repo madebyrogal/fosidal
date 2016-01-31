@@ -6,15 +6,22 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use AdminBundle\Entity\Survey;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Result
  *
  * @ORM\Table(name="result")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\ResultRepository")
+ * @UniqueEntity(
+ *      fields={"email"},
+ *      repositoryMethod="checkUniqueEmailInCompetition",
+ *      message="Ten email brał już udział w tej edycji konkursu."
+ * )
  */
 class Result
 {
+
     /**
      * @var int
      *
@@ -127,20 +134,20 @@ class Result
      * @ORM\Column(name="points", type="integer")
      */
     private $points;
-    
+
     /**
      * @var string
      *
      * @ORM\Column(name="content", type="text")
      */
     private $content;
-    
+
     /**
      * @ORM\ManyToOne(targetEntity="Survey")
      * @ORM\JoinColumn(name="survey_id", referencedColumnName="id")
      */
     private $survey;
-    
+
     /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="created", type="datetime")
@@ -409,8 +416,8 @@ class Result
     {
         return $this->agree2;
     }
-    
-     /**
+
+    /**
      * Get created
      *
      * @return Datetime 
@@ -419,7 +426,7 @@ class Result
     {
         return $this->created;
     }
-    
+
     function getPoints()
     {
         return $this->points;
@@ -449,6 +456,5 @@ class Result
     {
         $this->survey = $survey;
     }
-
 
 }
