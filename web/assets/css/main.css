@@ -9512,6 +9512,24 @@ label {
     padding-left: 0;
   }
 }
+.modalBody .about h1 {
+  font-size: 30px;
+  line-height: 40px;
+  margin: 35px 0 0 0;
+}
+.modalBody .about .wrapperAbout {
+  padding: 0 5%;
+}
+.modalBody .about .left-box {
+  padding: 0 3% 0 0;
+}
+.modalBody .about .left-box p {
+  font-size: 18px;
+  line-height: 22px;
+}
+.modalBody .about .right-box {
+  padding: 0 0 0  3%;
+}
 .pointCounter {
   max-width: 460px;
   margin: 15px auto 0 auto;
