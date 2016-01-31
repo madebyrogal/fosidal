@@ -2,15 +2,24 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Panel Administracyjny{% endblock %}</title>
+        {% block stylesheets %}
+            {{ include('AdminBundle::_partial/include_head.html.twig') }}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <div class="container-fluid">
-            {{ include('AdminBundle::_partial/menu.html.twig') }}
-            {% block body %}{% endblock %}
-            {% block javascripts %}{% endblock %}
+        <div class="container-fluid panel">
+            <div class="row headerBar">
+                <div class="col-md-12">{{ include('AdminBundle::_partial/header_bar.html.twig') }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 menu">{{ include('AdminBundle::_partial/menu.html.twig') }}</div>
+                <div class="col-md-10 data">{% block body %}{% endblock %}</div>
+            </div>
+            {% block javascripts %}
+                 {{ include('AdminBundle::_partial/include_foot.html.twig') }}
+            {% endblock %}
         </div>
     </body>
 </html>

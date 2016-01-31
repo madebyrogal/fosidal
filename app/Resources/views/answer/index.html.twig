@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'AdminBundle::base.html.twig' %}
 
 {% block body %}
-    <h1>Answer list</h1>
+    <h1>Odpowiedzi</h1>
 
-    <table>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -37,7 +37,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('answer_new') }}">Create a new entry</a>
+            <a href="{{ path('answer_new') }}" class="btn btn-success">Utwórz</a>
         </li>
     </ul>
 {% endblock %}

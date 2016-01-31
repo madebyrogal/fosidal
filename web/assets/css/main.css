@@ -8971,6 +8971,47 @@ label {
 .footerBox .textFooter {
   margin-top: 20px;
 }
+.loginForm {
+  margin-top: 50px;
+}
+.loginForm .loginBox {
+  background-color: black;
+  padding: 30px;
+}
+.loginForm .loginBox label {
+  color: white;
+}
+.loginForm .loginBox .error {
+  color: red;
+  font-weight: bold;
+}
+.panel {
+  font-size: 12px;
+}
+.panel ul {
+  list-style-type: none;
+}
+.panel .menu ul li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.panel .headerBar {
+  height: 50px;
+  background-color: black;
+  line-height: 50px;
+  font-weight: bold;
+  color: white;
+}
+.panel .headerBar ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.panel .headerBar ul li:last-child {
+  margin-right: 0px;
+}
+.panel .data h1 {
+  margin-bottom: 20px;
+}
 .modalBody {
   margin-top: 100px;
   margin-bottom: 60px;

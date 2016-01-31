@@ -1,0 +1,6 @@
+<div>
+    <ul>
+        <li>Witaj: {{ render(controller('AdminBundle:Main:user')) }}</li>
+        <li><a href="{{ path('fos_user_security_logout')}}">Wyloguj</a></li>
+    </ul>
+</div>

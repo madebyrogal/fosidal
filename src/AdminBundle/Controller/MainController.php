@@ -12,9 +12,14 @@ class MainController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AdminBundle:Main:index.html.twig', array(
+        return $this->render('AdminBundle:Main:index.html.twig', array('user'
             // ...
         ));
+    }
+    
+    public function userAction(){
+        $user =  $this->getUser();
+        return $this->render('AdminBundle:Main:user.html.twig', array('user'=>$user));
     }
 
 }
