@@ -409,13 +409,36 @@
         h1 {
             font-size: 30px;
             line-height: 40px;
-            margin: 35px 0 0 0;
+            margin: 35px 0 30px 0;
+        }
+        h2 {
+            font-size: 29px;
+            font-weight: 400;
+            line-height: 32px;
+            margin: 70px 0 0 0;
+            &.special {
+                line-height: 29px;
+                margin: 0;
+            }
+        }
+        p {
+            &.note {
+                clear: both;
+                font-size: 10px;
+                margin: 0;
+            }
+            &.specialBlue {
+                color: #273583;
+                font-size: 48px;
+                margin: 20px 0 5px 0;
+            }
         }
         .wrapperAbout {
             padding: 0 5%;
         }
         .left-box {
             padding: 0 3% 0 0;
+            margin-bottom: 35px;
             p {
                 font-size: 18px;
                 line-height: 22px;
@@ -423,6 +446,57 @@
         }
         .right-box {
             padding: 0 0 0  3%;
+            ul {
+                list-style-type: none;
+                padding: 0;
+                li {
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-bottom: 20px;
+                    i {
+                        //font-size: 24px;
+                        margin-right: 5px;
+                    }
+                    span {
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .fenspirydDescription {
+            h2 {
+                font-size: 30px;
+                font-weight: 600;
+                line-height: 36px;
+            }
+            p {
+                font-size: 20px;
+                line-height: 24px;
+                margin-bottom: 25px;
+                &.note {
+                    font-size: 10px;
+                    line-height: 1.42857;
+                    margin: 0;
+                }
+            }
+        }
+        .seeMore {
+            background-color: #fe5600;
+            color: #fff;
+            display: block;
+            font-size: 30px;
+            line-height: 56px;
+            padding: 0 21px;
+            margin: 60px auto 0 auto;
+            width: 31%;
+            &:hover {
+                background-color: #f34c31;
+                text-decoration: none;
+            }
+            i {
+                margin-left: 30px;
+            }
         }
     }
 }
