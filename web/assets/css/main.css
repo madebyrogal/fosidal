@@ -8851,6 +8851,8 @@ label {
 }
 .headerBox header nav ul li a {
   color: #253583;
+  display: block;
+  height: 100%;
 }
 .headerBox header nav ul li a:hover,
 .headerBox header nav ul li a:active,
@@ -9226,7 +9228,18 @@ label {
 .modalBody .competition.slide8 .row {
   background: url('/assets/images/fosidal.png') no-repeat 0 0;
   margin: 0;
-  padding: 110px 0 89px;
+  padding: 10px 0 89px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .modalBody .competition.slide8 .row {
+    padding-top: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .modalBody .competition.slide8 .row {
+    padding-top: 110px;
+  }
 }
 .modalBody .competition.slide8 p {
   font-family: 'Open Sans';
@@ -9241,15 +9254,27 @@ label {
   line-height: 30px;
 }
 .modalBody .competition.slide8 p.topText {
-  margin: 0 0 0 148px;
+  margin-top: 40px;
 }
-.modalBody .competition.slide8 p.centerText {
-  margin: 64px 0 0 552px;
-  width: 32%;
+@media (min-width: 768px) {
+  .modalBody .competition.slide8 p.topText,
+  .modalBody .competition.slide8 p.centerText,
+  .modalBody .competition.slide8 p.bottomText {
+    margin-left: 5%;
+  }
 }
-.modalBody .competition.slide8 p.bottomText {
-  margin: 30px 0 0 168px;
-  width: 43%;
+@media (min-width: 1200px) {
+  .modalBody .competition.slide8 p.topText {
+    margin: 0 0 0 148px;
+  }
+  .modalBody .competition.slide8 p.centerText {
+    margin: 60px 0 0 552px;
+    width: 32%;
+  }
+  .modalBody .competition.slide8 p.bottomText {
+    margin: 26px 0 0 168px;
+    width: 43%;
+  }
 }
 @media (min-width: 992px) {
   .modalBody .competition.slide7 .right-box img {
@@ -9409,6 +9434,83 @@ label {
 }
 .modalBody .competition .back i {
   margin: 10px 20px 0 10px;
+}
+.modalBody .award .left-box {
+  padding-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .modalBody .award .left-box {
+    padding: 0 4% 20px 3.5%;
+  }
+}
+.modalBody .award h1 {
+  color: #1a171b;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 45px 0 20px 0;
+}
+.modalBody .award p {
+  color: #1a171b;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 0;
+}
+.modalBody .award .awardText p {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 26px;
+}
+.modalBody .award .take-part {
+  cursor: pointer;
+  background-color: #3a3a3a;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 60px;
+  padding-left: 20px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  margin: 0 0 11px 0;
+  padding: 0 0 0 6%;
+}
+.modalBody .award .take-part i {
+  background-color: #fdc010;
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  height: 40px;
+  margin: 10px 10px 0 20px;
+  width: 53px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.modalBody .award .take-part:hover {
+  background-color: #262626;
+  text-decoration: none;
+}
+@media (min-width: 480px) {
+  .modalBody .award .take-part {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .modalBody .award .take-part {
+    width: 38%;
+  }
+}
+@media (min-width: 992px) {
+  .modalBody .award .take-part {
+    width: 57%;
+  }
+}
+@media (min-width: 768px) {
+  .modalBody .award .right-box {
+    padding-left: 0;
+  }
 }
 .pointCounter {
   max-width: 460px;
