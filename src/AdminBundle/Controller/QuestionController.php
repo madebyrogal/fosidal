@@ -26,7 +26,7 @@ class QuestionController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $questions = $em->getRepository('AdminBundle:Question')->findAll();
+        $questions = $em->getRepository('AdminBundle:Question')->findAllOrder();
 
         return $this->render('question/index.html.twig', array(
             'questions' => $questions,

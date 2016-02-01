@@ -234,4 +234,11 @@ class Question
     {
         return $this->answers;
     }
+    
+    /**
+     * For formBuilder
+     */
+    public function getQuestion(){
+        return $this->name;
+    }
 }

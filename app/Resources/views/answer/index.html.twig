@@ -8,6 +8,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Pytanie</th>
                 <th>Iscorrect</th>
                 <th>Position</th>
                 <th>Actions</th>
@@ -18,6 +19,7 @@
             <tr>
                 <td><a href="{{ path('answer_show', { 'id': answer.id }) }}">{{ answer.id }}</a></td>
                 <td>{{ answer.name }}</td>
+                <td><a href="{{ path('question_show', { 'id': answer.question.id }) }}">{{ answer.question.id }}</a></td>
                 <td>{% if answer.isCorrect %}Yes{% else %}No{% endif %}</td>
                 <td>{{ answer.position }}</td>
                 <td>

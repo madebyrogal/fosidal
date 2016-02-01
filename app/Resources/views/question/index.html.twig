@@ -8,6 +8,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Konkurs</th>
                 <th>Timetoanswer</th>
                 <th>Points</th>
                 <th>Position</th>
@@ -19,6 +20,7 @@
             <tr>
                 <td><a href="{{ path('question_show', { 'id': question.id }) }}">{{ question.id }}</a></td>
                 <td>{{ question.name }}</td>
+                <td><a href="{{ path('survey_show', { 'id': question.survey.id }) }}">{{ question.survey.id }}</a></td>
                 <td>{{ question.timeToAnswer }}</td>
                 <td>{{ question.points }}</td>
                 <td>{{ question.position }}</td>

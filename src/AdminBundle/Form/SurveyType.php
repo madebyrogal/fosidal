@@ -19,7 +19,7 @@ class SurveyType extends AbstractType
                 ->add('name')
                 ->add('start', 'datetime')
                 ->add('end', 'datetime')
-                ->add('questions');
+                ->add('questions', 'Symfony\Bridge\Doctrine\Form\Type\EntityType', array('class' => 'AdminBundle:Question', 'choice_label' => 'Question', 'multiple'=>true))
         ;
     }
 

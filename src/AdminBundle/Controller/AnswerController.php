@@ -26,7 +26,7 @@ class AnswerController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $answers = $em->getRepository('AdminBundle:Answer')->findAll();
+        $answers = $em->getRepository('AdminBundle:Answer')->findAllOrder();
 
         return $this->render('answer/index.html.twig', array(
             'answers' => $answers,

@@ -8996,6 +8996,7 @@ label {
   padding-bottom: 5px;
 }
 .panel .headerBar {
+  margin-bottom: 20px;
   height: 50px;
   background-color: black;
   line-height: 50px;
@@ -9011,6 +9012,22 @@ label {
 }
 .panel .data h1 {
   margin-bottom: 20px;
+}
+.panel .data form div {
+  margin-bottom: 20px;
+}
+.panel .data form div div {
+  margin-bottom: 10px;
+}
+.panel .data form div div label {
+  margin-right: 10px;
+}
+.panel .data form div div label.required::after {
+  content: '*';
+  color: #da2828;
+}
+.panel .data form div div select[multiple] {
+  height: 300px;
 }
 .modalBody {
   margin-top: 100px;

@@ -150,4 +150,13 @@ class Answer
     {
         return $this->question;
     }
+    
+    /**
+     * FormBuilder
+     * @return type
+     */
+    public function getAnswer()
+    {
+        return $this->name;
+    }
 }

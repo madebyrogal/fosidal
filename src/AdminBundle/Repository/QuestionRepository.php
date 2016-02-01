@@ -12,4 +12,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class QuestionRepository extends EntityRepository
 {
+    public function findAllOrder(){
+        return $this->findBy(array(), array('survey' => 'ASC'));
+    }
 }
