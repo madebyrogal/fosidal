@@ -1,13 +1,55 @@
 .headerBox {
     background-color: @colorWhite;
 
+    .logo {
+
+        img {
+            float: left;
+
+            @media(max-width: @grid-float-breakpoint){
+                max-width: 200px;
+            }
+        }
+    }
+
     header {
         padding-bottom: 20px;
         padding-top:20px;
 
+        .mobileMenuButton {
+            display: none;
+            float: right;
+            cursor: pointer;
+
+            @media(max-width: @grid-float-breakpoint){
+                display: inline-block;
+            }
+
+            i {
+                font-size: 60px;
+                color: @colorBlue;
+            }
+        }
+
         nav {
             min-height: 83px;
             position: relative;
+
+            @media(max-width: @grid-float-breakpoint){
+                display: none;
+                position: absolute;
+                background-color: @colorWhite;
+                width: 100%;
+                top:90px;
+                left:0;
+                padding:15px;
+                padding-bottom: 50px;
+                z-index: 1;
+                
+                &.in {
+                    display: block;
+                }
+            }
 
             ul {
                 position: absolute;
@@ -18,31 +60,42 @@
                 z-index: 1;
                 margin-bottom: 0;
                 list-style: none;
+                
+                @media(max-width: @grid-float-breakpoint){
+                    display: inline-block;
+                    position: relative;
+                    height: auto;
+                }
 
                 li {
                     float: left;
                     height: 100%;
                     margin-right: 30px;
                     
+                    @media(max-width: @grid-float-breakpoint){
+                        float: none;
+                        margin-bottom: 10px;
+                    }
+
                     a {
                         color: @colorBlue;
                         display: block;
                         height: 100%;
-                        
+
                         &:hover, &:active, &:focus {
                             text-decoration: none;
                             color: @colorYellow;
                         }
                     }
-                    
+
                     &:hover, &.active {
                         border-bottom: 6px solid @colorYellow;
-                        
+
                         a {
                             color: @colorYellow;
                         }
                     }
-                    
+
                     &:last-child {
                         margin-right: 0;
                     }

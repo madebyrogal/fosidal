@@ -4,14 +4,15 @@
             <div class='row'>
                 <div class="col-md-3 logo">
                     <a href="{{ path('home')}}"><img src="{{ asset('assets/images/logo.png')}}" class="img-responsive" alt="Fosidal - logo"/></a>
+                    <div id="mobileMenu" class="mobileMenuButton"><i class="fa fa-bars"></i></div>
                 </div>
                 <div class="col-md-9">
-                    <nav>
+                    <nav id="menu">
                         <ul class="clearfix">
                             <li {% if (app.request.get('_route') == 'competition' or app.request.get('_route') == 'competitionQuestion' or app.request.get('_route') == 'competitionNexQuestion' or app.request.get('_route') == 'competitionEnd' or app.request.get('_route') == 'competitionSave') %}class="active"{% endif %}><a href="{{ path('competition') }}">Konkurs</a></li>
                             <li {% if app.request.get('_route') == 'award' %}class="active"{% endif %}><a href="{{ path('award') }}">Nagrody</a></li>
                             <li {% if app.request.get('_route') == 'winner' %}class="active"{% endif %}><a href="{{ path('winner') }}">Zwycięzcy</a></li>
-                            <li {% if app.request.get('_route') == 'term' %}class="active"{% endif %}><a href="{{ path('term')}}">Reguamin</a></li>
+                            <li {% if app.request.get('_route') == 'term' %}class="active"{% endif %}><a href="{{ path('term')}}">Regulamin</a></li>
                             <li {% if app.request.get('_route') == 'about' %}class="active"{% endif %}><a href="{{ path('about')}}">O produkcie</a></li>
                         </ul>
                     </nav>

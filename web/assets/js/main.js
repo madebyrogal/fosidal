@@ -1,6 +1,7 @@
 $(document).ready(function () {
     scaleBar();
     initQuiz();
+    toogleMenu();
 });
 
 $(window).resize(function () {
@@ -21,4 +22,10 @@ function scaleBar()
 function initQuiz()
 {
     $('.questions').quiz();
+}
+
+function toogleMenu(){
+    $('#mobileMenu').on('click', function(){
+       $('#menu').toggleClass('in'); 
+    });
 }

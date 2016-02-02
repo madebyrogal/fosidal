@@ -20,6 +20,14 @@
                     border-right: 1px solid @colorGray;
                     padding-right: 8px;
                     padding-left: 8px;
+                    
+                    @media(max-width: @grid-float-breakpoint){
+                        float: none;
+                        border: none;
+                        padding-right: 0;
+                        padding-left: 0;
+                        margin-bottom: 10px;
+                    }
 
                     a {
                         color: @colorGray;
