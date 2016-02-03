@@ -8,12 +8,12 @@
             <div class="col-sm-6">
                 <h1>Etap <br/>zakończony</h1>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 clearfix">
                 <div class="desc">
                     Twój wynik to:
                     <div class="podium"></div>
-                    <div points> 25pkt</div>
-                    <div class="allPoint">(możliwe do zdobycia 200)</div>
+                    <div class="points"> {{points}}pkt</div>
+                    <div class="allPoint">(możliwe do zdobycia {{allPoints}})</div>
                 </div>
                 <a href="{{path('winner')}}"><div id="ranking" class="ranking">Sprawdź ranking <i class="fa fa-angle-double-right"></i></div></a>
             </div>

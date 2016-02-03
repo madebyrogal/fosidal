@@ -10164,28 +10164,35 @@ label {
   top: 0;
   left: 0;
 }
+.thankYou {
+  text-align: center;
+}
 .thankYou h1 {
+  margin-top: 235px;
   display: inline-block;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 55px;
+  line-height: 65px;
+  text-align: left;
 }
 .thankYou .desc {
+  margin-top: 120px;
+  margin-bottom: 110px;
   text-align: center;
   font-size: 30px;
   font-weight: bold;
   display: inline-block;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 50%;
-  transform: translateX(-50%);
+}
+.thankYou .desc .podium {
+  display: block;
+  margin: 60px auto 45px auto;
+  width: 135px;
+  height: 135px;
+  background-repeat: no-repeat;
+  background-color: #999999;
 }
 .thankYou .desc .points {
   font-size: 48px;
+  color: #253583;
 }
 .thankYou .desc .allPoint {
   font-size: 14px;
@@ -10204,6 +10211,7 @@ label {
   padding-left: 20px;
   transition-property: background-color;
   transition-duration: 2s;
+  float: right;
 }
 .thankYou .ranking i {
   background-color: #fdc010;
