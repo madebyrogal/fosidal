@@ -3,17 +3,20 @@
 {% block title %}Fosidal - Konkurs{% endblock %}
 
 {% block body %}
-    <div class='modalBody clearfix'>
-        <h1>Dziękujemy za udział w konkursie</h1>
-        <p>
-            Vestibulum ullamcorper mauris at ligula. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat
-            nibh, nec pellentesque velit pede quis nunc. Nam commodo suscipit quam. Duis vel nibh at velit scelerisque suscipit. 
-            Curabitur blandit mollis lacus.
-        </p>
-        <p>
-            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum eu odio. Curabitur
-            blandit mollis lacus. Ut non enim eleifend felis pretium feugiat. Vestibulum purus quam, scelerisque ut, mollis sed,
-            nonummy id, metus.
-        </p>
+    <div class='modalBody clearfix thankYou'>
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Etap <br/>zakończony</h1>
+            </div>
+            <div class="col-sm-6">
+                <div class="desc">
+                    Twój wynik to:
+                    <div class="podium"></div>
+                    <div points> 25pkt</div>
+                    <div class="allPoint">(możliwe do zdobycia 200)</div>
+                </div>
+                <a href="{{path('winner')}}"><div id="ranking" class="ranking">Sprawdź ranking <i class="fa fa-angle-double-right"></i></div></a>
+            </div>
+        </div>
     </div>
 {% endblock %}

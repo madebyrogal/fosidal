@@ -10127,6 +10127,62 @@ label {
   top: 0;
   left: 0;
 }
+.thankYou h1 {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 55px;
+}
+.thankYou .desc {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.thankYou .desc .points {
+  font-size: 48px;
+}
+.thankYou .desc .allPoint {
+  font-size: 14px;
+  font-weight: normal;
+}
+.thankYou .ranking {
+  cursor: pointer;
+  background-color: #3a3a3a;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 60px;
+  padding-left: 20px;
+  transition-property: background-color;
+  transition-duration: 2s;
+}
+.thankYou .ranking i {
+  background-color: #fdc010;
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  height: 40px;
+  margin: 10px 10px 0 20px;
+  width: 53px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.thankYou .ranking:hover {
+  background-color: #262626;
+  text-decoration: none;
+}
 body {
   font-family: 'Open sans';
   font-size: 14px;

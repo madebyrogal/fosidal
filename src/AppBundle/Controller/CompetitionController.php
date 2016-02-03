@@ -95,13 +95,15 @@ class CompetitionController extends Controller
     public function saveQuizAction(Request $request)
     {
         $quiz = $this->get('app.quiz');
-        if (!$quiz->validEnd() || empty($request->headers->get('referer'))) {
-            
-            return $this->redirectToRoute('competitionQuestion');
-        }
-        $quiz->close();
+//        if (!$quiz->validEnd() || empty($request->headers->get('referer'))) {
+//            
+//            return $this->redirectToRoute('competitionQuestion');
+//        }
+        //$points = $quiz->getPoints();
+        //$allPoints = $quiz->getMaxPoints();
+//        $quiz->close();
         
-        return $this->render('AppBundle:Competition:thanksPage.html.twig', array());
+        return $this->render('AppBundle:Competition:thanksPage.html.twig', array(/*'points'=>$points, 'allPoints'=>$allPoints*/));
     }
 
     /**
