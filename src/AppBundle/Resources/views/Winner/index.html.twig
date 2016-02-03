@@ -3,15 +3,32 @@
 {% block title %}Fosidal - Zwycięzcy{% endblock %}
 
 {% block body %}
-    <div class='modalBody'>
-        <h1>Zwycięzcy</h1>
-        <p>
-            Curabitur suscipit suscipit tellus. Sed aliquam ultrices mauris. Proin magna. Donec orci lectus, aliquam ut, faucibus non, 
-            euismod id, nulla. Nulla sit amet est. In ac felis quis tortor malesuada pretium. Praesent turpis. Nullam dictum felis eu
-            pede mollis pretium. Morbi nec metus. Vestibulum dapibus nunc ac augue. Maecenas vestibulum mollis diam. Fusce
-            ac felis sit amet ligula pharetra condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia Curae; Fusce id purus. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi
-            sem ut ipsum. Pellentesque dapibus hendrerit tortor.
+    <div class='modalBody winners'>
+        <h1>Lista zwycięzców</h1>
+        <p class="desc">
+            Zwycięzcy z poszczególnych etapów konkursu będą wyłaniani w przeciągu 7 dni roboczych po zakończeniu każdego etapu. 
         </p>
+        <div class="tableBox">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <td>Miejsce</td>
+                        <td>Nazwisko</td>
+                        <td>Imię</td>
+                        <td>Miasto</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                        <tr>
+                            <td>{{loop.index}}</td>
+                            <td>{{result.surname}}</td>
+                            <td>{{result.name}}</td>
+                            <td>{{result.city}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}

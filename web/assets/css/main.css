@@ -10195,6 +10195,32 @@ label {
   background-color: #262626;
   text-decoration: none;
 }
+.winners {
+  padding: 30px;
+}
+.winners .desc {
+  margin-bottom: 30px;
+}
+.winners .tableBox {
+  height: 550px;
+  overflow-y: auto;
+}
+.winners .tableBox .table {
+  margin-bottom: 0px;
+}
+.winners .tableBox .table thead tr {
+  background-color: #fff;
+}
+.winners .tableBox .table thead tr td:first-child {
+  width: 110px;
+}
+.winners .tableBox .table tr td {
+  padding-left: 30px;
+}
+.winners .tableBox .table tr td:first-child {
+  text-align: center;
+  padding-left: 0;
+}
 body {
   font-family: 'Open sans';
   font-size: 14px;

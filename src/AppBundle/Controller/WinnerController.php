@@ -14,9 +14,8 @@ class WinnerController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AppBundle:Winner:index.html.twig', array(
-            // ...
-        ));
+        $results = $this->getDoctrine()->getRepository('AdminBundle:Result')->findAll();
+        return $this->render('AppBundle:Winner:index.html.twig', array('results'=>$results));
     }
 
 }
