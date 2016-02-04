@@ -9153,6 +9153,13 @@ label {
   margin: 10px 0 35px 0;
   padding: 0 0 0 6%;
 }
+.modalBody .home .take-part:hover {
+  background-color: #ccc;
+  text-decoration: none;
+}
+.modalBody .home .take-part:hover i {
+  background-color: #999999;
+}
 .modalBody .home .take-part i {
   background-color: #fdc010;
   text-align: center;
@@ -9163,10 +9170,7 @@ label {
   width: 53px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-}
-.modalBody .home .take-part:hover {
-  background-color: #262626;
-  text-decoration: none;
+  transition: none;
 }
 @media (min-width: 480px) {
   .modalBody .home .take-part {
@@ -9470,6 +9474,13 @@ label {
   font-size: 17px;
   width: 100%;
 }
+.modalBody .competition .next:hover {
+  background-color: #ccc;
+  text-decoration: none;
+}
+.modalBody .competition .next:hover i {
+  background-color: #999999;
+}
 .modalBody .competition .next i {
   background-color: #fdc010;
   text-align: center;
@@ -9480,10 +9491,7 @@ label {
   width: 53px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-}
-.modalBody .competition .next:hover {
-  background-color: #262626;
-  text-decoration: none;
+  transition: none;
 }
 @media (min-width: 480px) {
   .modalBody .competition .next {
@@ -9503,7 +9511,7 @@ label {
 }
 .modalBody .competition .back {
   cursor: pointer;
-  background-color: #ccc;
+  background-color: #3a3a3a;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   color: #fff;
@@ -9520,8 +9528,15 @@ label {
   margin-bottom: 10px;
   width: 100%;
 }
-.modalBody .competition .back i {
+.modalBody .competition .back:hover {
+  background-color: #ccc;
+  text-decoration: none;
+}
+.modalBody .competition .back:hover i {
   background-color: #999999;
+}
+.modalBody .competition .back i {
+  background-color: #fdc010;
   text-align: center;
   line-height: 40px;
   float: left;
@@ -9530,10 +9545,7 @@ label {
   width: 53px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-}
-.modalBody .competition .back:hover {
-  background-color: #abaaaa;
-  text-decoration: none;
+  transition: none;
 }
 @media (min-width: 480px) {
   .modalBody .competition .back {
@@ -9595,6 +9607,13 @@ label {
   margin: 0 0 11px 0;
   padding: 0 0 0 6%;
 }
+.modalBody .award .take-part:hover {
+  background-color: #ccc;
+  text-decoration: none;
+}
+.modalBody .award .take-part:hover i {
+  background-color: #999999;
+}
 .modalBody .award .take-part i {
   background-color: #fdc010;
   text-align: center;
@@ -9605,10 +9624,7 @@ label {
   width: 53px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-}
-.modalBody .award .take-part:hover {
-  background-color: #262626;
-  text-decoration: none;
+  transition: none;
 }
 @media (min-width: 480px) {
   .modalBody .award .take-part {
@@ -9886,6 +9902,13 @@ label {
   bottom: 5px;
   right: 5px;
 }
+.question .nextQuestion:hover {
+  background-color: #ccc;
+  text-decoration: none;
+}
+.question .nextQuestion:hover i {
+  background-color: #999999;
+}
 .question .nextQuestion i {
   background-color: #fdc010;
   text-align: center;
@@ -9896,10 +9919,7 @@ label {
   width: 53px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-}
-.question .nextQuestion:hover {
-  background-color: #262626;
-  text-decoration: none;
+  transition: none;
 }
 @media (max-width: 991px) {
   .question .nextQuestion {
@@ -9923,6 +9943,13 @@ label {
   transition-property: background-color;
   transition-duration: 2s;
 }
+.question .nextQuestion.disabled:hover {
+  background-color: #999999;
+  text-decoration: none;
+}
+.question .nextQuestion.disabled:hover i {
+  background-color: #999999;
+}
 .question .nextQuestion.disabled i {
   background-color: #3a3a3a;
   text-align: center;
@@ -9933,10 +9960,7 @@ label {
   width: 53px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-}
-.question .nextQuestion.disabled:hover {
-  background-color: #999999;
-  text-decoration: none;
+  transition: none;
 }
 .question .questions {
   list-style-type: none;
@@ -10131,6 +10155,13 @@ label {
   transition-duration: 2s;
   margin-top: 40px;
 }
+.form form .saveForm:hover {
+  background-color: #ccc;
+  text-decoration: none;
+}
+.form form .saveForm:hover i {
+  background-color: #999999;
+}
 .form form .saveForm i {
   background-color: #fdc010;
   text-align: center;
@@ -10141,10 +10172,7 @@ label {
   width: 53px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-}
-.form form .saveForm:hover {
-  background-color: #262626;
-  text-decoration: none;
+  transition: none;
 }
 .form .checkBoxWraper {
   padding-left: 25px;
@@ -10213,6 +10241,13 @@ label {
   transition-duration: 2s;
   float: right;
 }
+.thankYou .ranking:hover {
+  background-color: #ccc;
+  text-decoration: none;
+}
+.thankYou .ranking:hover i {
+  background-color: #999999;
+}
 .thankYou .ranking i {
   background-color: #fdc010;
   text-align: center;
@@ -10223,10 +10258,7 @@ label {
   width: 53px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-}
-.thankYou .ranking:hover {
-  background-color: #262626;
-  text-decoration: none;
+  transition: none;
 }
 .winners {
   padding: 30px;

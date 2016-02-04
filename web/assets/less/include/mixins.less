@@ -1,5 +1,5 @@
 //Button next, previus question, Register
-.button(@bgColor, @bgHover, @colorYellow, @textColor, @float){
+.button(@bgColor, @bgHover, @colorYellow, @colorGrey, @textColor, @float){
     cursor: pointer;
     background-color: @bgColor;
     -webkit-border-radius: 10px;
@@ -12,6 +12,13 @@
     padding-left: 20px;
     transition-property: background-color;
     transition-duration: 2s;
+    &:hover {
+        background-color: @bgHover;
+        text-decoration: none;
+        i {
+            background-color: @colorGrey;
+        }
+    }
     i {
         background-color: @colorYellow;
         text-align: center;
@@ -22,10 +29,7 @@
         width: 53px;
         -webkit-border-radius: 10px;
         border-radius: 10px;
-    }
-    &:hover {
-        background-color: @bgHover;
-        text-decoration: none;
+        transition: none;
     }
 }
 
