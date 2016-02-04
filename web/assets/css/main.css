@@ -10231,8 +10231,12 @@ label {
 .winners {
   padding: 30px;
 }
+.winners h1 {
+  margin-bottom: 15px;
+}
 .winners .desc {
   margin-bottom: 30px;
+  text-align: justify;
 }
 .winners .tableBox {
   height: 550px;
@@ -10241,16 +10245,36 @@ label {
 .winners .tableBox .table {
   margin-bottom: 0px;
 }
+.winners .tableBox .table thead {
+  font-weight: bold;
+}
 .winners .tableBox .table thead tr {
   background-color: #fff;
 }
-.winners .tableBox .table thead tr td:first-child {
-  width: 110px;
-}
-.winners .tableBox .table tr td {
+.winners .tableBox .table thead tr th {
+  padding-top: 16px;
+  padding-bottom: 16px;
   padding-left: 30px;
+  border-bottom: none;
 }
-.winners .tableBox .table tr td:first-child {
+.winners .tableBox .table thead tr th:first-child {
+  width: 110px;
+  text-align: center;
+  padding-left: 0;
+}
+.winners .tableBox .table tbody tr:nth-child(2n+2) {
+  background-color: #fff;
+}
+.winners .tableBox .table tbody tr:nth-child(2n+1) {
+  background-color: #f2f2f2;
+}
+.winners .tableBox .table tbody tr td {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 30px;
+  border-top: none;
+}
+.winners .tableBox .table tbody tr td:first-child {
   text-align: center;
   padding-left: 0;
 }
