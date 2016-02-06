@@ -10310,6 +10310,79 @@ label {
   text-align: center;
   padding-left: 0;
 }
+@-webkit-keyframes slide1_text {
+  0% {
+    color: #3a3a3a;
+    list-style-type: none;
+  }
+  3% {
+    color: #fdc010;
+    list-style-type: none;
+  }
+  4% {
+    color: #fdc010;
+    list-style-type: initial;
+  }
+  28% {
+    color: #fdc010;
+    list-style-type: initial;
+  }
+  31% {
+    color: #3a3a3a;
+    list-style-type: none;
+  }
+  100% {
+    color: #3a3a3a;
+    list-style-type: none;
+  }
+}
+@keyframes slide1_text {
+  0% {
+    color: #3a3a3a;
+    list-style-type: none;
+  }
+  3% {
+    color: #fdc010;
+    list-style-type: none;
+  }
+  4% {
+    color: #fdc010;
+    list-style-type: initial;
+  }
+  28% {
+    color: #fdc010;
+    list-style-type: initial;
+  }
+  31% {
+    color: #3a3a3a;
+    list-style-type: none;
+  }
+  100% {
+    color: #3a3a3a;
+    list-style-type: none;
+  }
+}
+.slide1 .faza1 {
+  animation-name: slide1_text;
+  animation-duration: 9s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide1 .faza2 {
+  animation-name: slide1_text;
+  animation-duration: 9s;
+  animation-delay: 3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide1 .faza3 {
+  animation-name: slide1_text;
+  animation-duration: 9s;
+  animation-delay: 6s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
 body {
   font-family: 'Open sans';
   font-size: 14px;
@@ -10345,4 +10418,7 @@ h1 {
 }
 .yellow {
   color: #fdc010;
+}
+.nowrap {
+  white-space: nowrap;
 }
