@@ -4,23 +4,28 @@
 
 {% block body %}
     <div class="modalBody clearfix">
-		<div class="competition">
+		<div class="competition slide2">
 			<div class="row">
 				<div class="col-md-6 left-box">
 				    <h1>Kliniczne objawy <span class="yellow nowrap">I fazy</span> zakażenia górnych dróg oddechowych</h1>
 				    <ul>
-				    	<li><span>Wodnisty katar</span></li>
-				    	<li><span>Stan podgorączkowy</span></li>
-				    	<li><span>Suchy kaszel</span></li>
-				    	<li class="active">Trudności w połykaniu</li>
-				    	<li><span>Bóle głowy</span></li>
+				    	<li class="txtFaza1">Wodnisty katar</li>
+				    	<li class="txtFaza2">Stan podgorączkowy</li>
+				    	<li class="txtFaza3">Suchy kaszel</li>
+				    	<li class="txtFaza4">Trudności w połykaniu</li>
+				    	<li class="txtFaza5">Bóle głowy</li>
 				    </ul>
 				</div>
 				<div class="col-md-6 right-box">
 					<div class="pagination-slide pagination-top">
 						<span>Slajd 02/08</span>
 					</div>
-				    <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/fantom2.png') }}">
+				    <img class="img-responsive" alt="" src="{{ asset('assets/images/fantom.png') }}">
+                                                                                 <img class="img-responsive faza imgFaza1" alt="" src="{{ asset('assets/images/fantomA.png') }}">
+                                                                                 <img class="img-responsive faza imgFaza2" alt="" src="{{ asset('assets/images/fantomB.png') }}">
+                                                                                 <img class="img-responsive faza imgFaza3" alt="" src="{{ asset('assets/images/fantomC.png') }}">
+                                                                                 <img class="img-responsive faza imgFaza4" alt="" src="{{ asset('assets/images/fantomD.png') }}">
+                                                                                 <img class="img-responsive faza imgFaza5" alt="" src="{{ asset('assets/images/fantomE.png') }}">
 				</div>
 			</div>
 			<div class="bottom-modal">

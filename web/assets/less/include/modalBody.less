@@ -124,8 +124,9 @@
         }
         ul {
             margin: 50px 0 0 22%;
+            
             li {
-                color: @colorYellow;
+                color: @colorTextMain;
                 font-size: 24px;
                 font-weight: bold;
                 line-height: 30px;
@@ -158,6 +159,30 @@
                 }
             }
         }
+        &.slide2 {
+            ul {
+                list-style-type: none;
+            }
+            .right-box {
+                min-height: 602px;
+                @media(min-width: @screen-md-min) {
+                        min-height: 552px;
+                }
+                img {
+                    position: absolute;
+                    top:20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @media(min-width: @screen-md-min) {
+                        top: -11px;
+                    }
+                    
+                    &.faza {
+                        opacity: 0;
+                    }
+                }
+            }
+        }        
         &.slide3 {
             position: relative;
             .row {

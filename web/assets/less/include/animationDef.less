@@ -1,5 +1,5 @@
 //Slide 1 ------------------------------------------------------------------------
-.animeSlide1_text(){
+.animeText3(){
     0% { color: @colorTextMain; list-style-type: none;} 
     3% { color: @colorYellow; list-style-type: none}
     4% { color: @colorYellow; list-style-type: initial}
@@ -8,8 +8,29 @@
     100% { color:@colorTextMain; list-style-type: none}  
 }
 
-@-webkit-keyframes slide1_text {.animeSlide1_text()}
-@keyframes slide1_text {.animeSlide1_text()}
+@-webkit-keyframes text3 {.animeText3()}
+@keyframes text3 {.animeText3()}
 
 //Slide 2 ------------------------------------------------------------------------
+.animeText5(){
+    0% { color: @colorTextMain; list-style-type: none;} 
+    3% { color: @colorYellow; list-style-type: none}
+    4% { color: @colorYellow; list-style-type: initial}
+    17% { color: @colorYellow; list-style-type: initial} 
+    19% { color:@colorTextMain; list-style-type: none}  
+    100% { color:@colorTextMain; list-style-type: none}  
+}
 
+.animeImg5(){
+    0% { opacity: 0;}
+    3% { opacity: 1;}
+    17% { opacity: 1;}
+    19% { opacity: 0;}
+    100% { opacity: 0;}
+}
+
+@-webkit-keyframes text5 {.animeText5()}
+@keyframes text5 {.animeText5()}
+
+@-webkit-keyframes img5 {.animeImg5()}
+@keyframes img5 {.animeImg5()}
