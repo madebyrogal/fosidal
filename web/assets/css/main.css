@@ -9451,6 +9451,13 @@ label {
     width: 43%;
   }
 }
+.modalBody .competition.slide7 h1 {
+  margin-bottom: 40px;
+}
+.modalBody .competition.slide7 .left-box p {
+  margin-bottom: 24px;
+  margin-top: 0;
+}
 @media (min-width: 992px) {
   .modalBody .competition.slide7 .right-box img {
     margin-left: -20px;
