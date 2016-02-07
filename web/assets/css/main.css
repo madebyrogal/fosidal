@@ -9830,6 +9830,27 @@ label {
   list-style: disc;
   margin: 20px 0 0 0;
 }
+.static {
+  padding: 0 4% 20px 4%;
+}
+.static h1,
+.static .h1,
+.static h2,
+.static .h2,
+.static h3,
+.static .h3 {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.static p {
+  margin: 0 0 20px 0;
+}
+.static ul,
+.static ol {
+  margin-bottom: 10px;
+  margin-top: 0;
+  padding: 0 0 0 14px;
+}
 .pointCounter {
   max-width: 460px;
   margin: 15px auto 0 auto;
