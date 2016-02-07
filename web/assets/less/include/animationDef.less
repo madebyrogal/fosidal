@@ -1,3 +1,27 @@
+//Anime 2 elements
+.animeText2(){
+    0% { color: @colorTextMain; list-style-type: none;} 
+    3% { color: @colorYellow; list-style-type: none}
+    4% { color: @colorYellow; list-style-type: initial}
+    46% { color: @colorYellow; list-style-type: initial}
+    49% { color:@colorTextMain; list-style-type: none}  
+    100% { color:@colorTextMain; list-style-type: none}  
+}
+
+.animeImg2(){
+    0% { opacity: 0;}
+    3% { opacity: 1;}
+    46% { opacity: 1;}
+    49% { opacity: 0;}
+    100% { opacity: 0;}
+}
+
+@-webkit-keyframes text2 {.animeText2()}
+@keyframes text2 {.animeText2()}
+
+@-webkit-keyframes img2 {.animeImg2()}
+@keyframes img2 {.animeImg2()}
+
 //Anime 3 elements ------------------------------------------------------------------------
 .animeText3(){
     0% { color: @colorTextMain; list-style-type: none;} 
@@ -29,8 +53,8 @@
     100% { opacity: 0;}
 }
 
-@-webkit-keyframes text5 {.animeText6()}
-@keyframes text5 {.animeText6()}
+@-webkit-keyframes text6 {.animeText6()}
+@keyframes text6 {.animeText6()}
 
-@-webkit-keyframes img5 {.animeImg6()}
-@keyframes img5 {.animeImg6()}
+@-webkit-keyframes img6 {.animeImg6()}
+@keyframes img6 {.animeImg6()}

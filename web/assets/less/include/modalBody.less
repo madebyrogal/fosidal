@@ -124,7 +124,7 @@
         }
         ul {
             margin: 50px 0 0 22%;
-            
+
             li {
                 color: @colorTextMain;
                 font-size: 24px;
@@ -166,7 +166,7 @@
             .right-box {
                 min-height: 602px;
                 @media(min-width: @screen-md-min) {
-                        min-height: 552px;
+                    min-height: 552px;
                 }
                 img {
                     position: absolute;
@@ -176,7 +176,7 @@
                     @media(min-width: @screen-md-min) {
                         top: -11px;
                     }
-                    
+
                     &.faza {
                         opacity: 0;
                     }
@@ -232,10 +232,38 @@
                     margin-top: 190px;
                 }
             }
+            ul {
+                list-style-type: none;
+            }
+
+            .right-box {
+                min-height: 602px;
+                @media(min-width: @screen-md-min) {
+                    min-height: 552px;
+                }
+                img {
+                    position: absolute;
+                    top:20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @media(min-width: @screen-md-min) {
+                        top: -11px;
+                    }
+
+                    &.faza {
+                        opacity: 0;
+                    }
+                }
+            }
         }
-        &.slide6 .right-box {
-            img {
-                margin-top: 90px;
+        &.slide6 {
+            .right-box {
+                img {
+                    margin-top: 90px;
+                }
+            }
+            ul {
+                list-style-type: none;
             }
         }
         &.slide8 {
@@ -272,7 +300,7 @@
                 }
                 @media (min-width: @screen-lg-min) {
                     &.topText {
-                    margin: 0 0 0 148px;
+                        margin: 0 0 0 148px;
                     }
                     &.centerText {
                         margin: 60px 0 0 552px;
