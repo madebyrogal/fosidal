@@ -10393,19 +10393,19 @@ label {
     color: #3a3a3a;
     list-style-type: none;
   }
-  3% {
+  2% {
     color: #fdc010;
     list-style-type: none;
   }
-  4% {
+  3% {
     color: #fdc010;
     list-style-type: initial;
   }
-  17% {
+  15% {
     color: #fdc010;
     list-style-type: initial;
   }
-  19% {
+  16% {
     color: #3a3a3a;
     list-style-type: none;
   }
@@ -10419,19 +10419,19 @@ label {
     color: #3a3a3a;
     list-style-type: none;
   }
-  3% {
+  2% {
     color: #fdc010;
     list-style-type: none;
   }
-  4% {
+  3% {
     color: #fdc010;
     list-style-type: initial;
   }
-  17% {
+  15% {
     color: #fdc010;
     list-style-type: initial;
   }
-  19% {
+  16% {
     color: #3a3a3a;
     list-style-type: none;
   }
@@ -10444,13 +10444,13 @@ label {
   0% {
     opacity: 0;
   }
-  3% {
+  2% {
     opacity: 1;
   }
-  17% {
+  15% {
     opacity: 1;
   }
-  19% {
+  16% {
     opacity: 0;
   }
   100% {
@@ -10461,13 +10461,13 @@ label {
   0% {
     opacity: 0;
   }
-  3% {
+  2% {
     opacity: 1;
   }
-  17% {
+  15% {
     opacity: 1;
   }
-  19% {
+  16% {
     opacity: 0;
   }
   100% {
@@ -10496,72 +10496,86 @@ label {
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza1 {
-  animation-name: text5;
-  animation-duration: 15s;
+  animation-name: text6;
+  animation-duration: 18s;
   animation-delay: 0s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza1 {
-  animation-name: img5;
-  animation-duration: 15s;
+  animation-name: img6;
+  animation-duration: 18s;
   animation-delay: 0s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza2 {
-  animation-name: text5;
-  animation-duration: 15s;
+  animation-name: text6;
+  animation-duration: 18s;
   animation-delay: 3s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza2 {
-  animation-name: img5;
-  animation-duration: 15s;
+  animation-name: img6;
+  animation-duration: 18s;
   animation-delay: 3s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza3 {
-  animation-name: text5;
-  animation-duration: 15s;
+  animation-name: text6;
+  animation-duration: 18s;
   animation-delay: 6s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza3 {
-  animation-name: img5;
-  animation-duration: 15s;
+  animation-name: img6;
+  animation-duration: 18s;
   animation-delay: 6s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza4 {
-  animation-name: text5;
-  animation-duration: 15s;
+  animation-name: text6;
+  animation-duration: 18s;
   animation-delay: 9s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza4 {
-  animation-name: img5;
-  animation-duration: 15s;
+  animation-name: img6;
+  animation-duration: 18s;
   animation-delay: 9s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza5 {
-  animation-name: text5;
-  animation-duration: 15s;
+  animation-name: text6;
+  animation-duration: 18s;
   animation-delay: 12s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza5 {
-  animation-name: img5;
-  animation-duration: 15s;
+  animation-name: img6;
+  animation-duration: 18s;
   animation-delay: 12s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide2 .txtFaza6 {
+  animation-name: text6;
+  animation-duration: 18s;
+  animation-delay: 15s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide2 .imgFaza6 {
+  animation-name: img6;
+  animation-duration: 18s;
+  animation-delay: 15s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
