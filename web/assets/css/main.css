@@ -10331,43 +10331,59 @@ label {
   margin-bottom: 30px;
   text-align: justify;
 }
-.winners .tableBox {
+.winners .tabelHeaderWraper {
+  position: relative;
+  padding-top: 52px;
+  background-color: #fff;
+}
+.winners .tabelHeaderWraper .tableBox {
   height: 550px;
   overflow-y: auto;
 }
-.winners .tableBox .table {
+.winners .tabelHeaderWraper .tableBox .table {
   margin-bottom: 0px;
 }
-.winners .tableBox .table thead {
+.winners .tabelHeaderWraper .tableBox .table thead {
   font-weight: bold;
 }
-.winners .tableBox .table thead tr {
+.winners .tabelHeaderWraper .tableBox .table thead tr {
   background-color: #fff;
 }
-.winners .tableBox .table thead tr th {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 30px;
-  border-bottom: none;
+.winners .tabelHeaderWraper .tableBox .table thead tr th {
+  height: 0;
+  line-height: 0;
+  padding: 0;
+  color: transparent;
+  border: none;
+  white-space: nowrap;
 }
-.winners .tableBox .table thead tr th:first-child {
+.winners .tabelHeaderWraper .tableBox .table thead tr th:first-child {
   width: 110px;
   text-align: center;
   padding-left: 0;
 }
-.winners .tableBox .table tbody tr:nth-child(2n+2) {
+.winners .tabelHeaderWraper .tableBox .table thead tr th div {
+  position: absolute;
+  color: #3a3a3a;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 30px;
+  top: 0;
+  line-height: normal;
+}
+.winners .tabelHeaderWraper .tableBox .table tbody tr:nth-child(2n+2) {
   background-color: #fff;
 }
-.winners .tableBox .table tbody tr:nth-child(2n+1) {
+.winners .tabelHeaderWraper .tableBox .table tbody tr:nth-child(2n+1) {
   background-color: #f2f2f2;
 }
-.winners .tableBox .table tbody tr td {
+.winners .tabelHeaderWraper .tableBox .table tbody tr td {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 30px;
   border-top: none;
 }
-.winners .tableBox .table tbody tr td:first-child {
+.winners .tabelHeaderWraper .tableBox .table tbody tr td:first-child {
   text-align: center;
   padding-left: 0;
 }
