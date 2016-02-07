@@ -14,9 +14,8 @@ class TermController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AppBundle:Term:index.html.twig', array(
-            // ...
-        ));
+        $page = $this->getDoctrine()->getRepository('AdminBundle:Page')->findOneBy(array('hashname' => 'rule'));
+        return $this->render('AppBundle:Term:index.html.twig', array('page' => $page));
     }
 
 }

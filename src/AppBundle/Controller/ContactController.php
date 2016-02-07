@@ -14,9 +14,8 @@ class ContactController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AppBundle:Contact:index.html.twig', array(
-            // ...
-        ));
+        $page = $this->getDoctrine()->getRepository('AdminBundle:Page')->findOneBy(array('hashname' => 'contact'));
+        return $this->render('AppBundle:Contact:index.html.twig', array('page' => $page));
     }
 
 }

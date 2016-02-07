@@ -8,15 +8,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class ResponsibilityController extends Controller
 {
+
     /**
      * @Route("odpowiedzialnosc_spoleczna.html", name="responsibility")
      * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {
-        return $this->render('AppBundle:Responsibility:index.html.twig', array(
-            // ...
-        ));
+        $page = $this->getDoctrine()->getRepository('AdminBundle:Page')->findOneBy(array('hashname' => 'responsibility'));
+        return $this->render('AppBundle:Responsibility:index.html.twig', array('page' => $page));
     }
 
 }

@@ -1,0 +1,45 @@
+{% extends 'AdminBundle::base.html.twig' %}
+
+{% block body %}
+    <h1>Strony</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Keywords</th>
+                <th>HashName</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for page in pages %}
+            <tr>
+                <td><a href="{{ path('admin_page_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
+                <td>{{ page.title }}</td>
+                <td>{{ page.description }}</td>
+                <td>{{ page.keywords }}</td>
+                <td>{{ page.hashname }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_page_show', { 'id': page.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_page_edit', { 'id': page.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_page_new') }}" class="btn btn-success">Utwórz</a>
+        </li>
+    </ul>
+{% endblock %}

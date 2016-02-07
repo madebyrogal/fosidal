@@ -9051,6 +9051,9 @@ label {
 .panel ul {
   list-style-type: none;
 }
+.panel .menu ul {
+  margin-bottom: 20px;
+}
 .panel .menu ul li {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -9088,6 +9091,10 @@ label {
 }
 .panel .data form div div select[multiple] {
   height: 300px;
+}
+.panel .data form div div textarea {
+  width: 700px;
+  height: 500px;
 }
 .modalBody {
   margin-top: 100px;

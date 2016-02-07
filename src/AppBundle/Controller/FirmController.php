@@ -8,15 +8,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class FirmController extends Controller
 {
+
     /**
      * @Route("o_firmie.html", name="firm")
      * @Method({"GET","POST","HEAD"})
      */
     public function indexAction()
     {
-        return $this->render('AppBundle:Firm:index.html.twig', array(
-            // ...
-        ));
+        $page = $this->getDoctrine()->getRepository('AdminBundle:Page')->findOneBy(array('hashname' => 'about'));
+        return $this->render('AppBundle:Firm:index.html.twig', array('page' => $page));
     }
 
 }

@@ -1,3 +1,11 @@
+admin_text:
+    resource: "@AdminBundle/Controller/TextController.php"
+    type:     annotation
+
+admin_page:
+    resource: "@AdminBundle/Controller/PageController.php"
+    type:     annotation
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

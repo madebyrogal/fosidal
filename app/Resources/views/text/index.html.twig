@@ -1,0 +1,43 @@
+{% extends 'AdminBundle::base.html.twig' %}
+
+{% block body %}
+    <h1>Teksty</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Strona</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for text in texts %}
+            <tr>
+                <td><a href="{{ path('admin_text_show', { 'id': text.id }) }}">{{ text.id }}</a></td>
+                <td>{{ text.title }}</td>
+                <td>{{ text.content }}</td>
+                <td>{{ text.page.title }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_text_show', { 'id': text.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_text_edit', { 'id': text.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_text_new') }}" class="btn btn-success">Utwórz</a>
+        </li>
+    </ul>
+{% endblock %}
