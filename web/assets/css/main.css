@@ -10353,7 +10353,12 @@ label {
   padding: 30px;
 }
 .winners h1 {
+  font-size: 30px;
+  font-weight: 400;
   margin-bottom: 15px;
+}
+.winners p {
+  font-size: 16px;
 }
 .winners .desc {
   margin-bottom: 30px;
@@ -10365,10 +10370,11 @@ label {
   background-color: #fff;
 }
 .winners .tabelHeaderWraper .tableBox {
-  height: 550px;
+  max-height: 357px;
   overflow-y: auto;
 }
 .winners .tabelHeaderWraper .tableBox .table {
+  font-size: 18px;
   margin-bottom: 0px;
 }
 .winners .tabelHeaderWraper .tableBox .table thead {
@@ -10383,9 +10389,11 @@ label {
   padding: 0;
   color: transparent;
   border: none;
+  border-left: 1px solid #e6e6e6;
   white-space: nowrap;
 }
 .winners .tabelHeaderWraper .tableBox .table thead tr th:first-child {
+  border-left: none;
   width: 110px;
   text-align: center;
   padding-left: 0;
@@ -10406,12 +10414,14 @@ label {
   background-color: #f2f2f2;
 }
 .winners .tabelHeaderWraper .tableBox .table tbody tr td {
+  border-left: 1px solid #e6e6e6;
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 30px;
   border-top: none;
 }
 .winners .tabelHeaderWraper .tableBox .table tbody tr td:first-child {
+  border-left: none;
   text-align: center;
   padding-left: 0;
 }
