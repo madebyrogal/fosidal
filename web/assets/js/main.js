@@ -2,6 +2,7 @@ $(document).ready(function () {
     scaleBar();
     initQuiz();
     toogleMenu();
+    initAutoTab();
 });
 
 $(window).resize(function () {
@@ -28,4 +29,9 @@ function toogleMenu(){
     $('#mobileMenu').on('click', function(){
        $('#menu').toggleClass('in'); 
     });
+}
+
+function initAutoTab(){
+    $('.form .postCode input').autotab('number');
+    $('.form .phone input').autotab('number');
 }

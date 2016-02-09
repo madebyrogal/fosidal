@@ -117,7 +117,6 @@ class Result
      * @var bool
      *
      * @ORM\Column(name="agree1", type="boolean")
-     * @Assert\NotBlank(message="Musisz zaznaczyć to pole")
      */
     private $agree1;
 

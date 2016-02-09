@@ -10195,6 +10195,8 @@ label {
 .form .right {
   padding-top: 12px;
   padding-left: 30px;
+  font-size: 14px;
+  line-height: 16px;
 }
 .form .left {
   padding-right: 30px;
@@ -10213,7 +10215,7 @@ label {
   width: 66%;
   padding-left: 0px;
 }
-.form form .formRow.custom:nth-child(2) ul li {
+.form form .formRow ul li {
   color: red;
   font-weight: bold;
   list-style-type: none;
@@ -10236,6 +10238,7 @@ label {
 }
 .form form .formRow.postCode input {
   width: 18px;
+  text-align: center;
   padding: 0 2px 0 2px;
 }
 .form form .formRow.postCode input:nth-child(3) {
@@ -10243,6 +10246,7 @@ label {
 }
 .form form .formRow.phone input {
   width: 18px;
+  text-align: center;
   padding: 0 2px 0 2px;
 }
 .form form .formDesc {
@@ -10820,7 +10824,6 @@ label {
 body {
   font-family: 'Open sans';
   font-size: 14px;
-  line-height: 14px;
   background-color: #fff;
   color: #3a3a3a;
 }

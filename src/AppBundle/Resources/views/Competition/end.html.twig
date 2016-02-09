@@ -15,14 +15,14 @@
                     <div class="col-sm-4">{{ form_label(form.name) }}</div>
                     <div class="col-sm-8">
                         {{ form_errors(form.name) }}
-                        {{ form_widget(form.name, {'attr': {'placeholder': 'Wpisz imię', 'pattern':"[a-zA-Z -]*"}}) }}
+                        {{ form_widget(form.name, {'attr': {'placeholder': 'Wpisz imię'}}) }}
                     </div>
                 </div>
                 <div class="row formRow custom">
                     <div class="col-sm-4">{{ form_label(form.surname) }}</div>
                     <div class="col-sm-8">
                         {{ form_errors(form.surname) }}
-                        {{ form_widget(form.surname, {'attr': {'placeholder': 'Wpisz nazwisko', 'pattern':"[a-zA-Z -]*"}}) }}
+                        {{ form_widget(form.surname, {'attr': {'placeholder': 'Wpisz nazwisko'}}) }}
                     </div>
                 </div>
                 <div class="row formRow custom">

@@ -18,6 +18,7 @@
     ],
     "dependencies":{
         "bootstrap": "3.3.*",
-        "font-awesome": "4.5.*"
+        "font-awesome": "4.5.*",
+        "jquery.autotab": "1.9.2"
     }
 }
