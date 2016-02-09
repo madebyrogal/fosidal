@@ -4,10 +4,12 @@
 
 {% block body %}
     <div class='modalBody clearfix form'>
+        <h1>REJESTRACJA</h1>
+        <p class="formDesc">Zwycięzcy z poszczególnych edycji konkursu będą wyłaniani w przeciągu 7 dni roboczych po zakończeniu każdej edycji.</p>
         {{ form_start(form) }}
+        <div class="errors">{{ form_errors(form) }}</div>
         <div class="row">
             <div class="col-sm-6 left">
-                <h1>REJESTRACJA</h1>
                 <div class="errors">{{ form_errors(form) }}</div>
                 <div class="row formRow">
                     <div class="col-sm-4">{{ form_label(form.name) }}</div>
@@ -16,42 +18,40 @@
                         {{ form_widget(form.name, {'attr': {'placeholder': 'Wpisz imię', 'pattern':"[a-zA-Z -]*"}}) }}
                     </div>
                 </div>
-                <div class="row formRow">
+                <div class="row formRow custom">
                     <div class="col-sm-4">{{ form_label(form.surname) }}</div>
                     <div class="col-sm-8">
                         {{ form_errors(form.surname) }}
                         {{ form_widget(form.surname, {'attr': {'placeholder': 'Wpisz nazwisko', 'pattern':"[a-zA-Z -]*"}}) }}
                     </div>
                 </div>
-                <div class="row formRow">
+                <div class="row formRow custom">
                     <div class="col-sm-4">{{ form_label(form.email) }}</div>
                     <div class="col-sm-8">
                         {{ form_errors(form.email) }}
                         {{ form_widget(form.email, {'attr': {'placeholder': 'Wpisz adres e-mail'}}) }}
                     </div>
                 </div>         
-                <div class="row formRow">
+                <div class="row formRow custom">
                     <div class="col-sm-4">{{ form_label(form.street) }}</div>
                     <div class="col-sm-8">
                         {{ form_errors(form.street) }}
                         {{ form_widget(form.street, {'attr': {'placeholder': 'Wpisz ulicę'}}) }}
                     </div>
                 </div>
-                <div class="row formRow">
+                <div class="row formRow houseNr">
                     <div class="col-sm-4">{{ form_label(form.houseNr) }}</div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-3">
                         {{ form_errors(form.houseNr) }}
                         {{ form_widget(form.houseNr) }}
                     </div>
-                </div>
-                <div class="row formRow">
-                    <div class="col-sm-4">{{ form_label(form.flatNr) }}</div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-2 custom">{{ form_label(form.flatNr) }}</div>
+                    <div class="col-sm-3">
                         {{ form_errors(form.flatNr) }}
                         {{ form_widget(form.flatNr) }}
                     </div>
                 </div>
-                <div class="row formRow postCode">
+                <div class="row formRow custom postCode">
                     <div class="col-sm-4">{{ form_label(form.postCode) }}</div>
                     <div class="col-sm-8">
                         {{ form_errors(form.postCode) }}
@@ -62,18 +62,26 @@
                         <input type="text" name="postCode[]" required="required" maxlength="1" value="{{form.vars.value.postCode | slice(4, 1)}}" pattern="\d{1}">
                     </div>
                 </div>
-                <div class="row formRow">
+                <div class="row formRow custom">
                     <div class="col-sm-4">{{ form_label(form.city) }}</div>
                     <div class="col-sm-8">
                         {{ form_errors(form.city) }}
                         {{ form_widget(form.city, {'attr': {'placeholder': 'Wpisz miasto'}}) }}
                     </div>
                 </div>
-                <div class="row formRow">
+                <div class="row formRow custom phone">
                     <div class="col-sm-4">{{ form_label(form.phone) }}</div>
                     <div class="col-sm-8">
                         {{ form_errors(form.phone) }}
-                        {{ form_widget(form.phone, {'attr': {'placeholder': 'Wpisz nr telefonu', 'pattern':'[0-9- +]{9,16}'}}) }}
+                        {{ form_widget(form.phone, {'attr': {'value':form.vars.value.phone | slice(0, 1), 'pattern':"\\d{1}", 'maxlength': '1'}}) }}
+                        <input type="text" name="phone[]" required="required" maxlength="1" value="{{form.vars.value.phone | slice(1, 1)}}" pattern="\d{1}">
+                        <input type="text" name="phone[]" required="required" maxlength="1" value="{{form.vars.value.phone | slice(2, 1)}}" pattern="\d{1}">
+                        <input type="text" name="phone[]" required="required" maxlength="1" value="{{form.vars.value.phone | slice(3, 1)}}" pattern="\d{1}">
+                        <input type="text" name="phone[]" required="required" maxlength="1" value="{{form.vars.value.phone | slice(4, 1)}}" pattern="\d{1}">
+                        <input type="text" name="phone[]" required="required" maxlength="1" value="{{form.vars.value.phone | slice(5, 1)}}" pattern="\d{1}">
+                        <input type="text" name="phone[]" required="required" maxlength="1" value="{{form.vars.value.phone | slice(6, 1)}}" pattern="\d{1}">
+                        <input type="text" name="phone[]" required="required" maxlength="1" value="{{form.vars.value.phone | slice(7, 1)}}" pattern="\d{1}">
+                        <input type="text" name="phone[]" required="required" maxlength="1" value="{{form.vars.value.phone | slice(8, 1)}}" pattern="\d{1}">
                     </div>
                 </div>
                 <div class="row formRow formDesc">
@@ -83,18 +91,17 @@
             </div>
             <div class="col-sm-6 right">
                 <p>
-                    Informujemy, że podane dane osobowe przetwarzane będą przez Polpharma Biuro Handlowe Sp. o.o. z siedzibą
-                    w Warszawie 00-728, przy ul. Bobrowieckiej 6, zgodnie z ustawą z dnia 29 sierpnia 1997 r. o ochronie  danych
-                    osobowych (t.j. Dz. U. z 2014 r., poz. 1182 ze zm.) w celu informowania o produktach i usługach spółek należących
-                    do Grupy Polpharma. Podanie danych jest dobrowolne. Każda osoba ma prawo dostępu do treści swoich danych
-                    i ich poprawiania.
+                    Informujemy, że podane dane osobowe przetwarzane będą przez Polpharma Biuro Handlowe Sp. o.o. z siedzibąw Warszawie 00-728, przy ul.
+                    Bobrowieckiej 6, zgodnie z ustawą z dnia 29 sierpnia 1997 r. o ochronie  danych osobowych (t.j. Dz. U. z 2014 r., poz. 1182 ze zm.)
+                    w celu informowania o produktach i usługach spółek należących do Grupy Polpharma. Podanie danych jest dobrowolne. Każda osoba ma
+                    prawo dostępu do treści swoich danych i ich poprawiania.
                 </p>
                 <div class="checkBoxWraper">
                     {{ form_errors(form.agree1) }}
                     <div class="checkBox">
                         {{ form_widget(form.agree1) }}
                     </div>
-                    Wyrażam zgodę na przetwarzanie moich danych osobowych w określonych powyżej celachpowyżej celach.
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych w określonych powyżej celach.
                 </div>
                 <div class="checkBoxWraper last">
                     {{ form_errors(form.agree2) }}

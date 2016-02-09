@@ -10174,10 +10174,13 @@ label {
   vertical-align: middle;
 }
 .form {
-  padding: 40px;
+  padding: 30px;
 }
 .form h1 {
-  margin-bottom: 40px;
+  margin-bottom: 5px;
+}
+.form .formDesc {
+  margin-bottom: 20px;
 }
 .form .errors {
   color: red;
@@ -10187,25 +10190,27 @@ label {
   list-style-type: none;
 }
 .form .right {
-  padding-top: 70px;
+  padding-top: 12px;
   padding-left: 30px;
 }
 .form .left {
   padding-right: 30px;
 }
 .form form .formRow {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .form form .formRow:first-child {
   margin-top: 0;
 }
-.form form .formRow div:first-child {
+.form form .formRow.custom:first-child {
   width: 34%;
+  padding-right: 5px;
 }
-.form form .formRow div:nth-child(2) {
+.form form .formRow.custom:nth-child(2) {
   width: 66%;
+  padding-left: 0px;
 }
-.form form .formRow div:nth-child(2) ul li {
+.form form .formRow.custom:nth-child(2) ul li {
   color: red;
   font-weight: bold;
   list-style-type: none;
@@ -10232,6 +10237,10 @@ label {
 }
 .form form .formRow.postCode input:nth-child(3) {
   margin-left: 10px;
+}
+.form form .formRow.phone input {
+  width: 18px;
+  padding: 0 2px 0 2px;
 }
 .form form .formDesc {
   color: #da2828;
@@ -10808,6 +10817,7 @@ label {
 body {
   font-family: 'Open sans';
   font-size: 14px;
+  line-height: 14px;
   background-color: #fff;
   color: #3a3a3a;
 }

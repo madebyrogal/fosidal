@@ -153,9 +153,13 @@ class CompetitionController extends Controller
             //postCode
             $fakePostCode = $request->request->get('postCode');
             $result['postCode'] = $result['postCode'][0] . join('', $fakePostCode);
+            //phone
+            $fakePhone = $request->request->get('phone');
+            $result['phone'] = $result['phone'][0] . join('', $fakePhone);
             $request->request->set('result', $result);
             //Clear request
             $request->request->remove('postCode');
+            $request->request->remove('phone');
         }
     }
 
