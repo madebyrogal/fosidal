@@ -9156,7 +9156,7 @@ label {
   line-height: 60px;
   padding-left: 20px;
   transition-property: background-color;
-  transition-duration: 2s;
+  transition-duration: 0.5s;
   margin: 10px 0 35px 0;
   padding: 0 0 0 6%;
 }
@@ -9536,7 +9536,7 @@ label {
   line-height: 60px;
   padding-left: 20px;
   transition-property: background-color;
-  transition-duration: 2s;
+  transition-duration: 0.5s;
   float: right;
   font-size: 17px;
   width: 100%;
@@ -9588,7 +9588,7 @@ label {
   line-height: 60px;
   padding-left: 20px;
   transition-property: background-color;
-  transition-duration: 2s;
+  transition-duration: 0.5s;
   float: left;
   font-size: 17px;
   padding-left: 0;
@@ -9670,7 +9670,7 @@ label {
   line-height: 60px;
   padding-left: 20px;
   transition-property: background-color;
-  transition-duration: 2s;
+  transition-duration: 0.5s;
   margin: 0 0 11px 0;
   padding: 0 0 0 6%;
 }
@@ -9953,10 +9953,18 @@ label {
   font-size: 36px;
 }
 .question .questionContainer {
-  padding-top: 70px;
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-bottom: 80px;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .question .questionContainer {
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 50px;
+  }
 }
 .question .questionCounterTop {
   float: right;
@@ -9969,6 +9977,7 @@ label {
 .question .questionCounterBottom {
   text-align: center;
   font-size: 24px;
+  font-style: italic;
   color: #999999;
   padding-bottom: 20px;
 }
@@ -9984,7 +9993,7 @@ label {
   line-height: 60px;
   padding-left: 20px;
   transition-property: background-color;
-  transition-duration: 2s;
+  transition-duration: 0.5s;
   position: absolute;
   z-index: 1;
   bottom: 5px;
@@ -10014,12 +10023,12 @@ label {
     display: block;
     position: static;
     margin: 0 auto;
-    width: 300px;
+    width: 280px;
   }
 }
 .question .nextQuestion.disabled {
   cursor: pointer;
-  background-color: #999999;
+  background-color: #3a3a3a;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   color: #fff;
@@ -10029,17 +10038,17 @@ label {
   line-height: 60px;
   padding-left: 20px;
   transition-property: background-color;
-  transition-duration: 2s;
+  transition-duration: 0.5s;
 }
 .question .nextQuestion.disabled:hover {
-  background-color: #999999;
+  background-color: #ccc;
   text-decoration: none;
 }
 .question .nextQuestion.disabled:hover i {
   background-color: #999999;
 }
 .question .nextQuestion.disabled i {
-  background-color: #3a3a3a;
+  background-color: #fdc010;
   text-align: center;
   line-height: 40px;
   float: right;
@@ -10240,7 +10249,7 @@ label {
   line-height: 60px;
   padding-left: 20px;
   transition-property: background-color;
-  transition-duration: 2s;
+  transition-duration: 0.5s;
   border: none;
   margin-top: 40px;
 }
@@ -10327,7 +10336,7 @@ label {
   line-height: 60px;
   padding-left: 20px;
   transition-property: background-color;
-  transition-duration: 2s;
+  transition-duration: 0.5s;
   float: right;
 }
 .thankYou .ranking:hover {
