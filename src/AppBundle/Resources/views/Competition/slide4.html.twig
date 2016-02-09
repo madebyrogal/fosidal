@@ -5,30 +5,30 @@
 {% block body %}
     <div class="modalBody clearfix">
         <div class="competition slide4">
-			<div class="row">
-				<div class="col-md-6 left-box">
-				    <h1>Objawy <span class="yellow">II fazy</span> zakażenia górnych dróg oddechowych:</h1>
-				    <ul>
-				    	<li class="txtFaza1">gęsty, lepki śluz w nosie</li>
-				    	<li class="txtFaza2">kaszel mokry</li>
-				    </ul>
-				</div>
-				<div class="col-md-6 right-box">
-					<div class="pagination-slide pagination-top">
-						<span>Slajd 04/08</span>
-					</div>
-				    <img class="img-responsive" alt="" src="{{ asset('assets/images/fantom.png') }}">
-				    <img class="img-responsive faza imgFaza1" alt="" src="{{ asset('assets/images/fantomG.png') }}">
-				    <img class="img-responsive faza imgFaza2" alt="" src="{{ asset('assets/images/fantomC.png') }}">
-				</div>
-			</div>
-			<div class="bottom-modal">
-				<a class="button back" title="" href="{{ path('competition', {'slideNr': 3}) }}"><i class="fa fa-angle-double-left"></i>Poprzedni slajd</a>
-				<div class="pagination-slide pagination-bottom">
-					<span>Slajd 04/08</span>
-				</div>
-				<a class="button next" title="" href="{{ path('competition', {'slideNr': 5}) }}">Następny slajd<i class="fa fa-angle-double-right"></i></a>
-			</div>
-		</div>
+            <div class="row">
+                <div class="col-md-6 left-box">
+                    <h1>Objawy <span class="yellow">II fazy</span> zakażenia górnych dróg oddechowych:</h1>
+                    <ul>
+                        <li class="txtFaza1"><i class="fa fa-circle"></i>gęsty, lepki śluz w nosie</li>
+                        <li class="txtFaza2"><i class="fa fa-circle"></i>kaszel mokry</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 right-box">
+                    <div class="pagination-slide pagination-top">
+                        <span>Slajd 04/08</span>
+                    </div>
+                    <img class="img-responsive" alt="" src="{{ asset('assets/images/fantom.png') }}">
+                    <img class="img-responsive faza imgFaza1" alt="" src="{{ asset('assets/images/fantomG.png') }}">
+                    <img class="img-responsive faza imgFaza2" alt="" src="{{ asset('assets/images/fantomC.png') }}">
+                </div>
+            </div>
+            <div class="bottom-modal">
+                <a class="button back" title="" href="{{ path('competition', {'slideNr': 3}) }}"><i class="fa fa-angle-double-left"></i>Poprzedni slajd</a>
+                <div class="pagination-slide pagination-bottom">
+                    <span>Slajd 04/08</span>
+                </div>
+                <a class="button next" title="" href="{{ path('competition', {'slideNr': 5}) }}">Następny slajd<i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
     </div>
 {% endblock %}

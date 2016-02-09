@@ -68,7 +68,7 @@
                 font-size: 13px;
                 line-height: 16px;
                 margin-bottom: 18px;
-                
+
                 &.firstP{
                     margin-bottom: 33px;
                 }
@@ -86,7 +86,7 @@
                 //background: linear-gradient(to bottom,  #e7e7e7 0%,#ffffff 100%);
                 //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#ffffff',GradientType=0 );
                 padding-bottom: 20px;
-                
+
                 img{
                     margin-top: 90px;
                     margin-bottom: 5px;
@@ -136,11 +136,19 @@
 
             li {
                 color: @colorTextMain;
+                position: relative;
                 font-size: 24px;
                 font-weight: bold;
                 line-height: 30px;
                 span {
                     color: @colorTextMain;
+                }
+                i {
+                    position: absolute;
+                    font-size: 12px;
+                    top: 10px;
+                    left: -20px;
+                    opacity: 0;
                 }
             }
         }
@@ -155,7 +163,7 @@
                     font-size: 30px;
                     font-weight: bold;
                     line-height: 24px;
-                    //list-style-type: none;
+                    list-style-type: none;
                     margin-bottom: 30px;
                     &.active {
                         color: #fdc010;
@@ -164,6 +172,9 @@
                     span {
                         display: block;
                         font-size: 18px;
+                    }
+                    i {
+                        top: 7px;
                     }
                 }
             }

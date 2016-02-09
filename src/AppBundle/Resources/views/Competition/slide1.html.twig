@@ -3,30 +3,30 @@
 {% block title %}Fosidal - Konkurs{% endblock %}
 
 {% block body %}
-	<div class="modalBody clearfix">
-		<div class="competition slide1">
-			<div class="row">
-				<div class="col-md-6 left-box">
-				    <h1>Trzy fazy zakażenia dróg oddechowych:</h1>
-				    <ul>
-				    	<li class="txtFaza1">I faza <span>obrzękowo - wysiękowa<br> (zwana również wysiękową)</span></li>
-				    	<li class="txtFaza2">II faza <span>obturacji gęstej</span></li>
-				    	<li class="txtFaza3">III faza <span>nadkażenia bakteryjnego</span></li>
-				    </ul>
-				</div>
-				<div class="col-md-6 right-box">
-					<div class="pagination-slide pagination-top">
-						<span>Slajd 01/08</span>
-					</div>
-				    <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/fantom.png') }}">
-				</div>
-			</div>
-			<div class="bottom-modal">
-				<div class="pagination-slide pagination-bottom">
-					<span>Slajd 01/08</span>
-				</div>
-				<a class="button next" title="" href="{{ path('competition', {'slideNr': 2}) }}">Następny slajd<i class="fa fa-angle-double-right"></i></a>
-			</div>
-		</div>
-	</div>
+    <div class="modalBody clearfix">
+        <div class="competition slide1">
+            <div class="row">
+                <div class="col-md-6 left-box">
+                    <h1>Trzy fazy zakażenia dróg oddechowych:</h1>
+                    <ul>
+                        <li class="txtFaza1"><i class="fa fa-circle"></i>I faza <span>obrzękowo - wysiękowa<br> (zwana również wysiękową)</span></li>
+                        <li class="txtFaza2"><i class="fa fa-circle"></i>II faza <span>obturacji gęstej</span></li>
+                        <li class="txtFaza3"><i class="fa fa-circle"></i>III faza <span>nadkażenia bakteryjnego</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 right-box">
+                    <div class="pagination-slide pagination-top">
+                        <span>Slajd 01/08</span>
+                    </div>
+                    <img class="img-responsive center-block" alt="" src="{{ asset('assets/images/fantom.png') }}">
+                </div>
+            </div>
+            <div class="bottom-modal">
+                <div class="pagination-slide pagination-bottom">
+                    <span>Slajd 01/08</span>
+                </div>
+                <a class="button next" title="" href="{{ path('competition', {'slideNr': 2}) }}">Następny slajd<i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

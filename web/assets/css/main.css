@@ -9266,12 +9266,20 @@ label {
 }
 .modalBody .competition ul li {
   color: #3a3a3a;
+  position: relative;
   font-size: 24px;
   font-weight: bold;
   line-height: 30px;
 }
 .modalBody .competition ul li span {
   color: #3a3a3a;
+}
+.modalBody .competition ul li i {
+  position: absolute;
+  font-size: 12px;
+  top: 10px;
+  left: -20px;
+  opacity: 0;
 }
 .modalBody .competition.slide1 ul {
   margin: 20px 5% 0 10%;
@@ -9286,6 +9294,7 @@ label {
   font-size: 30px;
   font-weight: bold;
   line-height: 24px;
+  list-style-type: none;
   margin-bottom: 30px;
 }
 .modalBody .competition.slide1 ul li.active {
@@ -9295,6 +9304,9 @@ label {
 .modalBody .competition.slide1 ul li span {
   display: block;
   font-size: 18px;
+}
+.modalBody .competition.slide1 ul li i {
+  top: 7px;
 }
 .modalBody .competition.slide2 ul {
   list-style-type: none;
@@ -10452,53 +10464,69 @@ label {
 @-webkit-keyframes text2 {
   0% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   3% {
     color: #fdc010;
-    list-style-type: none;
-  }
-  4% {
-    color: #fdc010;
-    list-style-type: initial;
   }
   46% {
     color: #fdc010;
-    list-style-type: initial;
   }
   49% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   100% {
     color: #3a3a3a;
-    list-style-type: none;
+  }
+}
+@-webkit-keyframes dot2 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  46% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes text2 {
   0% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   3% {
     color: #fdc010;
-    list-style-type: none;
-  }
-  4% {
-    color: #fdc010;
-    list-style-type: initial;
   }
   46% {
     color: #fdc010;
-    list-style-type: initial;
   }
   49% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   100% {
     color: #3a3a3a;
-    list-style-type: none;
+  }
+}
+@keyframes dot2 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  46% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @-webkit-keyframes img2 {
@@ -10538,112 +10566,144 @@ label {
 @-webkit-keyframes text3 {
   0% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   3% {
     color: #fdc010;
-    list-style-type: none;
-  }
-  4% {
-    color: #fdc010;
-    list-style-type: initial;
   }
   28% {
     color: #fdc010;
-    list-style-type: initial;
   }
   31% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   100% {
     color: #3a3a3a;
-    list-style-type: none;
+  }
+}
+@-webkit-keyframes dot3 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes text3 {
   0% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   3% {
     color: #fdc010;
-    list-style-type: none;
-  }
-  4% {
-    color: #fdc010;
-    list-style-type: initial;
   }
   28% {
     color: #fdc010;
-    list-style-type: initial;
   }
   31% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   100% {
     color: #3a3a3a;
-    list-style-type: none;
+  }
+}
+@keyframes dot3 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @-webkit-keyframes text6 {
   0% {
     color: #3a3a3a;
-    list-style-type: none;
-  }
-  2% {
-    color: #fdc010;
-    list-style-type: none;
   }
   3% {
     color: #fdc010;
-    list-style-type: initial;
   }
   15% {
     color: #fdc010;
-    list-style-type: initial;
   }
   16% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   100% {
     color: #3a3a3a;
-    list-style-type: none;
+  }
+}
+@-webkit-keyframes dot6 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  16% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes text6 {
   0% {
     color: #3a3a3a;
-    list-style-type: none;
-  }
-  2% {
-    color: #fdc010;
-    list-style-type: none;
   }
   3% {
     color: #fdc010;
-    list-style-type: initial;
   }
   15% {
     color: #fdc010;
-    list-style-type: initial;
   }
   16% {
     color: #3a3a3a;
-    list-style-type: none;
   }
   100% {
     color: #3a3a3a;
-    list-style-type: none;
+  }
+}
+@keyframes dot6 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  16% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @-webkit-keyframes img6 {
   0% {
     opacity: 0;
   }
-  2% {
+  3% {
     opacity: 1;
   }
   15% {
@@ -10660,7 +10720,7 @@ label {
   0% {
     opacity: 0;
   }
-  2% {
+  3% {
     opacity: 1;
   }
   15% {
@@ -10680,8 +10740,22 @@ label {
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
+.slide1 .txtFaza1 i {
+  animation-name: dot3;
+  animation-duration: 6s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
 .slide1 .txtFaza2 {
   animation-name: text3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide1 .txtFaza2 i {
+  animation-name: dot3;
   animation-duration: 6s;
   animation-delay: 2s;
   animation-timing-function: ease-in;
@@ -10694,8 +10768,22 @@ label {
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
+.slide1 .txtFaza3 i {
+  animation-name: dot3;
+  animation-duration: 6s;
+  animation-delay: 4s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
 .slide2 .txtFaza1 {
   animation-name: text6;
+  animation-duration: 12s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide2 .txtFaza1 i {
+  animation-name: dot6;
   animation-duration: 12s;
   animation-delay: 0s;
   animation-timing-function: ease-in;
@@ -10715,6 +10803,13 @@ label {
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
+.slide2 .txtFaza2 i {
+  animation-name: dot6;
+  animation-duration: 12s;
+  animation-delay: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
 .slide2 .imgFaza2 {
   animation-name: img6;
   animation-duration: 12s;
@@ -10724,6 +10819,13 @@ label {
 }
 .slide2 .txtFaza3 {
   animation-name: text6;
+  animation-duration: 12s;
+  animation-delay: 4s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide2 .txtFaza3 i {
+  animation-name: dot6;
   animation-duration: 12s;
   animation-delay: 4s;
   animation-timing-function: ease-in;
@@ -10743,6 +10845,13 @@ label {
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
+.slide2 .txtFaza4 i {
+  animation-name: dot6;
+  animation-duration: 12s;
+  animation-delay: 6s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
 .slide2 .imgFaza4 {
   animation-name: img6;
   animation-duration: 12s;
@@ -10752,6 +10861,13 @@ label {
 }
 .slide2 .txtFaza5 {
   animation-name: text6;
+  animation-duration: 12s;
+  animation-delay: 8s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide2 .txtFaza5 i {
+  animation-name: dot6;
   animation-duration: 12s;
   animation-delay: 8s;
   animation-timing-function: ease-in;
@@ -10771,6 +10887,13 @@ label {
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
+.slide2 .txtFaza6 i {
+  animation-name: dot6;
+  animation-duration: 12s;
+  animation-delay: 10s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
 .slide2 .imgFaza6 {
   animation-name: img6;
   animation-duration: 12s;
@@ -10780,6 +10903,13 @@ label {
 }
 .slide4 .txtFaza1 {
   animation-name: text2;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide4 .txtFaza1 i {
+  animation-name: dot2;
   animation-duration: 4s;
   animation-delay: 0s;
   animation-timing-function: ease-in;
@@ -10799,6 +10929,13 @@ label {
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
+.slide4 .txtFaza2 i {
+  animation-name: dot2;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
 .slide4 .imgFaza2 {
   animation-name: img2;
   animation-duration: 4s;
@@ -10813,8 +10950,22 @@ label {
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
+.slide6 .txtFaza1 i {
+  animation-name: dot2;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
 .slide6 .txtFaza2 {
   animation-name: text2;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.slide6 .txtFaza2 i {
+  animation-name: dot2;
   animation-duration: 4s;
   animation-delay: 2s;
   animation-timing-function: ease-in;
