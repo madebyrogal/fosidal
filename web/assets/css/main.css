@@ -10987,6 +10987,11 @@ body .mainBox {
   background-repeat: no-repeat;
   overflow-x: hidden;
 }
+@media (min-width: 1800px) {
+  body .mainBox {
+    background-size: 100% 1100px;
+  }
+}
 h1,
 h2,
 h3,
