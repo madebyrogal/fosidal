@@ -10980,15 +10980,11 @@ body {
 body .mainBox {
   padding-left: 0;
   padding-right: 0;
-  background-size: cover;
+  background-size: contain 1100px;
+  background-position: 50% 0%;
   min-height: 1100px;
   background-repeat: no-repeat;
   overflow-x: hidden;
-}
-@media (max-width: 1920px) {
-  body .mainBox {
-    background-size: contain;
-  }
 }
 h1,
 h2,
