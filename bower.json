@@ -19,6 +19,7 @@
     "dependencies":{
         "bootstrap": "3.3.*",
         "font-awesome": "4.5.*",
-        "jquery.autotab": "1.9.2"
+        "jquery.autotab": "1.9.2",
+        "tinymce": "4.3.3"
     }
 }
