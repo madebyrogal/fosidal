@@ -9817,41 +9817,10 @@ label {
 .modalBody .about .seeMore i {
   margin-left: 30px;
 }
-.modalBody .bylaw {
-  padding: 40px 4%;
-}
-.modalBody .bylaw h1 {
-  font-size: 30px;
-}
-.modalBody .bylaw ol {
-  list-style-type: upper-roman;
-  margin: 20px 0 0 4%;
-  padding: 0;
-}
-.modalBody .bylaw ol li {
-  font-size: 24px;
-  margin: 0 0 34px 0;
-}
-.modalBody .bylaw ol li p {
-  font-size: 16px;
-  line-height: 18px;
-  margin: 20px 0 0 0;
-}
-.modalBody .bylaw ol ol {
-  list-style: decimal;
-  margin: 20px 0 0 0;
-}
-.modalBody .bylaw ol ol li {
-  font-size: 16px;
-  line-height: 18px;
-  margin: 0 0 20px 0;
-}
-.modalBody .bylaw ol ol ul {
-  list-style: disc;
-  margin: 20px 0 0 0;
-}
 .static {
   padding: 0 4% 20px 4%;
+  font-size: 16px;
+  line-height: 20px;
 }
 .static h1,
 .static .h1,
@@ -9859,7 +9828,7 @@ label {
 .static .h2,
 .static h3,
 .static .h3 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 20px;
 }
 .static p {
@@ -9869,7 +9838,7 @@ label {
 .static ol {
   margin-bottom: 10px;
   margin-top: 0;
-  padding: 0 0 0 14px;
+  padding: 0 0 0 20px;
 }
 .pointCounter {
   max-width: 462px;
@@ -10400,6 +10369,23 @@ label {
 .winners .desc {
   margin-bottom: 30px;
   text-align: justify;
+}
+.winners .tab {
+  list-style-type: none;
+}
+.winners .tab li {
+  display: inline-block;
+  padding: 18px 20px;
+  margin-right: 2px;
+  background-color: #e6e6e6;
+  color: #999999;
+}
+.winners .tab li.active {
+  background-color: #fdc010;
+  color: #fff;
+}
+.winners .quizeSelect {
+  float: right;
 }
 .winners .tabelHeaderWraper {
   position: relative;
