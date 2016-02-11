@@ -16,7 +16,7 @@ class TextType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('content')
+            ->add('content', 'Symfony\Component\Form\Extension\Core\Type\TextareaType', array('attr'=>array('class'=>'tinyMCE')))
             ->add('page', 'Symfony\Bridge\Doctrine\Form\Type\EntityType', array('class' => 'AdminBundle:Page', 'choice_label' => 'title'))
         ;
     }

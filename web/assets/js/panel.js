@@ -5,6 +5,7 @@ $(document).ready(function () {
 
 function initTinyMCE() {
     tinymce.init({
-        selector: 'textarea'
+        selector: '.tinyMCE',
+        menubar: false
     });
 }
