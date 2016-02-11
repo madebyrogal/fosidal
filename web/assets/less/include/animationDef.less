@@ -53,6 +53,39 @@
 @keyframes text3 {.animeText3()}
 @keyframes dot3 {.animeDot3()}
 
+//Anime 5 elements ------------------------------------------------------------------------
+.animeText5(){
+    0% { color: @colorTextMain} 
+    3% { color: @colorYellow}
+    18% { color: @colorYellow} 
+    19% { color:@colorTextMain}  
+    100% { color:@colorTextMain}  
+}
+
+.animeDot5() {
+    0% { opacity: 0} 
+    3% { opacity: 1}
+    18% { opacity: 1}
+    19% { opacity:0}  
+    100% { opacity:0} 
+}
+
+.animeImg5(){
+    0% { opacity: 0;}
+    3% { opacity: 1;}
+    18% { opacity: 1;}
+    19% { opacity: 0;}
+    100% { opacity: 0;}
+}
+
+@-webkit-keyframes text5 {.animeText5()}
+@-webkit-keyframes dot5 {.animeDot5()}
+@keyframes text5 {.animeText5()}
+@keyframes dot5 {.animeDot5()}
+
+@-webkit-keyframes img5 {.animeImg5()}
+@keyframes img5 {.animeImg5()}
+
 //Anime 6 elements ------------------------------------------------------------------------
 .animeText6(){
     0% { color: @colorTextMain} 
