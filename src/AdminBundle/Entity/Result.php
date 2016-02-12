@@ -116,14 +116,14 @@ class Result
     /**
      * @var bool
      *
-     * @ORM\Column(name="agree1", type="boolean")
+     * @ORM\Column(name="agree1", type="boolean", nullable=true)
      */
     private $agree1;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="agree2", type="boolean")
+     * @ORM\Column(name="agree2", type="boolean", nullable=true)
      */
     private $agree2;
 
@@ -152,6 +152,20 @@ class Result
      * @ORM\Column(name="created", type="datetime")
      */
     private $created;
+    
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="award1", type="boolean")
+     */
+    private $award1;
+    
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="award2", type="boolean")
+     */
+    private $award2;
 
     /**
      * Get id
@@ -456,4 +470,63 @@ class Result
         $this->survey = $survey;
     }
 
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Result
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Set award1
+     *
+     * @param boolean $award1
+     * @return Result
+     */
+    public function setAward1($award1)
+    {
+        $this->award1 = $award1;
+
+        return $this;
+    }
+
+    /**
+     * Get award1
+     *
+     * @return boolean 
+     */
+    public function getAward1()
+    {
+        return $this->award1;
+    }
+
+    /**
+     * Set award2
+     *
+     * @param boolean $award2
+     * @return Result
+     */
+    public function setAward2($award2)
+    {
+        $this->award2 = $award2;
+
+        return $this;
+    }
+
+    /**
+     * Get award2
+     *
+     * @return boolean 
+     */
+    public function getAward2()
+    {
+        return $this->award2;
+    }
 }

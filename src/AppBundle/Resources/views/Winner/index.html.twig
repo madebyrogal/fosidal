@@ -8,16 +8,29 @@
         <p class="desc">
             Zwycięzcy z poszczególnych etapów konkursu będą wyłaniani w przeciągu 7 dni roboczych po zakończeniu każdego etapu. 
         </p>
+        <form action="{{path('winner')}}" method="POST" />
+            <div class="tab">
+                <input type="submit" name="award1" value="Etui na pieczątki" class="active"/>
+                <input type="submit" name="award2" value="Etui na klucze" />
+            </div>
+            <div class="quizeSelect clearfix">
+                <select name="quize">
+                    <option id="1">Edycja pierwsza</option>
+                    <option>Edycja druga</option>
+                    <option>Edycja trzecia</option>
+                </select>
+            </div>
+        </form>
         <div class="tabelHeaderWraper">
             <div class="tableBox">
                 <table class="table">
                     <thead>
                         <tr>
                             <th><div>Miejsce</div></th>
-                            <th><div>Nazwisko</div></th>
-                            <th><div>Imię</div></th>
-                            <th><div>Miasto</div></th>
-                        </tr>
+                    <th><div>Nazwisko</div></th>
+                    <th><div>Imię</div></th>
+                    <th><div>Miasto</div></th>
+                    </tr>
                     </thead>
                     <tbody>
                         {% for result in results %}
