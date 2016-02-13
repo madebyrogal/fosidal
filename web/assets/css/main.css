@@ -10390,6 +10390,10 @@ label {
 .winners .quizeSelect {
   float: right;
 }
+.winners .quizeSelect select {
+  background-color: #fff;
+  padding: 4px;
+}
 .winners .tabelHeaderWraper {
   position: relative;
   padding-top: 52px;
