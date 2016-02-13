@@ -15,21 +15,28 @@ class WinnerController extends Controller
      */
     public function indexAction(Request $request)
     {
-//        $surveyes = $this->getDoctrine()->getRepository('AdminBundle:Survey')->findActually();
-//        if($request->getMethod() === Request::METHOD_POST){
-//            $survey = $this->getDoctrine()->getRepository('AdminBundle:Survey')->find($request->get('quiz'));
-//            if($request->get('award1')->isClicked()){
-//                $results = $this->getDoctrine()->getRepository('AdminBundle:Result')->findBy(array('award1'=>true, 'survey'=>$survey));
-//            } elseif($request->get('award2')->isClicked()){
-//                $results = $this->getDoctrine()->getRepository('AdminBundle:Result')->findBy(array('award2'=>true, 'survey'=>$survey));
-//            }
-//        } else {
-//            $results = $this->getDoctrine()->getRepository('AdminBundle:Result')->findBy(array('award1'=>true, 'survey'=>$surveyes[0]));
-//        }
-//        
-//        return $this->render('AppBundle:Winner:index.html.twig', array('results'=>$results, 'surveyes'=>$surveyes));
+        $surveyes = $this->getDoctrine()->getRepository('AdminBundle:Survey')->findBy(array(), array('start' => 'ASC'));
+        if($request->getMethod() === Request::METHOD_POST){
+            $surveyActuall = $this->getDoctrine()->getRepository('AdminBundle:Survey')->find($request->get('quize'));
+            if($request->get('award1')){
+                $results = $this->getDoctrine()->getRepository('AdminBundle:Result')->findBy(array('award1'=>true, 'survey'=>$surveyActuall));
+                $award = 1;
+            } elseif($request->get('award2')){
+                $results = $this->getDoctrine()->getRepository('AdminBundle:Result')->findBy(array('award2'=>true, 'survey'=>$surveyActuall));
+                $award = 2;
+            } else {
+                $award = $request->request->get('award');
+                $results = $this->getDoctrine()->getRepository('AdminBundle:Result')->findBy(array('award'.$award=>true, 'survey'=>$surveyActuall));
+            }
+        } else {
+            //On get without post formular (initial data)
+            $surveyActuall = $this->getDoctrine()->getRepository('AdminBundle:Survey')->findActive();
+            $results = $this->getDoctrine()->getRepository('AdminBundle:Result')->findBy(array('award1'=>true, 'survey'=>$surveyActuall));
+            $award = 1;
+        }
+        
         $results = array();
-        return $this->render('AppBundle:Winner:index.html.twig', array('results'=>$results));
+        return $this->render('AppBundle:Winner:index.html.twig', array('results'=>$results, 'surveyes'=>$surveyes, 'award'=>$award, 'surveyActuall'=>$surveyActuall));
     }
 
 }

@@ -3,6 +3,7 @@ $(document).ready(function () {
     initQuiz();
     toogleMenu();
     initAutoTab();
+    initWinnerSubmit();
 });
 
 $(window).resize(function () {
@@ -25,13 +26,19 @@ function initQuiz()
     $('.questions').quiz();
 }
 
-function toogleMenu(){
-    $('#mobileMenu').on('click', function(){
-       $('#menu').toggleClass('in'); 
+function toogleMenu() {
+    $('#mobileMenu').on('click', function () {
+        $('#menu').toggleClass('in');
     });
 }
 
-function initAutoTab(){
+function initAutoTab() {
     $('.form .postCode input').autotab('number');
     $('.form .phone input').autotab('number');
+}
+
+function initWinnerSubmit() {
+    $('#winnerQuize').change(function () {
+        $('#winnerForm').submit();
+    });
 }
