@@ -1,3 +1,7 @@
+admin_result:
+    resource: "@AdminBundle/Controller/ResultController.php"
+    type:     annotation
+
 admin_text:
     resource: "@AdminBundle/Controller/TextController.php"
     type:     annotation

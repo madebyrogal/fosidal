@@ -35,7 +35,6 @@ class WinnerController extends Controller
             $award = 1;
         }
         
-        $results = array();
         return $this->render('AppBundle:Winner:index.html.twig', array('results'=>$results, 'surveyes'=>$surveyes, 'award'=>$award, 'surveyActuall'=>$surveyActuall));
     }
 
