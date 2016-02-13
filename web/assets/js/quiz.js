@@ -17,18 +17,35 @@
         var point = parseInt(container.data('point'));
         //Points assume
         var points = parseInt(container.data('points'));
-        toogleNextButton();
-        timerStart();
+
+        //If initial
+        if (elems.length) {
+            toogleNextButton();
+            timerStart();
+        }
+        
         var data = {
             'questionNr': container.data('question'),
             'token': container.data('token')
         }
 
+        function selectAnswer() {
+            elems.removeClass('active');
+            $(this).addClass('active');
+            toogleNextButton('enabled');
+        }
+
         function checkAnswer() {
             timerStop();
-            var selectedAnswer = $(this);
-            data.answerNr = $(this).data('answer');
-            selectedAnswer.addClass('active');
+            var selectedAnswer = 0;
+            elems.each(function (i, elem) {
+                if ($(elem).hasClass('active')) {
+                    selectedAnswer = $(elem);
+                    return;
+                }
+            });
+            data.answerNr = selectedAnswer.data('answer');
+
             $.ajax({
                 url: url,
                 type: 'POST',
@@ -41,16 +58,17 @@
                     } else {
                         toogleClasses(false, selectedAnswer, response.answerId)
                     }
-                    toogleNextButton('enabled');
+                    //toogleNextButton('enabled');
                     disablePlugin();
+                    setTimeout(moveToNextQuestion, 1000);
                 },
                 error: function (response) {
                     window.location.href = response.responseJSON.url;
                 }
             });
         }
-        
-        function sendFakeAnswer(){
+
+        function sendFakeAnswer() {
             data.timeLeft = 0;
             data.answerNr = 0;
             $.ajax({
@@ -58,7 +76,6 @@
                 type: 'POST',
                 data: data,
                 success: function (response) {
-                    toogleNextButton('enabled');
                     moveToNextQuestion();
                 },
                 error: function (response) {
@@ -81,8 +98,8 @@
                 correctAnswer.addClass('ok');
             }
         }
-        
-        function addPoints(){
+
+        function addPoints() {
             var newPoints = points + point;
             $('#pointAssume').html(newPoints);
         }
@@ -93,6 +110,10 @@
             if (status === 'enabled') {
                 nextButton.removeClass('disabled');
                 nextButton.unbind('click');
+                nextButton.on('click', function (e) {
+                    e.preventDefault();
+                    checkAnswer();
+                });
             } else {
                 nextButton.on('click', function (e) {
                     e.preventDefault();
@@ -106,13 +127,13 @@
                 $(this).unbind('click');
             });
         }
-        
+
         function timerStart() {
             timerHandler = setInterval(countDown, 1000)
         }
 
-         function countDown() {
-            if(time > 0){
+        function countDown() {
+            if (time > 0) {
                 time--;
                 displayCountDown(time);
             } else {
@@ -133,13 +154,14 @@
             clearInterval(timerHandler);
             data.timeLeft = time;
         }
-        
-        function moveToNextQuestion(){
-            nextButton.trigger('click');
+
+        function moveToNextQuestion() {
+            var urlNext = nextButton.parent().attr('href');
+            window.location.href = urlNext;
         }
 
-        return elems.each(function () {
-            $(this).on('click', checkAnswer);
+        return elems.each(function (i, elem) {
+            $(this).on('click', selectAnswer);
         });
     }
 })(jQuery);
