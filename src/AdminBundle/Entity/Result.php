@@ -156,14 +156,14 @@ class Result
     /**
      * @var bool
      *
-     * @ORM\Column(name="award1", type="boolean")
+     * @ORM\Column(name="award1", type="boolean", nullable=true)
      */
     private $award1;
     
     /**
      * @var bool
      *
-     * @ORM\Column(name="award2", type="boolean")
+     * @ORM\Column(name="award2", type="boolean", nullable=true)
      */
     private $award2;
 

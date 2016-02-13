@@ -9841,7 +9841,7 @@ label {
   padding: 0 0 0 20px;
 }
 .pointCounter {
-  max-width: 462px;
+  max-width: 472px;
   margin: 15px auto 0 auto;
 }
 .pointCounter ul {
@@ -9877,6 +9877,7 @@ label {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 15px;
+  width: 290px;
 }
 .pointCounter ul .pointSummar .podium {
   background-image: url('/assets/images/sprite.png');
@@ -9903,7 +9904,7 @@ label {
 .pointCounter ul .pointSummar .pointDesc .pointAssume {
   position: absolute;
   top: -10px;
-  right: 0;
+  right: -15px;
   z-index: 1;
   font-size: 24px;
   color: #fdc010;
