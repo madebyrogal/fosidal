@@ -27,7 +27,6 @@ class Quiz
     {
         $this->em = $entityManager;
         $this->quiz = $this->em->getRepository('AdminBundle:Survey')->findActive();
-        $session->start();
         $this->session = $session;
     }
 
