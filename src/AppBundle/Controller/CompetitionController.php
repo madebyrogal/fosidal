@@ -41,9 +41,9 @@ class CompetitionController extends Controller
         if (!$survey) {
             throw $this->createNotFoundException('Sorry, there are no quiz');
         }
-        $data = $quiz->getNextQuestion();
+        $data = $quiz->getFirstQuestion();
 
-        return $this->render('AppBundle:Competition:question.html.twig', $this->prepareViewData($survey, $data->question, $quiz->getPoints(), $data->questionNr));
+        return $this->render('AppBundle:Competition:question.html.twig', $this->prepareViewData($survey, $data, $quiz->getPoints(), 1));
     }
 
     /**
@@ -72,7 +72,7 @@ class CompetitionController extends Controller
         $quiz = $this->get('app.quiz');
         if (!$quiz->validEnd()) {
             
-            return $this->redirectToRoute('competitionQuestion');
+            return $this->redirectToRoute('competition');
         }
         $result = new Result();
         $form = $this->createForm('AdminBundle\Form\ResultType', $result, array('action' => $this->generateUrl('competitionEnd')));
