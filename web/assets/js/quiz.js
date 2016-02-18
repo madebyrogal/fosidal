@@ -58,7 +58,6 @@
                     } else {
                         toogleClasses(false, selectedAnswer, response.answerId)
                     }
-                    //toogleNextButton('enabled');
                     disablePlugin();
                     setTimeout(moveToNextQuestion, 1000);
                 },

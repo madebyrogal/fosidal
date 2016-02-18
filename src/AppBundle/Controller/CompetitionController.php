@@ -23,6 +23,10 @@ class CompetitionController extends Controller
      */
     public function indexAction($slideNr)
     {
+        if($slideNr == 1){
+            $quiz = $this->get('app.quiz');
+            $quiz->init();
+        }
         return $this->render('AppBundle:Competition:slide' . $slideNr . '.html.twig', array());
     }
 
@@ -33,7 +37,6 @@ class CompetitionController extends Controller
     public function questionAction()
     {
         $quiz = $this->get('app.quiz');
-        $quiz->init();
         $survey = $quiz->getQuiz();
         if (!$survey) {
             throw $this->createNotFoundException('Sorry, there are no quiz');
@@ -113,13 +116,9 @@ class CompetitionController extends Controller
      */
     public function checkAnswerAction(Request $request)
     {
-        if ($request->request->get('token') !== $this->get('form.csrf_provider')->generateCsrfToken('')) {
-            
-            return new JsonResponse(null, JsonResponse::HTTP_FORBIDDEN);
-        }
         $quiz = $this->get('app.quiz');
         if (!$quiz->valid($request->get('questionNr'))) {
-            $data = array('url' => $this->generateUrl('competitionQuestion'));
+            $data = array('url' => $this->generateUrl('competition'));
             
             return new JsonResponse($data, JsonResponse::HTTP_GONE);
         }
