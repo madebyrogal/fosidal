@@ -95,7 +95,8 @@ class CompetitionController extends Controller
     public function saveQuizAction(Request $request)
     {
         $quiz = $this->get('app.quiz');
-        if (!$quiz->validEnd() || empty($request->headers->get('referer'))) {
+        $referer = $request->headers->get('referer'); 
+        if (!$quiz->validEnd() || empty($referer)) {
             
             return $this->redirectToRoute('competitionQuestion');
         }
