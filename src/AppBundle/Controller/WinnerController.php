@@ -15,6 +15,7 @@ class WinnerController extends Controller
      */
     public function indexAction(Request $request)
     {
+        throw $this->createNotFoundException('Sorry, there are no winners');
         $surveyes = $this->getDoctrine()->getRepository('AdminBundle:Survey')->findBy(array(), array('start' => 'ASC'));
         if($request->getMethod() === Request::METHOD_POST){
             $surveyActuall = $this->getDoctrine()->getRepository('AdminBundle:Survey')->find($request->get('quize'));

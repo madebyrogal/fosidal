@@ -52,14 +52,14 @@
                 data: data,
                 success: function (response) {
                     if (data.answerNr === response.answerId) {
-                        toogleClasses(true, selectedAnswer)
+                        //toogleClasses(true, selectedAnswer)
                         //Add points
                         addPoints();
                     } else {
-                        toogleClasses(false, selectedAnswer, response.answerId)
+                        //toogleClasses(false, selectedAnswer, response.answerId)
                     }
                     disablePlugin();
-                    setTimeout(moveToNextQuestion, 1000);
+                    moveToNextQuestion();
                 },
                 error: function (response) {
                     window.location.href = response.responseJSON.url;
