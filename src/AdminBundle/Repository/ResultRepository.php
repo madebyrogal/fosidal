@@ -14,15 +14,17 @@ use AppBundle\Quiz\Quiz;
 class ResultRepository extends EntityRepository
 {
 
-    public function checkUniqueEmailInCompetition($fields)
+    public function checkUniqueCompetition($fields)
     {
         $em = $this->getEntityManager();
         $quiz = $em->getRepository('AdminBundle:Survey')->findActive();
 
         $query = $this->createQueryBuilder('r')
-                ->where('r.email = :email')
+                ->where('r.name = :name')
+                ->andWhere('r.surname = :surname')
+                ->andWhere('r.phone = :phone')
                 ->andWhere('r.survey = :survey')
-                ->setParameters(array('email' => $fields['email'], 'survey' => $quiz))
+                ->setParameters(array('name' => $fields['name'], 'surname'=>$fields['surname'], 'phone'=>$fields['phone'], 'survey' => $quiz))
                 ->getQuery();
 
         return $query->getResult();

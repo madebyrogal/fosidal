@@ -14,9 +14,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Table(name="result")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\ResultRepository")
  * @UniqueEntity(
- *      fields={"email"},
- *      repositoryMethod="checkUniqueEmailInCompetition",
- *      message="Ten email brał już udział w tej edycji konkursu."
+ *      fields={"name","surname","phone"},
+ *      errorPath="name",
+ *      repositoryMethod="checkUniqueCompetition",
+ *      message="Brałeś/aś już udział w konkursie. Spróbuj w następnej edycji"
  * )
  */
 class Result
