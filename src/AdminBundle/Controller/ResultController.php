@@ -25,7 +25,7 @@ class ResultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $results = $em->getRepository('AdminBundle:Result')->findBy(array(), array('survey'=>'ASC', 'points' => 'DESC', 'created' => 'DESC'));
+        $results = $em->getRepository('AdminBundle:Result')->findBy(array(), array('survey'=>'ASC', 'points' => 'DESC', 'created' => 'ASC'));
 
         return $this->render('result/index.html.twig', array(
                     'results' => $results,
