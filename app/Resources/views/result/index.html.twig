@@ -2,6 +2,20 @@
 
 {% block body %}
     <h1>Lista zwycięzców</h1>
+    <div class="filters">
+        <ul>
+            <li>
+                <b>Edycja - </b>
+                <select id="quizeEdition" name="quizeEdition">
+                    {% for edit in surveys %}
+                        <option value="{{edit.id}}" {%if (quize and edit.id == quize.id)%}selected="selected"{%endif%}>{{edit.name}}</option>
+                    {% endfor %}
+                </select>
+            </li>
+            <li><b>Etui na klucze</b> - {{award1Count}}</li>
+            <li><b>Pieczątki</b> - {{award2Count}}</li>
+        </ul>
+    </div>
 
     <table class="table table-hover">
         <thead>
@@ -50,9 +64,9 @@
                         <ul>
                             <li>
                                 {% if (result.award1) %}
-                                    <a href="{{ path('admin_result_award1_remove', { 'id': result.id }) }}" class="nowrap"><i class="fa fa-minus"></i> Pieczątki</a>
+                                    <a href="{{ path('admin_result_award1_remove', { 'id': result.id, 'quize': quize.id }) }}" class="nowrap"><i class="fa fa-minus"></i> Pieczątki</a>
                                 {% else %}
-                                    <a href="{{ path('admin_result_award1_add', { 'id': result.id }) }}" class="nowrap"><i class="fa fa-plus"></i> Pieczątki</a>
+                                    <a href="{{ path('admin_result_award1_add', { 'id': result.id, 'quize': quize.id }) }}" class="nowrap"><i class="fa fa-plus"></i> Pieczątki</a>
                                 {% endif %}
                             </li>
                             <li>
@@ -68,6 +82,6 @@
             {% endfor %}
         </tbody>
     </table>
-
+    <input type="hidden" id="adminResultIndexURL" value="{{path('admin_result_index')}}" />
 
 {% endblock %}
