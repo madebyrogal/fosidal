@@ -25,5 +25,16 @@ class SurveyRepository extends EntityRepository
                 ->getQuery();
         return $query->getOneOrNullResult();
     }
+    
+    //Get done and active
+    public function findActually(){
+        $now = new \DateTime('now');
+        $query = $this->createQueryBuilder('s')
+                ->where('s.start <= :start')
+                ->setParameters(array('start' => $now))
+                ->setMaxResults(1)
+                ->getQuery();
+        return $query->getResult();
+    }
 
 }

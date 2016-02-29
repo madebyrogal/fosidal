@@ -8,29 +8,43 @@
         <p class="desc">
             Zwycięzcy z poszczególnych etapów konkursu będą wyłaniani w przeciągu 7 dni roboczych po zakończeniu każdego etapu. 
         </p>
-        <div class="tabelHeaderWraper">
-            <div class="tableBox">
-                <table class="table">
-                    <thead>
+        <form id="winnerForm" action="{{path('winner')}}" method="POST" />
+        <div class="tab">
+            <input type="submit" name="award1" value="Etui na pieczątki" {% if (award ==1) %} class="active"{% endif %} />
+            <input type="submit" name="award2" value="Etui na klucze" {% if (award ==2) %} class="active"{% endif %}/>
+            <input type="hidden" name="award" value="{{award}}" />
+        </div>
+        <div class="quizeSelect clearfix">
+            <select id="winnerQuize" name="quize">
+                {% for survey in surveyes %}
+                    <option {%if (surveyActuall.id == survey.id)%}selected="selected"{% endif %} value="{{survey.id}}">{{survey.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+    <div class="tabelHeaderWraper">
+        <div class="tableBox">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><div>Miejsce</div></th>
+                <th><div>Nazwisko</div></th>
+                <th><div>Imię</div></th>
+                <th><div>Miasto</div></th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
                         <tr>
-                            <th><div>Miejsce</div></th>
-                            <th><div>Nazwisko</div></th>
-                            <th><div>Imię</div></th>
-                            <th><div>Miasto</div></th>
+                            <td>{{loop.index}}</td>
+                            <td>{{result.surname}}</td>
+                            <td>{{result.name}}</td>
+                            <td>{{result.city}}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {% for result in results %}
-                            <tr>
-                                <td>{{loop.index}}</td>
-                                <td>{{result.surname}}</td>
-                                <td>{{result.name}}</td>
-                                <td>{{result.city}}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 {% endblock %}

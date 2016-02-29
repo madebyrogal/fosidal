@@ -14,9 +14,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Table(name="result")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\ResultRepository")
  * @UniqueEntity(
- *      fields={"email"},
- *      repositoryMethod="checkUniqueEmailInCompetition",
- *      message="Ten email brał już udział w tej edycji konkursu."
+ *      fields={"name","surname","phone"},
+ *      errorPath="name",
+ *      repositoryMethod="checkUniqueCompetition",
+ *      message="Brałeś/aś już udział w konkursie. Spróbuj w następnej edycji"
  * )
  */
 class Result
@@ -116,14 +117,14 @@ class Result
     /**
      * @var bool
      *
-     * @ORM\Column(name="agree1", type="boolean")
+     * @ORM\Column(name="agree1", type="boolean", nullable=true)
      */
     private $agree1;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="agree2", type="boolean")
+     * @ORM\Column(name="agree2", type="boolean", nullable=true)
      */
     private $agree2;
 
@@ -152,6 +153,20 @@ class Result
      * @ORM\Column(name="created", type="datetime")
      */
     private $created;
+    
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="award1", type="boolean", nullable=true)
+     */
+    private $award1;
+    
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="award2", type="boolean", nullable=true)
+     */
+    private $award2;
 
     /**
      * Get id
@@ -456,4 +471,63 @@ class Result
         $this->survey = $survey;
     }
 
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Result
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Set award1
+     *
+     * @param boolean $award1
+     * @return Result
+     */
+    public function setAward1($award1)
+    {
+        $this->award1 = $award1;
+
+        return $this;
+    }
+
+    /**
+     * Get award1
+     *
+     * @return boolean 
+     */
+    public function getAward1()
+    {
+        return $this->award1;
+    }
+
+    /**
+     * Set award2
+     *
+     * @param boolean $award2
+     * @return Result
+     */
+    public function setAward2($award2)
+    {
+        $this->award2 = $award2;
+
+        return $this;
+    }
+
+    /**
+     * Get award2
+     *
+     * @return boolean 
+     */
+    public function getAward2()
+    {
+        return $this->award2;
+    }
 }

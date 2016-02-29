@@ -37,7 +37,7 @@ class Text
 
     /**
      * @ORM\ManyToOne(targetEntity="Page", inversedBy="texts")
-     * @ORM\JoinColumn(name="page_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="page_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $page;
 

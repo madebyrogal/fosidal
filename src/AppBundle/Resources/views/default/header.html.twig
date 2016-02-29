@@ -17,7 +17,7 @@
                                 app.request.get('_route') == 'competitionThanks') %}
                                 class="active"{% endif %}><a href="{{ path('competition') }}">Konkurs</a></li>
                             <li {% if app.request.get('_route') == 'award' %}class="active"{% endif %}><a href="{{ path('award') }}">Nagrody</a></li>
-                            <li {% if app.request.get('_route') == 'winner' %}class="active"{% endif %}><a href="{{ path('winner') }}">Zwycięzcy</a></li>
+{#                            <li {% if app.request.get('_route') == 'winner' %}class="active"{% endif %}><a href="{{ path('winner') }}">Zwycięzcy</a></li>#}
                             <li {% if app.request.get('_route') == 'term' %}class="active"{% endif %}><a href="{{ path('term')}}">Regulamin</a></li>
                             <li {% if app.request.get('_route') == 'about' %}class="active"{% endif %}><a href="{{ path('about')}}">O produkcie</a></li>
                         </ul>

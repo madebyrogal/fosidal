@@ -1,7 +1,7 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
-
+session_start();
 /**
  * @var Composer\Autoload\ClassLoader
  */

@@ -23,6 +23,7 @@ class CompetitionController extends Controller
      */
     public function indexAction($slideNr)
     {
+        
         return $this->render('AppBundle:Competition:slide' . $slideNr . '.html.twig', array());
     }
 
@@ -38,9 +39,9 @@ class CompetitionController extends Controller
         if (!$survey) {
             throw $this->createNotFoundException('Sorry, there are no quiz');
         }
-        $data = $quiz->getNextQuestion();
+        $data = $quiz->getFirstQuestion();
 
-        return $this->render('AppBundle:Competition:question.html.twig', $this->prepareViewData($survey, $data->question, $quiz->getPoints(), $data->questionNr));
+        return $this->render('AppBundle:Competition:question.html.twig', $this->prepareViewData($survey, $data, $quiz->getPoints(), 1));
     }
 
     /**
@@ -95,7 +96,8 @@ class CompetitionController extends Controller
     public function saveQuizAction(Request $request)
     {
         $quiz = $this->get('app.quiz');
-        if (!$quiz->validEnd() || empty($request->headers->get('referer'))) {
+        $referer = $request->headers->get('referer'); 
+        if (!$quiz->validEnd() || empty($referer)) {
             
             return $this->redirectToRoute('competitionQuestion');
         }
@@ -112,10 +114,6 @@ class CompetitionController extends Controller
      */
     public function checkAnswerAction(Request $request)
     {
-        if ($request->request->get('token') !== $this->get('form.csrf_provider')->generateCsrfToken('')) {
-            
-            return new JsonResponse(null, JsonResponse::HTTP_FORBIDDEN);
-        }
         $quiz = $this->get('app.quiz');
         if (!$quiz->valid($request->get('questionNr'))) {
             $data = array('url' => $this->generateUrl('competitionQuestion'));

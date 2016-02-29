@@ -15,6 +15,33 @@
         margin-bottom: 30px;
         text-align: justify;
     }
+
+    .tab {
+        display: inline-block;
+        
+        input[type="submit"] {
+            display: inline-block;
+            padding: 18px 20px;
+            margin-right: 2px;
+            font-weight: bold;
+            background-color: @colorLightGray;
+            color: @colorGray;
+            border: 0;
+
+            &.active {
+                background-color: @colorYellow;
+                color: @colorWhite;
+            }
+        }
+    }
+    .quizeSelect{
+        float: right;
+        
+        select {
+            background-color: @colorWhite;
+            padding:4px;
+        }
+    }
     .tabelHeaderWraper{
         position: relative;
         padding-top: 52px;

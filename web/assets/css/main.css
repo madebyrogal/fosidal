@@ -8972,7 +8972,7 @@ label {
   z-index: 2;
   width: 384px;
   height: 287px;
-  top: -38px;
+  top: -37px;
   left: 50%;
   transform: translateX(-50%);
   background-repeat: no-repeat;
@@ -9075,6 +9075,13 @@ label {
 }
 .panel .data h1 {
   margin-bottom: 20px;
+}
+.panel .data .filters {
+  margin-bottom: 20px;
+}
+.panel .data .filters ul li {
+  display: inline-block;
+  margin-right: 20px;
 }
 .panel .data form div {
   margin-bottom: 20px;
@@ -9817,41 +9824,10 @@ label {
 .modalBody .about .seeMore i {
   margin-left: 30px;
 }
-.modalBody .bylaw {
-  padding: 40px 4%;
-}
-.modalBody .bylaw h1 {
-  font-size: 30px;
-}
-.modalBody .bylaw ol {
-  list-style-type: upper-roman;
-  margin: 20px 0 0 4%;
-  padding: 0;
-}
-.modalBody .bylaw ol li {
-  font-size: 24px;
-  margin: 0 0 34px 0;
-}
-.modalBody .bylaw ol li p {
-  font-size: 16px;
-  line-height: 18px;
-  margin: 20px 0 0 0;
-}
-.modalBody .bylaw ol ol {
-  list-style: decimal;
-  margin: 20px 0 0 0;
-}
-.modalBody .bylaw ol ol li {
-  font-size: 16px;
-  line-height: 18px;
-  margin: 0 0 20px 0;
-}
-.modalBody .bylaw ol ol ul {
-  list-style: disc;
-  margin: 20px 0 0 0;
-}
 .static {
   padding: 0 4% 20px 4%;
+  font-size: 16px;
+  line-height: 20px;
 }
 .static h1,
 .static .h1,
@@ -9859,7 +9835,7 @@ label {
 .static .h2,
 .static h3,
 .static .h3 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 20px;
 }
 .static p {
@@ -9869,10 +9845,10 @@ label {
 .static ol {
   margin-bottom: 10px;
   margin-top: 0;
-  padding: 0 0 0 14px;
+  padding: 0 0 0 20px;
 }
 .pointCounter {
-  max-width: 462px;
+  max-width: 472px;
   margin: 15px auto 0 auto;
 }
 .pointCounter ul {
@@ -9908,6 +9884,7 @@ label {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 15px;
+  width: 290px;
 }
 .pointCounter ul .pointSummar .podium {
   background-image: url('/assets/images/sprite.png');
@@ -9934,7 +9911,7 @@ label {
 .pointCounter ul .pointSummar .pointDesc .pointAssume {
   position: absolute;
   top: -10px;
-  right: 0;
+  right: -15px;
   z-index: 1;
   font-size: 24px;
   color: #fdc010;
@@ -10321,12 +10298,10 @@ label {
 .thankYou {
   text-align: center;
 }
-.thankYou h1 {
-  margin-top: 235px;
+.thankYou .leftDesc {
+  margin-top: 210px;
   display: inline-block;
-  font-size: 55px;
-  line-height: 65px;
-  text-align: left;
+  text-align: center;
 }
 .thankYou .desc {
   margin-top: 120px;
@@ -10400,6 +10375,29 @@ label {
 .winners .desc {
   margin-bottom: 30px;
   text-align: justify;
+}
+.winners .tab {
+  display: inline-block;
+}
+.winners .tab input[type="submit"] {
+  display: inline-block;
+  padding: 18px 20px;
+  margin-right: 2px;
+  font-weight: bold;
+  background-color: #e6e6e6;
+  color: #999999;
+  border: 0;
+}
+.winners .tab input[type="submit"].active {
+  background-color: #fdc010;
+  color: #fff;
+}
+.winners .quizeSelect {
+  float: right;
+}
+.winners .quizeSelect select {
+  background-color: #fff;
+  padding: 4px;
 }
 .winners .tabelHeaderWraper {
   position: relative;
@@ -10632,6 +10630,108 @@ label {
     opacity: 0;
   }
 }
+@-webkit-keyframes text5 {
+  0% {
+    color: #3a3a3a;
+  }
+  3% {
+    color: #fdc010;
+  }
+  18% {
+    color: #fdc010;
+  }
+  19% {
+    color: #3a3a3a;
+  }
+  100% {
+    color: #3a3a3a;
+  }
+}
+@-webkit-keyframes dot5 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes text5 {
+  0% {
+    color: #3a3a3a;
+  }
+  3% {
+    color: #fdc010;
+  }
+  18% {
+    color: #fdc010;
+  }
+  19% {
+    color: #3a3a3a;
+  }
+  100% {
+    color: #3a3a3a;
+  }
+}
+@keyframes dot5 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes img5 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes img5 {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @-webkit-keyframes text6 {
   0% {
     color: #3a3a3a;
@@ -10777,128 +10877,107 @@ label {
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza1 {
-  animation-name: text6;
-  animation-duration: 12s;
+  animation-name: text5;
+  animation-duration: 10s;
   animation-delay: 0s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza1 i {
-  animation-name: dot6;
-  animation-duration: 12s;
+  animation-name: dot5;
+  animation-duration: 10s;
   animation-delay: 0s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza1 {
-  animation-name: img6;
-  animation-duration: 12s;
+  animation-name: img5;
+  animation-duration: 10s;
   animation-delay: 0s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza2 {
-  animation-name: text6;
-  animation-duration: 12s;
+  animation-name: text5;
+  animation-duration: 10s;
   animation-delay: 2s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza2 i {
-  animation-name: dot6;
-  animation-duration: 12s;
+  animation-name: dot5;
+  animation-duration: 10s;
   animation-delay: 2s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza2 {
-  animation-name: img6;
-  animation-duration: 12s;
+  animation-name: img5;
+  animation-duration: 10s;
   animation-delay: 2s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza3 {
-  animation-name: text6;
-  animation-duration: 12s;
+  animation-name: text5;
+  animation-duration: 10s;
   animation-delay: 4s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza3 i {
-  animation-name: dot6;
-  animation-duration: 12s;
+  animation-name: dot5;
+  animation-duration: 10s;
   animation-delay: 4s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza3 {
-  animation-name: img6;
-  animation-duration: 12s;
+  animation-name: img5;
+  animation-duration: 10s;
   animation-delay: 4s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza4 {
-  animation-name: text6;
-  animation-duration: 12s;
+  animation-name: text5;
+  animation-duration: 10s;
   animation-delay: 6s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza4 i {
-  animation-name: dot6;
-  animation-duration: 12s;
+  animation-name: dot5;
+  animation-duration: 10s;
   animation-delay: 6s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza4 {
-  animation-name: img6;
-  animation-duration: 12s;
+  animation-name: img5;
+  animation-duration: 10s;
   animation-delay: 6s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza5 {
-  animation-name: text6;
-  animation-duration: 12s;
+  animation-name: text5;
+  animation-duration: 10s;
   animation-delay: 8s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .txtFaza5 i {
-  animation-name: dot6;
-  animation-duration: 12s;
+  animation-name: dot5;
+  animation-duration: 10s;
   animation-delay: 8s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
 .slide2 .imgFaza5 {
-  animation-name: img6;
-  animation-duration: 12s;
+  animation-name: img5;
+  animation-duration: 10s;
   animation-delay: 8s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-}
-.slide2 .txtFaza6 {
-  animation-name: text6;
-  animation-duration: 12s;
-  animation-delay: 10s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-}
-.slide2 .txtFaza6 i {
-  animation-name: dot6;
-  animation-duration: 12s;
-  animation-delay: 10s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-}
-.slide2 .imgFaza6 {
-  animation-name: img6;
-  animation-duration: 12s;
-  animation-delay: 10s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }

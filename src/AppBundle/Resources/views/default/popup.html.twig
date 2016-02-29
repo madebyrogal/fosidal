@@ -1,0 +1,253 @@
+<div class="popup-intro" style="z-index: 9998">
+	  <div class="window">
+		<p>Oświadczenie</p>
+		<div>
+		  Wejście do serwisu dla lekarzy medycyny wymaga potwierdzenia oświadczenia widocznego na stronie.
+		  Jeśli nie spełniasz wyżej wymienionych warunków, kliknij przycisk Anuluj. 
+		</div>
+		<div>
+		  <input type="checkbox" name="_accept" id="_accept"/>
+		  <label for="_accept">Oświadczam, że jestem lekarzem medycyny.</label>
+		</div>
+		<div class="buttons">
+		  <a href="#" class="cancel-button"><span>Anuluj</span></a>
+		  <a href="#" class="accept-button"><span>Akceptuj</span></a>
+		</div>
+	  </div>
+</div>
+
+<script type="text/javascript">
+ 
+(function (factory) {
+        if (typeof define === 'function' && define.amd) {
+                // AMD. Register as anonymous module.
+                define(['jquery'], factory);
+        } else {
+                // Browser globals.
+                factory(jQuery);
+        }
+}(function ($) {
+
+        var pluses = /\+/g;
+
+        function encode(s) {
+                return config.raw ? s : encodeURIComponent(s);
+        }
+
+        function decode(s) {
+                return config.raw ? s : decodeURIComponent(s);
+        }
+
+        function stringifyCookieValue(value) {
+                return encode(config.json ? JSON.stringify(value) : String(value));
+        }
+
+        function parseCookieValue(s) {
+                if (s.indexOf('"') === 0) {
+                        // This is a quoted cookie as according to RFC2068, unescape...
+                        s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+                }
+
+                try {
+                        // Replace server-side written pluses with spaces.
+                        // If we can't decode the cookie, ignore it, it's unusable.
+                        // If we can't parse the cookie, ignore it, it's unusable.
+                        s = decodeURIComponent(s.replace(pluses, ' '));
+                        return config.json ? JSON.parse(s) : s;
+                } catch(e) {}
+        }
+
+        function read(s, converter) {
+                var value = config.raw ? s : parseCookieValue(s);
+                return $.isFunction(converter) ? converter(value) : value;
+        }
+
+        var config = $.cookie = function (key, value, options) {
+
+                // Write
+                if (value !== undefined && !$.isFunction(value)) {
+                        options = $.extend({}, config.defaults, options);
+
+                        if (typeof options.expires === 'number') {
+                                var days = options.expires, t = options.expires = new Date();
+                                t.setDate(t.getDate() + days);
+                        }
+
+                        return (document.cookie = [
+                                encode(key), '=', stringifyCookieValue(value),
+                                options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                                options.path ? '; path=' + options.path : '',
+                                options.domain ? '; domain=' + options.domain : '',
+                                options.secure ? '; secure' : ''
+                        ].join(''));
+                }
+
+                // Read
+
+                var result = key ? undefined : {};
+
+                // To prevent the for loop in the first place assign an empty array
+                // in case there are no cookies at all. Also prevents odd result when
+                // calling $.cookie().
+                var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+                for (var i = 0, l = cookies.length; i < l; i++) {
+                        var parts = cookies[i].split('=');
+                        var name = decode(parts.shift());
+                        var cookie = parts.join('=');
+
+                        if (key && key === name) {
+                                // If second argument (value) is a function it's a converter...
+                                result = read(cookie, value);
+                                break;
+                        }
+
+                        // Prevent storing a cookie that we couldn't decode.
+                        if (!key && (cookie = read(cookie)) !== undefined) {
+                                result[name] = cookie;
+                        }
+                }
+
+                return result;
+        };
+
+        config.defaults = {};
+
+        $.removeCookie = function (key, options) {
+                if ($.cookie(key) === undefined) {
+                        return false;
+                }
+
+                // Must not alter options, thus extending a fresh object...
+                $.cookie(key, '', $.extend({}, options, { expires: -1 }));
+                return !$.cookie(key);
+        };
+
+}));
+
+
+
+$(document).ready(function(){
+  $('.popup-intro a.cancel-button').click(function(){
+     window.location.href='http://www.google.com';
+	 return false;
+  });
+ 
+   if($.cookie('accepted') == null) { 
+   $('.popup-intro').show();
+   		$('.popup-intro .accept-button').click(function(){
+   			if($('.popup-intro input[name=_accept]').prop("checked")){
+	    		$.cookie('accepted', '1', {expires: 365});
+	    		$('.popup-intro').remove();
+    		}
+		});
+   }
+   else {
+   		$('.popup-intro').remove();
+   }
+  
+});
+</script> 
+<style>
+.popup-intro
+{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  zoom: 1;
+  background: #000;
+}
+
+.window
+{
+  background: #fff;
+  padding: 30px;
+  width: 540px;
+  margin: 120px auto 0 auto;
+}
+
+.popup-intro p
+{
+  text-align: center;
+  color: #74c043;
+  font-size: 21pt;
+  margin-bottom: 20px;
+  line-height: 21pt;
+}
+
+.popup-intro .window div
+{
+  text-align: center;
+  font-size: 12pt;
+  margin-bottom: 20px;
+  line-height: 22px;
+}
+
+.popup-intro input
+{
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.popup-intro label
+{
+  font-size: 9pt;
+  float: left;
+  width: 400px;
+  text-align: left;
+  line-height: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.buttons
+{
+  clear: both;
+  text-align: center;
+}
+
+.popup-intro .cancel-button,
+.popup-intro .accept-button
+{
+  height: 34px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 0 5px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+
+.popup-intro .accept-button {
+  background-color: #60b44f;
+}
+
+.popup-intro .cancel-button {
+
+  background-color: #e30613;
+}
+
+.popup-intro .cancel-button span,
+.popup-intro .accept-button span
+{
+  line-height: 34px;
+  font-size: 11pt;
+  padding-right: 11px;
+}
+
+.popup-intro .cancel-button
+{
+  background-position: left -130px;
+}
+
+.popup-intro .accept-button
+{
+  background-position: left -164px;
+}
+</style>

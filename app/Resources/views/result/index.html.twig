@@ -1,0 +1,87 @@
+{% extends 'AdminBundle::base.html.twig' %}
+
+{% block body %}
+    <h1>Lista zwycięzców</h1>
+    <div class="filters">
+        <ul>
+            <li>
+                <b>Edycja - </b>
+                <select id="quizeEdition" name="quizeEdition">
+                    {% for edit in surveys %}
+                        <option value="{{edit.id}}" {%if (quize and edit.id == quize.id)%}selected="selected"{%endif%}>{{edit.name}}</option>
+                    {% endfor %}
+                </select>
+            </li>
+            <li><b>Etui na klucze</b> - {{award1Count}}</li>
+            <li><b>Pieczątki</b> - {{award2Count}}</li>
+        </ul>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Street</th>
+                <th>Housenr</th>
+                <th>Flatnr</th>
+                <th>Postcode</th>
+                <th>City</th>
+                <th>Phone</th>
+                <th>Agree1</th>
+                <th>Agree2</th>
+                <th>Konkurs</th>
+                <th>Points</th>
+                <th>Created</th>
+                <th>Pieczątki</th>
+                <th>Klucze</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <tr>
+                    <td><a href="{{ path('admin_result_show', { 'id': result.id }) }}">{{ result.id }}</a></td>
+                    <td>{{ result.name }}</td>
+                    <td>{{ result.surname }}</td>
+                    <td>{{ result.email }}</td>
+                    <td>{{ result.street }}</td>
+                    <td>{{ result.houseNr }}</td>
+                    <td>{{ result.flatNr }}</td>
+                    <td>{{ result.postCode }}</td>
+                    <td>{{ result.city }}</td>
+                    <td>{{ result.phone }}</td>
+                    <td>{% if result.agree1 %}Yes{% else %}No{% endif %}</td>
+                    <td>{% if result.agree2 %}Yes{% else %}No{% endif %}</td>
+                    <td>{{ result.survey.name }}</td>
+                    <td>{{ result.points }}</td>
+                    <td>{% if result.created %}{{ result.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if result.award1 %}<i class="fa fa-check"></i>{% else %}<i class="fa fa-times"></i>{% endif %}</td>
+                    <td>{% if result.award2 %}<i class="fa fa-check"></i>{% else %}<i class="fa fa-times"></i>{% endif %}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                {% if (result.award1) %}
+                                    <a href="{{ path('admin_result_award1_remove', { 'id': result.id, 'quize': quize.id }) }}" class="nowrap"><i class="fa fa-minus"></i> Pieczątki</a>
+                                {% else %}
+                                    <a href="{{ path('admin_result_award1_add', { 'id': result.id, 'quize': quize.id }) }}" class="nowrap"><i class="fa fa-plus"></i> Pieczątki</a>
+                                {% endif %}
+                            </li>
+                            <li>
+                                {% if (result.award2) %}
+                                    <a href="{{ path('admin_result_award2_remove', { 'id': result.id }) }}" class="nowrap"><i class="fa fa-minus"></i> Klucze</a>
+                                {% else %}
+                                    <a href="{{ path('admin_result_award2_add', { 'id': result.id }) }}" class="nowrap"><i class="fa fa-plus"></i> Klucze</a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <input type="hidden" id="adminResultIndexURL" value="{{path('admin_result_index')}}" />
+
+{% endblock %}

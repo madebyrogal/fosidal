@@ -18,7 +18,7 @@
             <tr>
                 <td><a href="{{ path('admin_text_show', { 'id': text.id }) }}">{{ text.id }}</a></td>
                 <td>{{ text.title }}</td>
-                <td>{{ text.content }}</td>
+                <td>{{ text.content | raw}}</td>
                 <td>{{ text.page.title }}</td>
                 <td>
                     <ul>
