@@ -17,7 +17,7 @@
         <div class="quizeSelect clearfix">
             <select id="winnerQuize" name="quize">
                 {% for survey in surveyes %}
-                    <option {%if (surveyActuall.id == survey.id)%}selected="selected"{% endif %} value="{{survey.id}}">{{survey.name}}</option>
+                    <option {%if (surveyActuall and surveyActuall.id == survey.id)%}selected="selected"{% endif %} value="{{survey.id}}">{{survey.name}}</option>
                 {% endfor %}
             </select>
         </div>
